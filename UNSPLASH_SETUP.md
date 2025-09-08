@@ -7,8 +7,8 @@ This document explains how to set up Unsplash API integration for course images.
 The Unsplash API credentials are already provided in your `env keys.md` file:
 
 ```env
-NEXT_PUBLIC_UNSPLASH_ACCESS_KEY=dOBXtJr2fBjWGrm1XGWgcZGnUVC7Tm_kLHeAVAjqQ6U
-UNSPLASH_SECRET_KEY=sNBTk20jA9bbY3FBdZ_LY85RlR7bqC0LVzl8uqgWdvs
+NEXT_PUBLIC_UNSPLASH_ACCESS_KEY=your_unsplash_access_key_here
+UNSPLASH_SECRET_KEY=your_unsplash_secret_key_here
 ```
 
 Simply copy these values to your `.env.local` file to enable the image search functionality.

@@ -1,7 +1,7 @@
 const OpenAI = require('openai');
 
 const openai = new OpenAI({
-  apiKey: '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',
+  apiKey: process.env.OPENAI_API_KEY,
 });
 
 async function testExtraction() {
