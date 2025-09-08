@@ -18,7 +18,7 @@ try {
   adminApp = getApps().length === 0 
     ? initializeApp({
         credential: cert(firebaseAdminConfig),
-        storageBucket: 'flowinternals-training-app.appspot.com',
+        storageBucket: `${process.env.FIREBASE_ADMIN_PROJECT_ID}.appspot.com`,
       })
     : getApps()[0];
 } catch (error) {
