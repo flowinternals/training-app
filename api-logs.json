@@ -1,0 +1,1400 @@
+[
+  {
+    "timestamp": "2025-09-04T17:37:18.070Z",
+    "action": "course_update",
+    "courseId": "syh9IAD1C10PeiR5XrCz",
+    "data": {
+      "title": "Introduction to n8n",
+      "description": "A beginner's guide to understanding and implementing workflow automation using the n8n tool. This course aims to equip non-technical professionals, business analysts, and junior developers with the skills to automate tasks and integrate applications without the need for advanced coding.\n\nMaking a change for the halfwit claude model.",
+      "category": "programming",
+      "difficulty": "beginner",
+      "price": 50,
+      "duration": 240,
+      "tags": [
+        "n8n",
+        "beginner",
+        "workflow"
+      ],
+      "thumbnail": "https://images.unsplash.com/photo-1444212477490-ca407925329e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwyfHxkb2dzfGVufDB8MHx8fDE3NTcwMDc0MzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1444212477490-ca407925329e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwyfHxkb2dzfGVufDB8MHx8fDE3NTcwMDc0MzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by Anoir Chafik on Unsplash",
+      "published": false,
+      "slug": "introduction-to-n8n",
+      "imageUrl": "https://images.unsplash.com/photo-1444212477490-ca407925329e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwyfHxkb2dzfGVufDB8MHx8fDE3NTcwMDc0MzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "isFree": false,
+      "createdAt": {
+        "_seconds": 1756996369,
+        "_nanoseconds": 953000000
+      },
+      "updatedAt": "2025-09-04T17:37:17.725Z",
+      "authorId": "FAxsVhNFSyWaBahUZI2HA1q0wTq1",
+      "authorName": "Flow Internals",
+      "modules": [
+        {
+          "title": "Understanding Workflow Automation and n8n",
+          "description": "Introduction to the basics of workflow automation and the role of n8n in the automation ecosystem.",
+          "order": 1,
+          "lessons": [
+            {
+              "id": "temp-1757007437725-0",
+              "title": "The Basics of Workflow Automation",
+              "content": "<p>An overview of workflow automation and its benefits.<br><br><img style=\"max-width: 100%; height: auto;\" src=\"https://images.unsplash.com/photo-1533915828531-55b274d98dc5?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHw0fHxyb2JvdHN8ZW58MHwwfHx8MTc1Njk5NTc3OHww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080\" alt=\"Photo by Craig Sybert on Unsplash\"></p>",
+              "duration": 20,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757007437725-1",
+              "title": "Introduction to n8n",
+              "content": "<p>An introduction to n8n, its purpose, and its place in the automation ecosystem.<img style=\"max-width: 100%; height: auto;\" src=\"https://images.unsplash.com/photo-1619197449441-4a5e108cb565?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHw2fHxoYWxmd2l0fGVufDB8MHx8fDE3NTcwMDU4Mjl8MA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080\" alt=\"Photo by Marija Zaric on Unsplash\"></p>",
+              "duration": 40,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Navigating the n8n Interface",
+          "description": "A guide to navigating n8n's interface, including the workflow editor, node library, and execution logs.",
+          "order": 2,
+          "lessons": [
+            {
+              "id": "temp-1757007437725-0",
+              "title": "Exploring the n8n Interface",
+              "content": "A tour of the n8n interface, focusing on the workflow editor and node library.",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757007437725-1",
+              "title": "Working with Execution Logs",
+              "content": "A guide to using execution logs to monitor and debug workflows.",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Building and Running Workflows",
+          "description": "Learn to build and run simple workflows using common nodes like email, webhook, and Google Sheets.",
+          "order": 3,
+          "lessons": [
+            {
+              "id": "temp-1757007437725-0",
+              "title": "Building Simple Workflows",
+              "content": "Creating simple workflows using common nodes.",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757007437725-1",
+              "title": "Configuring Triggers and Actions",
+              "content": "A guide to configuring triggers and actions to automate processes.",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Monitoring and Refining Workflows",
+          "description": "Learn to monitor, debug and refine workflows using n8n's execution logs and error handling features.",
+          "order": 4,
+          "lessons": [
+            {
+              "id": "temp-1757007437725-0",
+              "title": "Monitoring Workflows",
+              "content": "Using n8n's execution logs to monitor workflows.",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757007437725-1",
+              "title": "Debugging and Refining Workflows",
+              "content": "A guide to debugging and improving workflows using error handling features.",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        }
+      ]
+    },
+    "published": false,
+    "imageData": {
+      "thumbnail": "https://images.unsplash.com/photo-1444212477490-ca407925329e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwyfHxkb2dzfGVufDB8MHx8fDE3NTcwMDc0MzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1444212477490-ca407925329e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwyfHxkb2dzfGVufDB8MHx8fDE3NTcwMDc0MzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by Anoir Chafik on Unsplash"
+    }
+  },
+  {
+    "timestamp": "2025-09-04T17:39:02.730Z",
+    "action": "course_update",
+    "courseId": "syh9IAD1C10PeiR5XrCz",
+    "data": {
+      "title": "Introduction to n8n",
+      "description": "A beginner's guide to understanding and implementing workflow automation using the n8n tool. This course aims to equip non-technical professionals, business analysts, and junior developers with the skills to automate tasks and integrate applications without the need for advanced coding.\n\nMaking a change for the halfwit claude model.",
+      "category": "programming",
+      "difficulty": "beginner",
+      "price": 50,
+      "duration": 240,
+      "tags": [
+        "n8n",
+        "beginner",
+        "workflow"
+      ],
+      "thumbnail": "https://images.unsplash.com/photo-1444212477490-ca407925329e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwyfHxkb2dzfGVufDB8MHx8fDE3NTcwMDc0MzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1444212477490-ca407925329e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwyfHxkb2dzfGVufDB8MHx8fDE3NTcwMDc0MzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by Anoir Chafik on Unsplash",
+      "published": false,
+      "slug": "introduction-to-n8n",
+      "imageUrl": "https://images.unsplash.com/photo-1444212477490-ca407925329e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwyfHxkb2dzfGVufDB8MHx8fDE3NTcwMDc0MzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "isFree": false,
+      "createdAt": {
+        "_seconds": 1756996369,
+        "_nanoseconds": 953000000
+      },
+      "updatedAt": "2025-09-04T17:39:02.376Z",
+      "authorId": "FAxsVhNFSyWaBahUZI2HA1q0wTq1",
+      "authorName": "Flow Internals",
+      "modules": [
+        {
+          "title": "Understanding Workflow Automation and n8n",
+          "description": "Introduction to the basics of workflow automation and the role of n8n in the automation ecosystem.",
+          "order": 1,
+          "lessons": [
+            {
+              "id": "temp-1757007542376-0",
+              "title": "The Basics of Workflow Automation",
+              "content": "<p>An overview of workflow automation and its benefits.<br><br><img style=\"max-width: 100%; height: auto;\" src=\"https://images.unsplash.com/photo-1533915828531-55b274d98dc5?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHw0fHxyb2JvdHN8ZW58MHwwfHx8MTc1Njk5NTc3OHww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080\" alt=\"Photo by Craig Sybert on Unsplash\"></p>",
+              "duration": 20,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757007542376-1",
+              "title": "Introduction to n8n",
+              "content": "<p>An introduction to n8n, its purpose, and its place in the automation ecosystem.<br><br><img style=\"max-width: 100%; height: auto;\" src=\"https://images.unsplash.com/photo-1472491235688-bdc81a63246e?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwyfHxjYXR8ZW58MHwwfHx8MTc1NzAwNzUxMnww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080\" alt=\"Photo by Mikhail Vasilyev on Unsplash\"></p>",
+              "duration": 40,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Navigating the n8n Interface",
+          "description": "A guide to navigating n8n's interface, including the workflow editor, node library, and execution logs.",
+          "order": 2,
+          "lessons": [
+            {
+              "id": "temp-1757007542376-0",
+              "title": "Exploring the n8n Interface",
+              "content": "<p>A tour of the n8n interface, focusing on the workflow editor and node library.<br><br><img style=\"max-width: 100%; height: auto;\" src=\"https://images.unsplash.com/photo-1480044965905-02098d419e96?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHw1fHxiaXJkc3xlbnwwfDB8fHwxNzU3MDA3NTM1fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080\" alt=\"Photo by Boris  Smokrovic on Unsplash\"></p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757007542376-1",
+              "title": "Working with Execution Logs",
+              "content": "A guide to using execution logs to monitor and debug workflows.",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Building and Running Workflows",
+          "description": "Learn to build and run simple workflows using common nodes like email, webhook, and Google Sheets.",
+          "order": 3,
+          "lessons": [
+            {
+              "id": "temp-1757007542376-0",
+              "title": "Building Simple Workflows",
+              "content": "Creating simple workflows using common nodes.",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757007542376-1",
+              "title": "Configuring Triggers and Actions",
+              "content": "A guide to configuring triggers and actions to automate processes.",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Monitoring and Refining Workflows",
+          "description": "Learn to monitor, debug and refine workflows using n8n's execution logs and error handling features.",
+          "order": 4,
+          "lessons": [
+            {
+              "id": "temp-1757007542376-0",
+              "title": "Monitoring Workflows",
+              "content": "Using n8n's execution logs to monitor workflows.",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757007542376-1",
+              "title": "Debugging and Refining Workflows",
+              "content": "A guide to debugging and improving workflows using error handling features.",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        }
+      ]
+    },
+    "published": false,
+    "imageData": {
+      "thumbnail": "https://images.unsplash.com/photo-1444212477490-ca407925329e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwyfHxkb2dzfGVufDB8MHx8fDE3NTcwMDc0MzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1444212477490-ca407925329e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwyfHxkb2dzfGVufDB8MHx8fDE3NTcwMDc0MzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by Anoir Chafik on Unsplash"
+    }
+  },
+  {
+    "timestamp": "2025-09-04T17:52:33.771Z",
+    "action": "course_update",
+    "courseId": "PF7ycSjQAtIpZYdPbyRR",
+    "data": {
+      "title": "Introduction to n8n (Dogs in Lessons)",
+      "description": "A beginner's guide to understanding and implementing workflow automation using the n8n tool. This course aims to equip non-technical professionals, business analysts, and junior developers with the skills to automate tasks and integrate applications without the need for advanced coding.\n\nMaking another change this time with dogs",
+      "category": "design",
+      "difficulty": "beginner",
+      "price": 150,
+      "duration": 240,
+      "tags": [
+        "n8n",
+        "beginner",
+        "workflow",
+        "dogs"
+      ],
+      "thumbnail": "https://images.unsplash.com/photo-1444212477490-ca407925329e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwyfHxkb2dzfGVufDB8MHx8fDE3NTcwMDc0MzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1444212477490-ca407925329e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwyfHxkb2dzfGVufDB8MHx8fDE3NTcwMDc0MzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by Anoir Chafik on Unsplash",
+      "published": false,
+      "slug": "introduction-to-n8n-(dogs-in-lessons)",
+      "imageUrl": "https://images.unsplash.com/photo-1444212477490-ca407925329e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwyfHxkb2dzfGVufDB8MHx8fDE3NTcwMDc0MzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "isFree": false,
+      "createdAt": "2025-09-04T17:46:45.279Z",
+      "updatedAt": "2025-09-04T17:52:33.406Z",
+      "authorId": "FAxsVhNFSyWaBahUZI2HA1q0wTq1",
+      "authorName": "Flow Internals",
+      "modules": [
+        {
+          "title": "Understanding Workflow Automation and n8n",
+          "description": "Introduction to the basics of workflow automation and the role of n8n in the automation ecosystem.",
+          "order": 1,
+          "lessons": [
+            {
+              "id": "temp-1757008353406-0",
+              "title": "The Basics of Workflow Automation",
+              "content": "<p>An overview of workflow automation and its benefits.<br><br><img style=\"max-width: 100%; height: auto;\" src=\"https://images.unsplash.com/photo-1533915828531-55b274d98dc5?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHw0fHxyb2JvdHN8ZW58MHwwfHx8MTc1Njk5NTc3OHww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080\" alt=\"Photo by Craig Sybert on Unsplash\"></p>",
+              "duration": 20,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757008353406-1",
+              "title": "Introduction to n8n",
+              "content": "<p>An introduction to n8n, its purpose, and its place in the automation ecosystem.<br><br><img style=\"max-width: 100%; height: auto;\" src=\"https://images.unsplash.com/photo-1472491235688-bdc81a63246e?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwyfHxjYXR8ZW58MHwwfHx8MTc1NzAwNzUxMnww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080\" alt=\"Photo by Mikhail Vasilyev on Unsplash\"></p>",
+              "duration": 40,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Navigating the n8n Interface",
+          "description": "A guide to navigating n8n's interface, including the workflow editor, node library, and execution logs.",
+          "order": 2,
+          "lessons": [
+            {
+              "id": "temp-1757008353406-0",
+              "title": "Exploring the n8n Interface",
+              "content": "<p>A tour of the n8n interface, focusing on the workflow editor and node library.<br><br><img style=\"max-width: 100%; height: auto;\" src=\"https://images.unsplash.com/photo-1480044965905-02098d419e96?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHw1fHxiaXJkc3xlbnwwfDB8fHwxNzU3MDA3NTM1fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080\" alt=\"Photo by Boris  Smokrovic on Unsplash\"></p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757008353406-1",
+              "title": "Working with Execution Logs",
+              "content": "<p>A guide to using execution logs to monitor and debug workflows.<br><br>Aligators ?<br><br><img style=\"max-width: 100%; height: auto;\" src=\"https://images.unsplash.com/photo-1484620479898-57494cfedf1a?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwyfHxhbGxpZ2F0b3JzfGVufDB8MHx8fDE3NTcwMDgzMzd8MA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080\" alt=\"Photo by Kyaw Tun on Unsplash\"></p>",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Building and Running Workflows",
+          "description": "Learn to build and run simple workflows using common nodes like email, webhook, and Google Sheets.",
+          "order": 3,
+          "lessons": [
+            {
+              "id": "temp-1757008353406-0",
+              "title": "Building Simple Workflows",
+              "content": "Creating simple workflows using common nodes.",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757008353406-1",
+              "title": "Configuring Triggers and Actions",
+              "content": "A guide to configuring triggers and actions to automate processes.",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Monitoring and Refining Workflows",
+          "description": "Learn to monitor, debug and refine workflows using n8n's execution logs and error handling features.",
+          "order": 4,
+          "lessons": [
+            {
+              "id": "temp-1757008353406-0",
+              "title": "Monitoring Workflows",
+              "content": "Using n8n's execution logs to monitor workflows.",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757008353406-1",
+              "title": "Debugging and Refining Workflows",
+              "content": "A guide to debugging and improving workflows using error handling features.",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        }
+      ]
+    },
+    "published": false,
+    "imageData": {
+      "thumbnail": "https://images.unsplash.com/photo-1444212477490-ca407925329e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwyfHxkb2dzfGVufDB8MHx8fDE3NTcwMDc0MzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1444212477490-ca407925329e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwyfHxkb2dzfGVufDB8MHx8fDE3NTcwMDc0MzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by Anoir Chafik on Unsplash"
+    }
+  },
+  {
+    "timestamp": "2025-09-04T17:53:50.003Z",
+    "action": "course_update",
+    "courseId": "syh9IAD1C10PeiR5XrCz",
+    "data": {
+      "title": "Introduction to n8n",
+      "description": "A beginner's guide to understanding and implementing workflow automation using the n8n tool. This course aims to equip non-technical professionals, business analysts, and junior developers with the skills to automate tasks and integrate applications without the need for advanced coding.\n\nMaking a change for the halfwit claude model.",
+      "category": "programming",
+      "difficulty": "beginner",
+      "price": 50,
+      "duration": 240,
+      "tags": [
+        "n8n",
+        "beginner",
+        "workflow"
+      ],
+      "thumbnail": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by Erik-Jan Leusink on Unsplash",
+      "published": false,
+      "slug": "introduction-to-n8n",
+      "imageUrl": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "isFree": false,
+      "createdAt": {
+        "_seconds": 1756996369,
+        "_nanoseconds": 953000000
+      },
+      "updatedAt": "2025-09-04T17:53:49.617Z",
+      "authorId": "FAxsVhNFSyWaBahUZI2HA1q0wTq1",
+      "authorName": "Flow Internals",
+      "modules": [
+        {
+          "title": "Understanding Workflow Automation and n8n",
+          "description": "Introduction to the basics of workflow automation and the role of n8n in the automation ecosystem.",
+          "order": 1,
+          "lessons": [
+            {
+              "id": "temp-1757008429617-0",
+              "title": "The Basics of Workflow Automation",
+              "content": "<p>An overview of workflow automation and its benefits.<br><br><img style=\"max-width: 100%; height: auto;\" src=\"https://images.unsplash.com/photo-1533915828531-55b274d98dc5?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHw0fHxyb2JvdHN8ZW58MHwwfHx8MTc1Njk5NTc3OHww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080\" alt=\"Photo by Craig Sybert on Unsplash\"></p>",
+              "duration": 20,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757008429617-1",
+              "title": "Introduction to n8n",
+              "content": "<p>An introduction to n8n, its purpose, and its place in the automation ecosystem.<br><br><img style=\"max-width: 100%; height: auto;\" src=\"https://images.unsplash.com/photo-1472491235688-bdc81a63246e?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwyfHxjYXR8ZW58MHwwfHx8MTc1NzAwNzUxMnww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080\" alt=\"Photo by Mikhail Vasilyev on Unsplash\"></p>",
+              "duration": 40,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Navigating the n8n Interface",
+          "description": "A guide to navigating n8n's interface, including the workflow editor, node library, and execution logs.",
+          "order": 2,
+          "lessons": [
+            {
+              "id": "temp-1757008429617-0",
+              "title": "Exploring the n8n Interface",
+              "content": "<p>A tour of the n8n interface, focusing on the workflow editor and node library.<br><br><img style=\"max-width: 100%; height: auto;\" src=\"https://images.unsplash.com/photo-1480044965905-02098d419e96?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHw1fHxiaXJkc3xlbnwwfDB8fHwxNzU3MDA3NTM1fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080\" alt=\"Photo by Boris  Smokrovic on Unsplash\"></p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757008429617-1",
+              "title": "Working with Execution Logs",
+              "content": "<p>A guide to using execution logs to monitor and debug workflows.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Building and Running Workflows",
+          "description": "Learn to build and run simple workflows using common nodes like email, webhook, and Google Sheets.",
+          "order": 3,
+          "lessons": [
+            {
+              "id": "temp-1757008429617-0",
+              "title": "Building Simple Workflows",
+              "content": "<p>Creating simple workflows using common nodes.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757008429617-1",
+              "title": "Configuring Triggers and Actions",
+              "content": "<p>A guide to configuring triggers and actions to automate processes.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Monitoring and Refining Workflows",
+          "description": "Learn to monitor, debug and refine workflows using n8n's execution logs and error handling features.",
+          "order": 4,
+          "lessons": [
+            {
+              "id": "temp-1757008429617-0",
+              "title": "Monitoring Workflows",
+              "content": "<p>Using n8n's execution logs to monitor workflows.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757008429617-1",
+              "title": "Debugging and Refining Workflows",
+              "content": "<p>A guide to debugging and improving workflows using error handling features.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        }
+      ]
+    },
+    "published": false,
+    "imageData": {
+      "thumbnail": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by Erik-Jan Leusink on Unsplash"
+    }
+  },
+  {
+    "timestamp": "2025-09-04T17:54:12.511Z",
+    "action": "course_update",
+    "courseId": "syh9IAD1C10PeiR5XrCz",
+    "data": {
+      "title": "Introduction to n8n (Cats)",
+      "description": "A beginner's guide to understanding and implementing workflow automation using the n8n tool. This course aims to equip non-technical professionals, business analysts, and junior developers with the skills to automate tasks and integrate applications without the need for advanced coding.\n\nMaking a change for the halfwit claude model.",
+      "category": "programming",
+      "difficulty": "beginner",
+      "price": 50,
+      "duration": 240,
+      "tags": [
+        "n8n",
+        "beginner",
+        "workflow"
+      ],
+      "thumbnail": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by Erik-Jan Leusink on Unsplash",
+      "published": false,
+      "slug": "introduction-to-n8n-(cats)",
+      "imageUrl": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "isFree": false,
+      "createdAt": {
+        "_seconds": 1756996369,
+        "_nanoseconds": 953000000
+      },
+      "updatedAt": "2025-09-04T17:54:12.170Z",
+      "authorId": "FAxsVhNFSyWaBahUZI2HA1q0wTq1",
+      "authorName": "Flow Internals",
+      "modules": [
+        {
+          "title": "Understanding Workflow Automation and n8n",
+          "description": "Introduction to the basics of workflow automation and the role of n8n in the automation ecosystem.",
+          "order": 1,
+          "lessons": [
+            {
+              "id": "temp-1757008452170-0",
+              "title": "The Basics of Workflow Automation",
+              "content": "<p>An overview of workflow automation and its benefits.<br><br><img style=\"max-width: 100%; height: auto;\" src=\"https://images.unsplash.com/photo-1533915828531-55b274d98dc5?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHw0fHxyb2JvdHN8ZW58MHwwfHx8MTc1Njk5NTc3OHww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080\" alt=\"Photo by Craig Sybert on Unsplash\"></p>",
+              "duration": 20,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757008452170-1",
+              "title": "Introduction to n8n",
+              "content": "<p>An introduction to n8n, its purpose, and its place in the automation ecosystem.<br><br><img style=\"max-width: 100%; height: auto;\" src=\"https://images.unsplash.com/photo-1472491235688-bdc81a63246e?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwyfHxjYXR8ZW58MHwwfHx8MTc1NzAwNzUxMnww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080\" alt=\"Photo by Mikhail Vasilyev on Unsplash\"></p>",
+              "duration": 40,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Navigating the n8n Interface",
+          "description": "A guide to navigating n8n's interface, including the workflow editor, node library, and execution logs.",
+          "order": 2,
+          "lessons": [
+            {
+              "id": "temp-1757008452170-0",
+              "title": "Exploring the n8n Interface",
+              "content": "<p>A tour of the n8n interface, focusing on the workflow editor and node library.<br><br><img style=\"max-width: 100%; height: auto;\" src=\"https://images.unsplash.com/photo-1480044965905-02098d419e96?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHw1fHxiaXJkc3xlbnwwfDB8fHwxNzU3MDA3NTM1fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080\" alt=\"Photo by Boris  Smokrovic on Unsplash\"></p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757008452170-1",
+              "title": "Working with Execution Logs",
+              "content": "<p>A guide to using execution logs to monitor and debug workflows.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Building and Running Workflows",
+          "description": "Learn to build and run simple workflows using common nodes like email, webhook, and Google Sheets.",
+          "order": 3,
+          "lessons": [
+            {
+              "id": "temp-1757008452170-0",
+              "title": "Building Simple Workflows",
+              "content": "<p>Creating simple workflows using common nodes.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757008452170-1",
+              "title": "Configuring Triggers and Actions",
+              "content": "<p>A guide to configuring triggers and actions to automate processes.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Monitoring and Refining Workflows",
+          "description": "Learn to monitor, debug and refine workflows using n8n's execution logs and error handling features.",
+          "order": 4,
+          "lessons": [
+            {
+              "id": "temp-1757008452170-0",
+              "title": "Monitoring Workflows",
+              "content": "<p>Using n8n's execution logs to monitor workflows.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757008452170-1",
+              "title": "Debugging and Refining Workflows",
+              "content": "<p>A guide to debugging and improving workflows using error handling features.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        }
+      ]
+    },
+    "published": false,
+    "imageData": {
+      "thumbnail": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by Erik-Jan Leusink on Unsplash"
+    }
+  },
+  {
+    "timestamp": "2025-09-04T17:57:00.325Z",
+    "action": "course_update",
+    "courseId": "syh9IAD1C10PeiR5XrCz",
+    "data": {
+      "title": "Introduction to n8n (Cats)",
+      "description": "A beginner's guide to understanding and implementing workflow automation using the n8n tool. This course aims to equip non-technical professionals, business analysts, and junior developers with the skills to automate tasks and integrate applications without the need for advanced coding.\n\nMaking a change for the halfwit claude model.",
+      "category": "programming",
+      "difficulty": "beginner",
+      "price": 50,
+      "duration": 240,
+      "tags": [
+        "n8n",
+        "beginner",
+        "workflow"
+      ],
+      "thumbnail": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by Erik-Jan Leusink on Unsplash",
+      "published": false,
+      "slug": "introduction-to-n8n-(cats)",
+      "imageUrl": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "isFree": false,
+      "createdAt": {
+        "_seconds": 1756996369,
+        "_nanoseconds": 953000000
+      },
+      "updatedAt": "2025-09-04T17:56:59.626Z",
+      "authorId": "FAxsVhNFSyWaBahUZI2HA1q0wTq1",
+      "authorName": "Flow Internals",
+      "modules": [
+        {
+          "title": "Understanding Workflow Automation and n8n",
+          "description": "Introduction to the basics of workflow automation and the role of n8n in the automation ecosystem.",
+          "order": 1,
+          "lessons": [
+            {
+              "id": "temp-1757008619626-0",
+              "title": "The Basics of Workflow Automation",
+              "content": "<p>An overview of workflow automation and its benefits.<br><br><img style=\"max-width: 100%; height: auto;\" src=\"https://images.unsplash.com/photo-1533915828531-55b274d98dc5?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHw0fHxyb2JvdHN8ZW58MHwwfHx8MTc1Njk5NTc3OHww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080\" alt=\"Photo by Craig Sybert on Unsplash\"></p>",
+              "duration": 20,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757008619626-1",
+              "title": "Introduction to n8n",
+              "content": "<p>An introduction to n8n, its purpose, and its place in the automation ecosystem.<br><br><img style=\"max-width: 100%; height: auto;\" src=\"https://images.unsplash.com/photo-1472491235688-bdc81a63246e?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwyfHxjYXR8ZW58MHwwfHx8MTc1NzAwNzUxMnww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080\" alt=\"Photo by Mikhail Vasilyev on Unsplash\"></p>",
+              "duration": 40,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Navigating the n8n Interface",
+          "description": "A guide to navigating n8n's interface, including the workflow editor, node library, and execution logs.",
+          "order": 2,
+          "lessons": [
+            {
+              "id": "temp-1757008619626-0",
+              "title": "Exploring the n8n Interface",
+              "content": "<p>A tour of the n8n interface, focusing on the workflow editor and node library.<br><br><img style=\"max-width: 100%; height: auto;\" src=\"https://images.unsplash.com/photo-1480044965905-02098d419e96?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHw1fHxiaXJkc3xlbnwwfDB8fHwxNzU3MDA3NTM1fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080\" alt=\"Photo by Boris  Smokrovic on Unsplash\"></p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757008619626-1",
+              "title": "Working with Execution Logs",
+              "content": "<p>A guide to using execution logs to monitor and debug workflows.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Building and Running Workflows",
+          "description": "Learn to build and run simple workflows using common nodes like email, webhook, and Google Sheets.",
+          "order": 3,
+          "lessons": [
+            {
+              "id": "temp-1757008619626-0",
+              "title": "Building Simple Workflows",
+              "content": "<p>Creating simple workflows using common nodes.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757008619626-1",
+              "title": "Configuring Triggers and Actions",
+              "content": "<p>A guide to configuring triggers and actions to automate processes.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Monitoring and Refining Workflows",
+          "description": "Learn to monitor, debug and refine workflows using n8n's execution logs and error handling features.",
+          "order": 4,
+          "lessons": [
+            {
+              "id": "temp-1757008619626-0",
+              "title": "Monitoring Workflows",
+              "content": "<p>Using n8n's execution logs to monitor workflows.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757008619626-1",
+              "title": "Debugging and Refining Workflows",
+              "content": "<p>A guide to debugging and improving workflows using error handling features.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        }
+      ]
+    },
+    "published": false,
+    "imageData": {
+      "thumbnail": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by Erik-Jan Leusink on Unsplash"
+    }
+  },
+  {
+    "timestamp": "2025-09-04T17:59:57.832Z",
+    "action": "course_update",
+    "courseId": "syh9IAD1C10PeiR5XrCz",
+    "data": {
+      "title": "Introduction to n8n (Cats)",
+      "description": "A beginner's guide to understanding and implementing workflow automation using the n8n tool. This course aims to equip non-technical professionals, business analysts, and junior developers with the skills to automate tasks and integrate applications without the need for advanced coding.\n\nMaking a change for the halfwit claude model.",
+      "category": "programming",
+      "difficulty": "beginner",
+      "price": 50,
+      "duration": 240,
+      "tags": [
+        "n8n",
+        "beginner",
+        "workflow"
+      ],
+      "thumbnail": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by Erik-Jan Leusink on Unsplash",
+      "published": false,
+      "slug": "introduction-to-n8n-(cats)",
+      "imageUrl": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "isFree": false,
+      "createdAt": {
+        "_seconds": 1756996369,
+        "_nanoseconds": 953000000
+      },
+      "updatedAt": "2025-09-04T17:59:57.393Z",
+      "authorId": "FAxsVhNFSyWaBahUZI2HA1q0wTq1",
+      "authorName": "Flow Internals",
+      "modules": [
+        {
+          "title": "Understanding Workflow Automation and n8n",
+          "description": "Introduction to the basics of workflow automation and the role of n8n in the automation ecosystem.",
+          "order": 1,
+          "lessons": [
+            {
+              "id": "temp-1757008797393-0",
+              "title": "The Basics of Workflow Automation",
+              "content": "<p>An overview of workflow automation and its benefits.<br><br><img style=\"max-width: 100%; height: auto;\" src=\"https://images.unsplash.com/photo-1533915828531-55b274d98dc5?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHw0fHxyb2JvdHN8ZW58MHwwfHx8MTc1Njk5NTc3OHww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080\" alt=\"Photo by Craig Sybert on Unsplash\"></p>\n<pre class=\"language-javascript\"><code>// Example: Simple greeting function\nfunction greetUser(name) {\n  if (!name) {\n    return \"Hello, Guest!\";\n  }\n  return `Hello, ${name}!`;\n}\n\n// Usage\nconsole.log(greetUser(\"Mick\")); // Output: Hello, Mick!\n</code></pre>",
+              "duration": 20,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757008797393-1",
+              "title": "Introduction to n8n",
+              "content": "<p>An introduction to n8n, its purpose, and its place in the automation ecosystem.<br><br><img style=\"max-width: 100%; height: auto;\" src=\"https://images.unsplash.com/photo-1472491235688-bdc81a63246e?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwyfHxjYXR8ZW58MHwwfHx8MTc1NzAwNzUxMnww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080\" alt=\"Photo by Mikhail Vasilyev on Unsplash\"></p>",
+              "duration": 40,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Navigating the n8n Interface",
+          "description": "A guide to navigating n8n's interface, including the workflow editor, node library, and execution logs.",
+          "order": 2,
+          "lessons": [
+            {
+              "id": "temp-1757008797393-0",
+              "title": "Exploring the n8n Interface",
+              "content": "<p>A tour of the n8n interface, focusing on the workflow editor and node library.<br><br><img style=\"max-width: 100%; height: auto;\" src=\"https://images.unsplash.com/photo-1480044965905-02098d419e96?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHw1fHxiaXJkc3xlbnwwfDB8fHwxNzU3MDA3NTM1fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080\" alt=\"Photo by Boris  Smokrovic on Unsplash\"></p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757008797393-1",
+              "title": "Working with Execution Logs",
+              "content": "<p>A guide to using execution logs to monitor and debug workflows.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Building and Running Workflows",
+          "description": "Learn to build and run simple workflows using common nodes like email, webhook, and Google Sheets.",
+          "order": 3,
+          "lessons": [
+            {
+              "id": "temp-1757008797393-0",
+              "title": "Building Simple Workflows",
+              "content": "<p>Creating simple workflows using common nodes.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757008797393-1",
+              "title": "Configuring Triggers and Actions",
+              "content": "<p>A guide to configuring triggers and actions to automate processes.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Monitoring and Refining Workflows",
+          "description": "Learn to monitor, debug and refine workflows using n8n's execution logs and error handling features.",
+          "order": 4,
+          "lessons": [
+            {
+              "id": "temp-1757008797393-0",
+              "title": "Monitoring Workflows",
+              "content": "<p>Using n8n's execution logs to monitor workflows.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757008797393-1",
+              "title": "Debugging and Refining Workflows",
+              "content": "<p>A guide to debugging and improving workflows using error handling features.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        }
+      ]
+    },
+    "published": false,
+    "imageData": {
+      "thumbnail": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by Erik-Jan Leusink on Unsplash"
+    }
+  },
+  {
+    "timestamp": "2025-09-08T11:22:54.618Z",
+    "action": "course_update",
+    "courseId": "syh9IAD1C10PeiR5XrCz",
+    "data": {
+      "title": "Introduction to n8n (Cats)",
+      "description": "A beginner's guide to understanding and implementing workflow automation using the n8n tool. This course aims to equip non-technical professionals, business analysts, and junior developers with the skills to automate tasks and integrate applications without the need for advanced coding.\n\nMaking a change for the halfwit claude model.",
+      "category": "programming",
+      "difficulty": "beginner",
+      "price": 50,
+      "duration": 240,
+      "tags": [
+        "n8n",
+        "beginner",
+        "workflow"
+      ],
+      "thumbnail": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by Erik-Jan Leusink on Unsplash",
+      "published": false,
+      "slug": "introduction-to-n8n-(cats)",
+      "imageUrl": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "isFree": false,
+      "createdAt": {
+        "_seconds": 1756996369,
+        "_nanoseconds": 953000000
+      },
+      "updatedAt": "2025-09-08T11:22:54.262Z",
+      "authorId": "FAxsVhNFSyWaBahUZI2HA1q0wTq1",
+      "authorName": "Flow Internals",
+      "modules": [
+        {
+          "title": "Understanding Workflow Automation and n8n",
+          "description": "Introduction to the basics of workflow automation and the role of n8n in the automation ecosystem.",
+          "order": 1,
+          "lessons": [
+            {
+              "id": "temp-1757330574262-0",
+              "title": "The Basics of Workflow Automation",
+              "content": "<p>An overview of workflow automation and its benefits.<br><br><img style=\"max-width: 100%; height: auto;\" src=\"https://images.unsplash.com/photo-1533915828531-55b274d98dc5?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHw0fHxyb2JvdHN8ZW58MHwwfHx8MTc1Njk5NTc3OHww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080\" alt=\"Photo by Craig Sybert on Unsplash\"></p>\n<pre class=\"language-javascript\"><code>// Example: Simple greeting function\nfunction greetUser(name) {\n  if (!name) {\n    return \"Hello, Guest!\";\n  }\n  return `Hello, ${name}!`;\n}\n\n// Usage\nconsole.log(greetUser(\"Mick\")); // Output: Hello, Mick!\n</code></pre>",
+              "duration": 20,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757330574262-1",
+              "title": "Introduction to n8n",
+              "content": "<p>An introduction to n8n, its purpose, and its place in the automation ecosystem.<br><br><img style=\"max-width: 100%; height: auto;\" src=\"https://images.unsplash.com/photo-1472491235688-bdc81a63246e?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwyfHxjYXR8ZW58MHwwfHx8MTc1NzAwNzUxMnww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080\" alt=\"Photo by Mikhail Vasilyev on Unsplash\"></p>",
+              "duration": 40,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Navigating the n8n Interface",
+          "description": "A guide to navigating n8n's interface, including the workflow editor, node library, and execution logs.",
+          "order": 2,
+          "lessons": [
+            {
+              "id": "temp-1757330574262-0",
+              "title": "Exploring the n8n Interface",
+              "content": "<p>A tour of the n8n interface, focusing on the workflow editor and node library.<br><br><img style=\"max-width: 100%; height: auto;\" src=\"https://images.unsplash.com/photo-1480044965905-02098d419e96?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHw1fHxiaXJkc3xlbnwwfDB8fHwxNzU3MDA3NTM1fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080\" alt=\"Photo by Boris  Smokrovic on Unsplash\"></p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757330574262-1",
+              "title": "Working with Execution Logs",
+              "content": "<p>A guide to using execution logs to monitor and debug workflows.<br><br></p>\n<pre class=\"language-javascript\"><code>&lt;!DOCTYPE html&gt;\n&lt;html lang=\"en\"&gt;\n&lt;head&gt;\n  &lt;meta charset=\"UTF-8\"&gt;\n  &lt;title&gt;JavaScript Sample&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n  &lt;h1&gt;Hello, JavaScript!&lt;/h1&gt;\n  &lt;button id=\"myButton\"&gt;Click Me&lt;/button&gt;\n\n  &lt;script&gt;\n    // Get the button element by its ID\n    const button = document.getElementById(\"myButton\");\n\n    // Add a click event listener\n    button.addEventListener(\"click\", () =&gt; {\n      alert(\"Button was clicked!\");\n    });\n  &lt;/script&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n</code></pre>",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Building and Running Workflows",
+          "description": "Learn to build and run simple workflows using common nodes like email, webhook, and Google Sheets.",
+          "order": 3,
+          "lessons": [
+            {
+              "id": "temp-1757330574262-0",
+              "title": "Building Simple Workflows",
+              "content": "<p>Creating simple workflows using common nodes.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757330574262-1",
+              "title": "Configuring Triggers and Actions",
+              "content": "<p>A guide to configuring triggers and actions to automate processes.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Monitoring and Refining Workflows",
+          "description": "Learn to monitor, debug and refine workflows using n8n's execution logs and error handling features.",
+          "order": 4,
+          "lessons": [
+            {
+              "id": "temp-1757330574262-0",
+              "title": "Monitoring Workflows",
+              "content": "<p>Using n8n's execution logs to monitor workflows.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757330574262-1",
+              "title": "Debugging and Refining Workflows",
+              "content": "<p>A guide to debugging and improving workflows using error handling features.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        }
+      ]
+    },
+    "published": false,
+    "imageData": {
+      "thumbnail": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by Erik-Jan Leusink on Unsplash"
+    }
+  },
+  {
+    "timestamp": "2025-09-08T14:01:12.462Z",
+    "action": "course_update",
+    "courseId": "syh9IAD1C10PeiR5XrCz",
+    "data": {
+      "title": "Introduction to n8n (Cats)",
+      "description": "A beginner's guide to understanding and implementing workflow automation using the n8n tool. This course aims to equip non-technical professionals, business analysts, and junior developers with the skills to automate tasks and integrate applications without the need for advanced coding.\n\nMaking a change for the halfwit claude model.",
+      "category": "programming",
+      "difficulty": "beginner",
+      "price": 50,
+      "duration": 240,
+      "tags": [
+        "n8n",
+        "beginner",
+        "workflow"
+      ],
+      "thumbnail": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by Erik-Jan Leusink on Unsplash",
+      "published": false,
+      "slug": "introduction-to-n8n-(cats)",
+      "imageUrl": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "isFree": false,
+      "createdAt": {
+        "_seconds": 1756996369,
+        "_nanoseconds": 953000000
+      },
+      "updatedAt": "2025-09-08T14:01:12.053Z",
+      "authorId": "FAxsVhNFSyWaBahUZI2HA1q0wTq1",
+      "authorName": "Flow Internals",
+      "modules": [
+        {
+          "title": "Understanding Workflow Automation and n8n",
+          "description": "Introduction to the basics of workflow automation and the role of n8n in the automation ecosystem.",
+          "order": 1,
+          "lessons": [
+            {
+              "id": "temp-1757340072053-0",
+              "title": "The Basics of Workflow Automation",
+              "content": "<p>An overview of workflow automation and its benefits.<br><br><img style=\"max-width: 100%; height: auto;\" src=\"https://images.unsplash.com/photo-1533915828531-55b274d98dc5?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHw0fHxyb2JvdHN8ZW58MHwwfHx8MTc1Njk5NTc3OHww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080\" alt=\"Photo by Craig Sybert on Unsplash\"></p>\n<pre class=\"language-javascript\"><code>// Example: Simple greeting function\nfunction greetUser(name) {\n  if (!name) {\n    return \"Hello, Guest!\";\n  }\n  return `Hello, ${name}!`;\n}\n\n// Usage\nconsole.log(greetUser(\"Mick\")); // Output: Hello, Mick!\n</code></pre>",
+              "duration": 20,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757340072053-1",
+              "title": "Introduction to n8n",
+              "content": "<p>An introduction to n8n, its purpose, and its place in the automation ecosystem.<br><br><img style=\"max-width: 100%; height: auto;\" src=\"https://images.unsplash.com/photo-1472491235688-bdc81a63246e?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwyfHxjYXR8ZW58MHwwfHx8MTc1NzAwNzUxMnww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080\" alt=\"Photo by Mikhail Vasilyev on Unsplash\"></p>",
+              "duration": 40,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Navigating the n8n Interface",
+          "description": "A guide to navigating n8n's interface, including the workflow editor, node library, and execution logs.",
+          "order": 2,
+          "lessons": [
+            {
+              "id": "temp-1757340072053-0",
+              "title": "Exploring the n8n Interface",
+              "content": "<p>A tour of the n8n interface, focusing on the workflow editor and node library.<br><br><img style=\"max-width: 100%; height: auto;\" src=\"https://images.unsplash.com/photo-1480044965905-02098d419e96?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHw1fHxiaXJkc3xlbnwwfDB8fHwxNzU3MDA3NTM1fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080\" alt=\"Photo by Boris  Smokrovic on Unsplash\"></p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757340072053-1",
+              "title": "Working with Execution Logs",
+              "content": "<p>A guide to using execution logs to monitor and debug workflows.<br><br></p>\n<pre class=\"language-javascript\"><code>&lt;!DOCTYPE html&gt;\n&lt;html lang=\"en\"&gt;\n&lt;head&gt;\n  &lt;meta charset=\"UTF-8\"&gt;\n  &lt;title&gt;JavaScript Sample&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n  &lt;h1&gt;Hello, JavaScript!&lt;/h1&gt;\n  &lt;button id=\"myButton\"&gt;Click Me&lt;/button&gt;\n\n  &lt;script&gt;\n    // Get the button element by its ID\n    const button = document.getElementById(\"myButton\");\n\n    // Add a click event listener\n    button.addEventListener(\"click\", () =&gt; {\n      alert(\"Button was clicked!\");\n    });\n  &lt;/script&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n</code></pre>",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Building and Running Workflows",
+          "description": "Learn to build and run simple workflows using common nodes like email, webhook, and Google Sheets.",
+          "order": 3,
+          "lessons": [
+            {
+              "id": "temp-1757340072053-0",
+              "title": "Building Simple Workflows",
+              "content": "<p>Creating simple workflows using common nodes.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757340072053-1",
+              "title": "Configuring Triggers and Actions",
+              "content": "<p>A guide to configuring triggers and actions to automate processes.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Monitoring and Refining Workflows",
+          "description": "Learn to monitor, debug and refine workflows using n8n's execution logs and error handling features.",
+          "order": 4,
+          "lessons": [
+            {
+              "id": "temp-1757340072053-0",
+              "title": "Monitoring Workflows",
+              "content": "<p>Using n8n's execution logs to monitor workflows.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757340072053-1",
+              "title": "Debugging and Refining Workflows",
+              "content": "<p>A guide to debugging and improving workflows using error handling features.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        }
+      ]
+    },
+    "published": false,
+    "imageData": {
+      "thumbnail": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by Erik-Jan Leusink on Unsplash"
+    }
+  },
+  {
+    "timestamp": "2025-09-08T14:17:40.031Z",
+    "action": "course_update",
+    "courseId": "syh9IAD1C10PeiR5XrCz",
+    "data": {
+      "title": "Introduction to n8n (Cats)",
+      "description": "A beginner's guide to understanding and implementing workflow automation using the n8n tool. This course aims to equip non-technical professionals, business analysts, and junior developers with the skills to automate tasks and integrate applications without the need for advanced coding.\n\nMaking a change for the halfwit claude model.",
+      "category": "programming",
+      "difficulty": "beginner",
+      "price": 50,
+      "duration": 240,
+      "tags": [
+        "n8n",
+        "beginner",
+        "workflow"
+      ],
+      "thumbnail": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by Erik-Jan Leusink on Unsplash",
+      "published": false,
+      "slug": "introduction-to-n8n-(cats)",
+      "imageUrl": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "isFree": false,
+      "createdAt": {
+        "_seconds": 1756996369,
+        "_nanoseconds": 953000000
+      },
+      "updatedAt": "2025-09-08T14:17:39.650Z",
+      "authorId": "FAxsVhNFSyWaBahUZI2HA1q0wTq1",
+      "authorName": "Flow Internals",
+      "modules": [
+        {
+          "title": "Understanding Workflow Automation and n8n",
+          "description": "Introduction to the basics of workflow automation and the role of n8n in the automation ecosystem.",
+          "order": 1,
+          "lessons": [
+            {
+              "id": "temp-1757341059650-0",
+              "title": "The Basics of Workflow Automation",
+              "content": "<p>An overview of workflow automation and its benefits.<br><br><img style=\"max-width: 100%; height: auto;\" src=\"https://images.unsplash.com/photo-1533915828531-55b274d98dc5?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHw0fHxyb2JvdHN8ZW58MHwwfHx8MTc1Njk5NTc3OHww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080\" alt=\"Photo by Craig Sybert on Unsplash\"></p>\n<pre class=\"language-javascript\"><code>// Example: Simple greeting function\nfunction greetUser(name) {\n  if (!name) {\n    return \"Hello, Guest!\";\n  }\n  return `Hello, ${name}!`;\n}\n\n// Usage\nconsole.log(greetUser(\"Mick\")); // Output: Hello, Mick!\n</code></pre>",
+              "duration": 20,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757341059650-1",
+              "title": "Introduction to n8n",
+              "content": "<p>An introduction to n8n, its purpose, and its place in the automation ecosystem.<br><br><img style=\"max-width: 100%; height: auto;\" src=\"https://images.unsplash.com/photo-1472491235688-bdc81a63246e?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwyfHxjYXR8ZW58MHwwfHx8MTc1NzAwNzUxMnww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080\" alt=\"Photo by Mikhail Vasilyev on Unsplash\"></p>",
+              "duration": 40,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Navigating the n8n Interface",
+          "description": "A guide to navigating n8n's interface, including the workflow editor, node library, and execution logs.",
+          "order": 2,
+          "lessons": [
+            {
+              "id": "temp-1757341059650-0",
+              "title": "Exploring the n8n Interface",
+              "content": "<p>A tour of the n8n interface, focusing on the workflow editor and node library.<br><br><img style=\"max-width: 100%; height: auto;\" src=\"https://images.unsplash.com/photo-1480044965905-02098d419e96?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHw1fHxiaXJkc3xlbnwwfDB8fHwxNzU3MDA3NTM1fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080\" alt=\"Photo by Boris  Smokrovic on Unsplash\"></p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757341059650-1",
+              "title": "Working with Execution Logs",
+              "content": "<p>A guide to using execution logs to monitor and debug workflows.<br><br></p>\n<pre class=\"language-javascript\"><code>&lt;!DOCTYPE html&gt;\n&lt;html lang=\"en\"&gt;\n&lt;head&gt;\n  &lt;meta charset=\"UTF-8\"&gt;\n  &lt;title&gt;JavaScript Sample&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n  &lt;h1&gt;Hello, JavaScript!&lt;/h1&gt;\n  &lt;button id=\"myButton\"&gt;Click Me&lt;/button&gt;\n\n  &lt;script&gt;\n    // Get the button element by its ID\n    const button = document.getElementById(\"myButton\");\n\n    // Add a click event listener\n    button.addEventListener(\"click\", () =&gt; {\n      alert(\"Button was clicked!\");\n    });\n  &lt;/script&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n</code></pre>",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Building and Running Workflows",
+          "description": "Learn to build and run simple workflows using common nodes like email, webhook, and Google Sheets.",
+          "order": 3,
+          "lessons": [
+            {
+              "id": "temp-1757341059650-0",
+              "title": "Building Simple Workflows",
+              "content": "<p>Creating simple workflows using common nodes.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757341059650-1",
+              "title": "Configuring Triggers and Actions",
+              "content": "<p>A guide to configuring triggers and actions to automate processes.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Monitoring and Refining Workflows",
+          "description": "Learn to monitor, debug and refine workflows using n8n's execution logs and error handling features.",
+          "order": 4,
+          "lessons": [
+            {
+              "id": "temp-1757341059650-0",
+              "title": "Monitoring Workflows",
+              "content": "<p>Using n8n's execution logs to monitor workflows.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757341059650-1",
+              "title": "Debugging and Refining Workflows",
+              "content": "<p>A guide to debugging and improving workflows using error handling features.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        }
+      ]
+    },
+    "published": false,
+    "imageData": {
+      "thumbnail": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by Erik-Jan Leusink on Unsplash"
+    }
+  }
+]

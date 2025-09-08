@@ -1,0 +1,52 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Helper functions
+    function isSignedIn() {
+      return request.auth != null;
+    }
+    
+    function isAdmin() {
+      return isSignedIn() && 
+        request.auth.token.role == 'admin';
+    }
+    
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+    
+    // User profile images
+    match /users/{userId}/profile/{fileName} {
+      allow read: if true; // Public read for profile images
+      allow write: if isOwner(userId);
+    }
+    
+    // Course content (images, videos, documents)
+    match /courses/{courseId}/{contentType}/{fileName} {
+      allow read: if true; // Public read for published course content
+      allow write: if isAdmin();
+    }
+    
+    // Course thumbnails
+    match /courses/{courseId}/thumbnails/{fileName} {
+      allow read: if true; // Public read for course thumbnails
+      allow write: if isAdmin();
+    }
+    
+    // Lesson attachments
+    match /courses/{courseId}/modules/{moduleId}/lessons/{lessonId}/attachments/{fileName} {
+      allow read: if true; // Public read for lesson attachments
+      allow write: if isAdmin();
+    }
+    
+    // Temporary uploads (for processing)
+    match /temp/{userId}/{fileName} {
+      allow read, write: if isOwner(userId);
+    }
+    
+    // Admin uploads
+    match /admin/{fileName} {
+      allow read, write: if isAdmin();
+    }
+  }
+}
