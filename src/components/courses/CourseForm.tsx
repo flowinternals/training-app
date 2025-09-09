@@ -3,12 +3,13 @@
 import { useState, useEffect } from 'react';
 import { useAuth } from '@/contexts/AuthContext';
 import { createCourseWithModules } from '@/lib/firebase-utils';
-import { Course, Module, Lesson } from '@/types';
-import { Plus, Trash2, Save, Loader2, BookOpen, FileText, Play, Sparkles } from 'lucide-react';
+import { Course, Module, Lesson, QuizBlock } from '@/types';
+import { Plus, Trash2, Save, Loader2, BookOpen, FileText, Play, Sparkles, HelpCircle } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import AICourseGenerator from '@/components/ai/AICourseGenerator';
 import ImageSelector from '@/components/courses/ImageSelector';
 import RichTextEditor from '@/components/ui/RichTextEditor';
+import { auth } from '@/lib/firebase';
 
 interface CourseFormData {
   title: string;
@@ -35,6 +36,8 @@ interface LessonFormData {
   content: string;
   duration: number;
   type: 'video' | 'text' | 'quiz';
+  videoUrl?: string;
+  quiz?: QuizBlock;
 }
 
 interface CourseFormProps {
@@ -48,75 +51,93 @@ export default function CourseForm({
   onCourseSaved, 
   mode = 'create' 
 }: CourseFormProps) {
-  const { user } = useAuth();
+  const { user, firebaseUser } = useAuth();
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
-  const [courseData, setCourseData] = useState<CourseFormData>({
-    title: '',
-    description: '',
-    category: '',
-    difficulty: 'beginner',
-    price: 0,
-    duration: 0,
-    tags: [],
-    thumbnail: '',
-    panelImage: '',
-    imageAttribution: '',
-    published: false,
-  });
-  const [modules, setModules] = useState<ModuleFormData[]>([
-    {
-      title: '',
-      description: '',
-      lessons: [
-        {
-          title: '',
-          content: '',
-          duration: 0,
-          type: 'text',
-        },
-      ],
-    },
-  ]);
+  const [courseData, setCourseData] = useState<CourseFormData | null>(null);
+  const [modules, setModules] = useState<ModuleFormData[]>([]);
+  const [initialized, setInitialized] = useState(false);
   const [newTag, setNewTag] = useState('');
   const [showAIGenerator, setShowAIGenerator] = useState(false);
+  const [generatingQuiz, setGeneratingQuiz] = useState<number | null>(null);
 
-  // Populate form with initial course data when in edit mode
-  useEffect(() => {
-    if (initialCourse && mode === 'edit') {
+  // Fetch fresh course data from Firebase API
+  const fetchCourseData = async () => {
+    if (mode === 'create') {
+      // Initialize with empty data for new course
       setCourseData({
-        title: initialCourse.title ?? '',
-        description: initialCourse.description ?? '',
-        category: initialCourse.category ?? '',
-        difficulty: initialCourse.difficulty ?? 'beginner',
-        price: initialCourse.price ?? 0,
-        duration: initialCourse.duration ?? 0,
-        tags: initialCourse.tags ?? [],
-        thumbnail: initialCourse.thumbnail ?? '',
-        panelImage: initialCourse.panelImage ?? '',
-        imageAttribution: initialCourse.imageAttribution ?? '',
-        published: initialCourse.published ?? false,
+        title: '',
+        description: '',
+        category: 'programming',
+        difficulty: 'beginner',
+        price: 0,
+        duration: 0,
+        tags: [],
+        thumbnail: '',
+        panelImage: '',
+        imageAttribution: '',
+        published: false,
       });
+      setModules([]);
+      setInitialized(true);
+    } else if (initialCourse?.id) {
+      try {
+        setLoading(true);
+        // Fetch fresh data from Firebase API
+        const response = await fetch(`/api/courses/${initialCourse.id}`);
+        if (!response.ok) {
+          throw new Error('Failed to fetch course data');
+        }
+        const freshCourse = await response.json();
+        
+        setCourseData({
+          title: freshCourse.title ?? '',
+          description: freshCourse.description ?? '',
+          category: freshCourse.category ?? '',
+          difficulty: freshCourse.difficulty ?? 'beginner',
+          price: freshCourse.price ?? 0,
+          duration: freshCourse.duration ?? 0,
+          tags: freshCourse.tags ?? [],
+          thumbnail: freshCourse.thumbnail ?? '',
+          panelImage: freshCourse.panelImage ?? '',
+          imageAttribution: freshCourse.imageAttribution ?? '',
+          published: freshCourse.published ?? false,
+        });
 
-      if (initialCourse.modules && Array.isArray(initialCourse.modules) && initialCourse.modules.length > 0) {
-        const mappedModules = initialCourse.modules.map(module => ({
-          title: module.title,
-          description: module.description,
-          lessons: module.lessons?.map(lesson => ({
-            title: lesson.title,
-            content: lesson.content,
-            duration: lesson.duration,
-            type: lesson.type,
-          })) || []
-        }));
-        setModules(mappedModules);
-      } else {
-        // Don't add empty modules - let the user add them if needed
-        setModules([]);
+        if (freshCourse.modules && Array.isArray(freshCourse.modules) && freshCourse.modules.length > 0) {
+          const mappedModules = freshCourse.modules.map((module: any) => ({
+            title: module.title,
+            description: module.description,
+            lessons: module.lessons?.map((lesson: any) => ({
+              title: lesson.title,
+              content: lesson.content,
+              duration: lesson.duration,
+              type: lesson.type,
+              videoUrl: lesson.videoUrl,
+              quiz: lesson.quiz,
+            })) || []
+          }));
+          setModules(mappedModules);
+        } else {
+          setModules([]);
+        }
+        setInitialized(true);
+      } catch (error) {
+        console.error('Error fetching course data:', error);
+        setMessage('Error loading course data');
+      } finally {
+        setLoading(false);
       }
     }
-  }, [initialCourse, mode]);
+  };
+
+  // Initialize form data
+  useEffect(() => {
+    if (!initialized) {
+      fetchCourseData();
+    }
+  }, [initialCourse, mode, initialized]);
 
   if (!user || user.role !== 'admin') {
     return (
@@ -134,8 +155,22 @@ export default function CourseForm({
     );
   }
 
+  if (!initialized || !courseData) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gray-50 dark:bg-gray-900">
+        <div className="text-center">
+          <Loader2 className="h-8 w-8 animate-spin mx-auto mb-4 text-blue-600" />
+          <p className="text-gray-600 dark:text-gray-400">Loading course data...</p>
+        </div>
+      </div>
+    );
+  }
+
   const handleCourseChange = (field: keyof CourseFormData, value: any) => {
-    setCourseData(prev => ({ ...prev, [field]: value }));
+    setCourseData(prev => {
+      if (!prev) return null;
+      return { ...prev, [field]: value };
+    });
   };
 
   const addModule = () => {
@@ -173,7 +208,7 @@ export default function CourseForm({
             ...module, 
             lessons: [
               ...module.lessons,
-              { title: '', content: '', duration: 0, type: 'text' }
+              { title: '', content: '', duration: 0, type: 'text', videoUrl: '' }
             ]
           }
         : module
@@ -191,6 +226,75 @@ export default function CourseForm({
     ));
   };
 
+  const generateQuizForModule = async (moduleIndex: number) => {
+    if (!user) return;
+    
+    setGeneratingQuiz(moduleIndex);
+    try {
+      // Collect all module content
+      const module = modules[moduleIndex];
+      const moduleContent = module.lessons
+        .filter(lesson => lesson.type !== 'quiz') // Exclude existing quizzes
+        .map(lesson => `# ${lesson.title}\n\n${lesson.content}`)
+        .join('\n\n');
+
+      const idToken = await auth.currentUser?.getIdToken();
+      if (!idToken) {
+        throw new Error('User not authenticated');
+      }
+
+      const response = await fetch(`${window.location.origin}/api/ai/generate-quiz`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${idToken}`
+        },
+        body: JSON.stringify({
+          moduleContent,
+          moduleTitle: module.title,
+          questionCount: 5
+        })
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to generate quiz');
+      }
+
+      const { data: quiz } = await response.json();
+
+      // Add quiz as the last lesson in the module
+      const quizLesson: LessonFormData = {
+        title: quiz.title,
+        content: '', // Quiz content is stored in the quiz field
+        duration: 10, // Default quiz duration
+        type: 'quiz',
+        videoUrl: '',
+        quiz: quiz
+      };
+
+      console.log('Adding quiz lesson:', quizLesson);
+      console.log('Quiz data:', quiz);
+
+      setModules(prev => prev.map((m, i) => 
+        i === moduleIndex 
+          ? { 
+              ...m, 
+              lessons: m.lessons.some(lesson => lesson.type === 'quiz') 
+                ? m.lessons.map(lesson => lesson.type === 'quiz' ? quizLesson : lesson)
+                : [...m.lessons, quizLesson]
+            }
+          : m
+      ));
+
+      setMessage('Quiz generated successfully!');
+    } catch (error) {
+      console.error('Error generating quiz:', error);
+      setMessage('Failed to generate quiz. Please try again.');
+    } finally {
+      setGeneratingQuiz(null);
+    }
+  };
+
   const updateLesson = (moduleIndex: number, lessonIndex: number, field: keyof LessonFormData, value: any) => {
     setModules(prev => prev.map((module, i) => 
       i === moduleIndex 
@@ -205,24 +309,48 @@ export default function CourseForm({
   };
 
   const addTag = () => {
-    if (newTag.trim() && !courseData.tags.includes(newTag.trim())) {
-      setCourseData(prev => ({ ...prev, tags: [...prev.tags, newTag.trim()] }));
+    if (newTag.trim() && courseData && !courseData.tags.includes(newTag.trim())) {
+      setCourseData(prev => {
+        if (!prev) return null;
+        return { ...prev, tags: [...prev.tags, newTag.trim()] };
+      });
       setNewTag('');
     }
   };
 
   const removeTag = (tagToRemove: string) => {
-    setCourseData(prev => ({ ...prev, tags: prev.tags.filter(tag => tag !== tagToRemove) }));
+    setCourseData(prev => {
+      if (!prev) return null;
+      return { ...prev, tags: prev.tags.filter(tag => tag !== tagToRemove) };
+    });
   };
 
   const handleAICourseGenerated = (aiCourse: Partial<Course>) => {
     // Populate form with AI-generated course data
-    if (aiCourse.title) setCourseData(prev => ({ ...prev, title: aiCourse.title! }));
-    if (aiCourse.description) setCourseData(prev => ({ ...prev, description: aiCourse.description! }));
-    if (aiCourse.category) setCourseData(prev => ({ ...prev, category: aiCourse.category! }));
-    if (aiCourse.difficulty) setCourseData(prev => ({ ...prev, difficulty: aiCourse.difficulty! }));
-    if (aiCourse.price !== undefined) setCourseData(prev => ({ ...prev, price: aiCourse.price! }));
-    if (aiCourse.tags) setCourseData(prev => ({ ...prev, tags: aiCourse.tags! }));
+    if (aiCourse.title) setCourseData(prev => {
+      if (!prev) return null;
+      return { ...prev, title: aiCourse.title! };
+    });
+    if (aiCourse.description) setCourseData(prev => {
+      if (!prev) return null;
+      return { ...prev, description: aiCourse.description! };
+    });
+    if (aiCourse.category) setCourseData(prev => {
+      if (!prev) return null;
+      return { ...prev, category: aiCourse.category! };
+    });
+    if (aiCourse.difficulty) setCourseData(prev => {
+      if (!prev) return null;
+      return { ...prev, difficulty: aiCourse.difficulty! };
+    });
+    if (aiCourse.price !== undefined) setCourseData(prev => {
+      if (!prev) return null;
+      return { ...prev, price: aiCourse.price! };
+    });
+    if (aiCourse.tags) setCourseData(prev => {
+      if (!prev) return null;
+      return { ...prev, tags: aiCourse.tags! };
+    });
     
     // Convert AI modules to form format
     if (aiCourse.modules) {
@@ -269,8 +397,17 @@ export default function CourseForm({
           throw new Error('All modules must have a title and at least one lesson.');
         }
         for (const lesson of module.lessons) {
-          if (!lesson.title || !lesson.content) {
-            throw new Error('All lessons must have a title and content.');
+          if (!lesson.title) {
+            throw new Error('All lessons must have a title.');
+          }
+          if (lesson.type === 'video' && !lesson.videoUrl) {
+            throw new Error('Video lessons must have a YouTube URL.');
+          }
+          if (lesson.type === 'text' && !lesson.content) {
+            throw new Error('Text lessons must have content.');
+          }
+          if (lesson.type === 'quiz' && !lesson.quiz) {
+            throw new Error('Quiz lessons must have quiz data.');
           }
         }
       }
@@ -294,15 +431,33 @@ export default function CourseForm({
         title: module.title,
         description: module.description,
         order: index + 1,
-        lessons: module.lessons.map((lesson, lessonIndex) => ({
-          id: `temp-${Date.now()}-${lessonIndex}`,
-          title: lesson.title,
-          content: lesson.content,
-          duration: lesson.duration,
-          type: lesson.type,
-          order: lessonIndex + 1,
-          completedBy: [],
-        })),
+        lessons: module.lessons.map((lesson, lessonIndex) => {
+          let processedContent = lesson.content;
+          
+          // If it's a video lesson and has a video URL, create a video block
+          if (lesson.type === 'video' && lesson.videoUrl) {
+            const videoBlock = {
+              type: 'video',
+              provider: 'youtube',
+              url: lesson.videoUrl,
+              title: lesson.title,
+            };
+            const videoBlockHtml = `<video-block data="${encodeURIComponent(JSON.stringify(videoBlock))}"></video-block>`;
+            processedContent = videoBlockHtml + (lesson.content ? `\n\n${lesson.content}` : '');
+          }
+          
+          return {
+            id: `temp-${Date.now()}-${lessonIndex}`,
+            title: lesson.title,
+            content: processedContent,
+            duration: lesson.duration,
+            type: lesson.type,
+            order: lessonIndex + 1,
+            completedBy: [],
+            videoUrl: lesson.videoUrl,
+            quiz: lesson.quiz,
+          };
+        }),
       }));
 
       if (mode === 'edit' && initialCourse) {
@@ -320,10 +475,18 @@ export default function CourseForm({
         });
         
         console.log('CourseForm - Making API request to:', `/api/courses/${initialCourse.id}`);
+        
+        // Get the current user's ID token
+        const idToken = await firebaseUser?.getIdToken();
+        if (!idToken) {
+          throw new Error('User not authenticated');
+        }
+        
         const response = await fetch(`/api/courses/${initialCourse.id}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',
+            'Authorization': `Bearer ${idToken}`
           },
           body: JSON.stringify(updateData),
         });
@@ -625,14 +788,29 @@ export default function CourseForm({
                     <h4 className="text-md font-medium text-gray-900 dark:text-white">
                       Lessons
                     </h4>
-                    <button
-                      type="button"
-                      onClick={() => addLesson(moduleIndex)}
-                      className="inline-flex items-center px-3 py-1 text-sm border border-gray-300 dark:border-gray-600 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700"
-                    >
-                      <Plus className="h-3 w-3 mr-1" />
-                      Add Lesson
-                    </button>
+                    <div className="flex gap-2">
+                      <button
+                        type="button"
+                        onClick={() => generateQuizForModule(moduleIndex)}
+                        disabled={generatingQuiz === moduleIndex || module.lessons.length === 0}
+                        className="inline-flex items-center px-3 py-1 text-sm border border-purple-300 dark:border-purple-600 rounded-md text-purple-700 dark:text-purple-300 hover:bg-purple-50 dark:hover:bg-purple-700 disabled:opacity-50 disabled:cursor-not-allowed"
+                      >
+                        {generatingQuiz === moduleIndex ? (
+                          <Loader2 className="h-3 w-3 mr-1 animate-spin" />
+                        ) : (
+                          <HelpCircle className="h-3 w-3 mr-1" />
+                        )}
+                        {generatingQuiz === moduleIndex ? 'Generating...' : 'Generate Quiz'}
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => addLesson(moduleIndex)}
+                        className="inline-flex items-center px-3 py-1 text-sm border border-gray-300 dark:border-gray-600 rounded-md text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700"
+                      >
+                        <Plus className="h-3 w-3 mr-1" />
+                        Add Lesson
+                      </button>
+                    </div>
                   </div>
 
                   {module.lessons.map((lesson, lessonIndex) => (
@@ -695,16 +873,133 @@ export default function CourseForm({
                         </div>
                       </div>
 
+                      {/* Video URL field - only show for video lessons */}
+                      {lesson.type === 'video' && (
+                        <div className="mb-3">
+                          <label className="block text-xs font-medium text-gray-700 dark:text-gray-300 mb-1">
+                            YouTube Video URL *
+                          </label>
+                          <input
+                            type="url"
+                            required
+                            value={lesson.videoUrl || ''}
+                            onChange={(e) => updateLesson(moduleIndex, lessonIndex, 'videoUrl', e.target.value)}
+                            className="w-full px-2 py-1 text-sm border border-gray-300 dark:border-gray-600 rounded-md bg-white dark:bg-gray-700 text-gray-900 dark:text-white focus:ring-blue-500 focus:border-blue-500"
+                            placeholder="https://www.youtube.com/watch?v=..."
+                          />
+                          <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">
+                            Paste any YouTube URL (watch, youtu.be, or embed format)
+                          </p>
+                        </div>
+                      )}
+
                       <div>
                         <label className="block text-xs font-medium text-gray-700 dark:text-gray-300 mb-1">
                           Content *
                         </label>
-                        <RichTextEditor
-                          value={lesson.content}
-                          onChange={(content) => updateLesson(moduleIndex, lessonIndex, 'content', content)}
-                          placeholder="Enter lesson content..."
-                          height={200}
-                        />
+                        {lesson.type === 'quiz' ? (
+                          <div className="space-y-4">
+                            <div className="p-4 bg-purple-50 dark:bg-purple-900/20 border border-purple-200 dark:border-purple-700 rounded-lg">
+                              <p className="text-sm text-purple-700 dark:text-purple-300">
+                                This is a quiz lesson. The quiz content is automatically generated and managed.
+                              </p>
+                              {lesson.quiz && (
+                                <div className="mt-2 text-xs text-purple-600 dark:text-purple-400">
+                                  Quiz: {lesson.quiz.title} ({lesson.quiz.questions.length} questions)
+                                </div>
+                              )}
+                            </div>
+                            
+                            {lesson.quiz && lesson.quiz.questions && (
+                              <div className="space-y-4">
+                                <h4 className="text-sm font-medium text-gray-700 dark:text-gray-300">Quiz Questions Preview:</h4>
+                                {lesson.quiz.questions.map((question, qIndex) => (
+                                  <div key={qIndex} className="p-3 bg-gray-50 dark:bg-gray-700 rounded-lg border border-gray-200 dark:border-gray-600">
+                                    <div className="flex items-start justify-between mb-2">
+                                      <span className="text-xs font-medium text-gray-500 dark:text-gray-400">
+                                        Question {qIndex + 1} ({question.kind.toUpperCase()})
+                                      </span>
+                                    </div>
+                                    <p className="text-sm text-gray-900 dark:text-white mb-2">
+                                      {question.kind === 'match' 
+                                        ? `Match the items on the left with the items on the right`
+                                        : question.text
+                                      }
+                                    </p>
+                                    
+                                    {question.kind === 'mcq' && (
+                                      <div className="space-y-1">
+                                        {question.options.map((option, oIndex) => (
+                                          <div key={oIndex} className="flex items-center text-xs">
+                                            <span className={`w-4 h-4 rounded-full border mr-2 flex items-center justify-center ${
+                                              question.correct.includes(oIndex) 
+                                                ? 'bg-green-100 border-green-500 text-green-700' 
+                                                : 'border-gray-300'
+                                            }`}>
+                                              {question.correct.includes(oIndex) && '✓'}
+                                            </span>
+                                            <span className="text-gray-700 dark:text-gray-300">{option}</span>
+                                          </div>
+                                        ))}
+                                      </div>
+                                    )}
+                                    
+                                    {question.kind === 'truefalse' && (
+                                      <div className="text-xs">
+                                        <span className={`px-2 py-1 rounded ${
+                                          question.correct 
+                                            ? 'bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-400' 
+                                            : 'bg-red-100 text-red-700 dark:bg-red-900/30 dark:text-red-400'
+                                        }`}>
+                                          {question.correct ? 'True' : 'False'}
+                                        </span>
+                                      </div>
+                                    )}
+                                    
+                                    {question.kind === 'short' && (
+                                      <div className="text-xs text-gray-600 dark:text-gray-400">
+                                        <p>Acceptable answers:</p>
+                                        <ul className="list-disc list-inside mt-1">
+                                          {question.answers.map((answer, aIndex) => (
+                                            <li key={aIndex}>{answer}</li>
+                                          ))}
+                                        </ul>
+                                      </div>
+                                    )}
+                                    
+                                    {question.kind === 'match' && (
+                                      <div className="grid grid-cols-2 gap-2 text-xs">
+                                        <div>
+                                          <p className="font-medium text-gray-700 dark:text-gray-300 mb-1">Terms:</p>
+                                          <ul className="space-y-1">
+                                            {question.left.map((term, tIndex) => (
+                                              <li key={tIndex} className="text-gray-600 dark:text-gray-400">{term}</li>
+                                            ))}
+                                          </ul>
+                                        </div>
+                                        <div>
+                                          <p className="font-medium text-gray-700 dark:text-gray-300 mb-1">Definitions:</p>
+                                          <ul className="space-y-1">
+                                            {question.right.map((def, dIndex) => (
+                                              <li key={dIndex} className="text-gray-600 dark:text-gray-400">{def}</li>
+                                            ))}
+                                          </ul>
+                                        </div>
+                                      </div>
+                                    )}
+                                  </div>
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        ) : (
+                          <RichTextEditor
+                            value={lesson.content}
+                            onChange={(content) => updateLesson(moduleIndex, lessonIndex, 'content', content)}
+                            placeholder="Enter lesson content..."
+                            height={200}
+                          />
+                        )}
                       </div>
                     </div>
                   ))}

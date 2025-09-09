@@ -59,26 +59,22 @@ export default function RichTextEditor({
     loadCSS('/tinymce/skins/ui/oxide-dark/skin.min.css');
     loadCSS('/tinymce/skins/content/dark/content.min.css');
     
-    // Load Prism.js for code syntax highlighting
-    loadCSS('https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css');
+    // Load Prism.js for code syntax highlighting (use same approach as other components)
+    loadCSS('https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-dark.min.css');
+    
+    // Check if Prism is already loaded
+    if (typeof window !== 'undefined' && (window as any).Prism) {
+      (window as any).Prism.highlightAll();
+      return;
+    }
     
     const script = document.createElement('script');
-    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js';
+    script.src = 'https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js';
     script.onload = () => {
-      // Load additional language support
-      const languages = ['javascript', 'typescript', 'python', 'java', 'cpp', 'csharp', 'php', 'ruby', 'go', 'rust', 'sql', 'html', 'css', 'json', 'xml', 'yaml', 'markdown', 'bash', 'powershell'];
-      languages.forEach(lang => {
-        const langScript = document.createElement('script');
-        langScript.src = `https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-${lang}.min.js`;
-        document.head.appendChild(langScript);
-      });
-      
-      // Initialize Prism after all language scripts are loaded
-      setTimeout(() => {
-        if (typeof window !== 'undefined' && (window as any).Prism) {
-          (window as any).Prism.highlightAll();
-        }
-      }, 1000);
+      if (typeof window !== 'undefined' && (window as any).Prism) {
+        (window as any).Prism.highlightAll();
+        console.log('Prism.js loaded in RichTextEditor');
+      }
     };
     document.head.appendChild(script);
 

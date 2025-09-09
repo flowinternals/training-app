@@ -1,0 +1,67 @@
+[debug] [2025-09-09T12:48:31.757Z] ----------------------------------------------------------------------
+[debug] [2025-09-09T12:48:31.763Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\sages\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy --only firestore:rules
+[debug] [2025-09-09T12:48:31.763Z] CLI Version:   14.15.2
+[debug] [2025-09-09T12:48:31.764Z] Platform:      win32
+[debug] [2025-09-09T12:48:31.764Z] Node Version:  v24.7.0
+[debug] [2025-09-09T12:48:31.764Z] Time:          Tue Sep 09 2025 22:48:31 GMT+1000 (Australian Eastern Standard Time)
+[debug] [2025-09-09T12:48:31.764Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-09-09T12:48:31.768Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2025-09-09T12:48:32.071Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-09-09T12:48:32.072Z] > authorizing via signed-in user (flowinternals@gmail.com)
+[debug] [2025-09-09T12:48:32.072Z] [iam] checking project flowinternals-training-app for permissions ["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get"]
+[debug] [2025-09-09T12:48:32.073Z] Checked if tokens are valid: false, expires at: 1757243998015
+[debug] [2025-09-09T12:48:32.073Z] Checked if tokens are valid: false, expires at: 1757243998015
+[debug] [2025-09-09T12:48:32.074Z] > refreshing access token with scopes: []
+[debug] [2025-09-09T12:48:32.075Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-09-09T12:48:32.075Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-09T12:48:32.364Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-09-09T12:48:32.364Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-09-09T12:48:32.387Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/flowinternals-training-app:testIamPermissions [none]
+[debug] [2025-09-09T12:48:32.387Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/flowinternals-training-app:testIamPermissions x-goog-quota-user=projects/flowinternals-training-app
+[debug] [2025-09-09T12:48:32.387Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/flowinternals-training-app:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get"]}
+[debug] [2025-09-09T12:48:32.550Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2025-09-09T12:48:32.550Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2025-09-09T12:48:33.677Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/flowinternals-training-app:testIamPermissions 200
+[debug] [2025-09-09T12:48:33.677Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/flowinternals-training-app:testIamPermissions {"permissions":["datastore.indexes.create","datastore.indexes.delete","datastore.indexes.list","datastore.indexes.update","firebase.projects.get"]}
+[info] 
+[info] === Deploying to 'flowinternals-training-app'...
+[info] 
+[info] i  deploying firestore 
+[info] i  firestore: reading indexes from firestore.indexes.json... 
+[info] i  cloud.firestore: checking firestore.rules for compilation errors... 
+[debug] [2025-09-09T12:48:33.695Z] Checked if tokens are valid: true, expires at: 1757425711364
+[debug] [2025-09-09T12:48:33.695Z] Checked if tokens are valid: true, expires at: 1757425711364
+[debug] [2025-09-09T12:48:33.695Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/flowinternals-training-app:test [none]
+[debug] [2025-09-09T12:48:33.695Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/flowinternals-training-app:test [omitted]
+[debug] [2025-09-09T12:48:35.284Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/flowinternals-training-app:test 200
+[debug] [2025-09-09T12:48:35.284Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/flowinternals-training-app:test {}
+[info] +  cloud.firestore: rules file firestore.rules compiled successfully 
+[debug] [2025-09-09T12:48:35.285Z] Checked if tokens are valid: true, expires at: 1757425711364
+[debug] [2025-09-09T12:48:35.286Z] Checked if tokens are valid: true, expires at: 1757425711364
+[debug] [2025-09-09T12:48:35.286Z] >>> [apiv2][query] GET https://firestore.googleapis.com/v1/projects/flowinternals-training-app/databases/(default) [none]
+[debug] [2025-09-09T12:48:35.599Z] <<< [apiv2][status] GET https://firestore.googleapis.com/v1/projects/flowinternals-training-app/databases/(default) 200
+[debug] [2025-09-09T12:48:35.599Z] <<< [apiv2][body] GET https://firestore.googleapis.com/v1/projects/flowinternals-training-app/databases/(default) {"name":"projects/flowinternals-training-app/databases/(default)","uid":"eed5061a-cd3c-4d5e-bfba-395d29213e54","createTime":"2025-08-31T04:17:18.365438Z","updateTime":"2025-08-31T04:17:18.365438Z","locationId":"australia-southeast2","type":"FIRESTORE_NATIVE","concurrencyMode":"PESSIMISTIC","versionRetentionPeriod":"3600s","earliestVersionTime":"2025-09-09T11:48:34.955029Z","appEngineIntegrationMode":"DISABLED","pointInTimeRecoveryEnablement":"POINT_IN_TIME_RECOVERY_DISABLED","deleteProtectionState":"DELETE_PROTECTION_DISABLED","databaseEdition":"STANDARD","freeTier":true,"etag":"IMe5h8fby48DMKSV7eumtI8D"}
+[debug] [2025-09-09T12:48:35.599Z] Checked if tokens are valid: true, expires at: 1757425711364
+[debug] [2025-09-09T12:48:35.600Z] Checked if tokens are valid: true, expires at: 1757425711364
+[debug] [2025-09-09T12:48:35.600Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/flowinternals-training-app/releases pageSize=10&pageToken=
+[debug] [2025-09-09T12:48:36.985Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/flowinternals-training-app/releases 200
+[debug] [2025-09-09T12:48:36.985Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/flowinternals-training-app/releases {"releases":[{"name":"projects/flowinternals-training-app/releases/cloud.firestore","rulesetName":"projects/flowinternals-training-app/rulesets/986b6d5a-a320-44d6-9f1b-61bcb4e52d39","createTime":"2025-08-31T04:17:27.087090Z","updateTime":"2025-08-31T05:31:29.739281Z"},{"name":"projects/flowinternals-training-app/releases/firebase.storage/flowinternals-training-app.firebasestorage.app","rulesetName":"projects/flowinternals-training-app/rulesets/f091114c-7ca6-4bb3-bcbe-e6c6fa433865","createTime":"2025-08-31T04:18:50.715602Z","updateTime":"2025-08-31T05:33:25.822293Z"}]}
+[debug] [2025-09-09T12:48:36.999Z] Checked if tokens are valid: true, expires at: 1757425711364
+[debug] [2025-09-09T12:48:36.999Z] Checked if tokens are valid: true, expires at: 1757425711364
+[debug] [2025-09-09T12:48:36.999Z] >>> [apiv2][query] GET https://firebaserules.googleapis.com/v1/projects/flowinternals-training-app/rulesets/986b6d5a-a320-44d6-9f1b-61bcb4e52d39 [none]
+[debug] [2025-09-09T12:48:38.375Z] <<< [apiv2][status] GET https://firebaserules.googleapis.com/v1/projects/flowinternals-training-app/rulesets/986b6d5a-a320-44d6-9f1b-61bcb4e52d39 200
+[debug] [2025-09-09T12:48:38.376Z] <<< [apiv2][body] GET https://firebaserules.googleapis.com/v1/projects/flowinternals-training-app/rulesets/986b6d5a-a320-44d6-9f1b-61bcb4e52d39 [omitted]
+[info] i  firestore: uploading rules firestore.rules... 
+[debug] [2025-09-09T12:48:38.378Z] Checked if tokens are valid: true, expires at: 1757425711364
+[debug] [2025-09-09T12:48:38.378Z] Checked if tokens are valid: true, expires at: 1757425711364
+[debug] [2025-09-09T12:48:38.378Z] >>> [apiv2][query] POST https://firebaserules.googleapis.com/v1/projects/flowinternals-training-app/rulesets [none]
+[debug] [2025-09-09T12:48:38.378Z] >>> [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/flowinternals-training-app/rulesets [omitted]
+[debug] [2025-09-09T12:48:39.804Z] <<< [apiv2][status] POST https://firebaserules.googleapis.com/v1/projects/flowinternals-training-app/rulesets 200
+[debug] [2025-09-09T12:48:39.804Z] <<< [apiv2][body] POST https://firebaserules.googleapis.com/v1/projects/flowinternals-training-app/rulesets {"name":"projects/flowinternals-training-app/rulesets/fc44f0f9-08cc-4efc-be51-6e3f50593acc","source":{"files":[{"content":"rules_version = '2';\r\nservice cloud.firestore {\r\n  match /databases/{database}/documents {\r\n    // Helper functions\r\n    function isSignedIn() {\r\n      return request.auth != null;\r\n    }\r\n    \r\n    function isAdmin() {\r\n      return isSignedIn() && \r\n        request.auth.token.role == 'admin';\r\n    }\r\n    \r\n    function isOwner(userId) {\r\n      return isSignedIn() && request.auth.uid == userId;\r\n    }\r\n    \r\n    // Users collection\r\n    match /users/{userId} {\r\n      allow read: if isOwner(userId) || isAdmin();\r\n      allow create: if isSignedIn() && request.auth.uid == userId;\r\n      allow update: if isOwner(userId) || isAdmin();\r\n      allow delete: if isAdmin();\r\n    }\r\n    \r\n    // Courses collection\r\n    match /courses/{courseId} {\r\n      allow read: if resource.data.published == true || isAdmin();\r\n      allow create, update, delete: if isAdmin();\r\n      \r\n      // Course enrollment\r\n      match /enrollments/{enrollmentId} {\r\n        allow read: if isOwner(resource.data.userId) || isAdmin();\r\n        allow create: if isSignedIn() && request.auth.uid == resource.data.userId;\r\n        allow update, delete: if isAdmin();\r\n      }\r\n    }\r\n    \r\n    // Modules subcollection\r\n    match /courses/{courseId}/modules/{moduleId} {\r\n      allow read: if get(/databases/$(database)/documents/courses/$(courseId)).data.published == true || isAdmin();\r\n      allow create, update, delete: if isAdmin();\r\n      \r\n      // Lessons subcollection\r\n      match /lessons/{lessonId} {\r\n        allow read: if get(/databases/$(database)/documents/courses/$(courseId)).data.published == true || isAdmin();\r\n        allow create, update, delete: if isAdmin();\r\n      }\r\n    }\r\n    \r\n    // Payments collection\r\n    match /payments/{paymentId} {\r\n      allow read: if isOwner(resource.data.userId) || isAdmin();\r\n      allow create: if isSignedIn() && request.auth.uid == resource.data.userId;\r\n      allow update: if isAdmin();\r\n      allow delete: if isAdmin();\r\n    }\r\n    \r\n    // Subscriptions collection\r\n    match /subscriptions/{subscriptionId} {\r\n      allow read: if isOwner(resource.data.userId) || isAdmin();\r\n      allow create: if isSignedIn() && request.auth.uid == resource.data.userId;\r\n      allow update: if isAdmin();\r\n      allow delete: if isAdmin();\r\n    }\r\n    \r\n    // User progress collection\r\n    match /userProgress/{progressId} {\r\n      allow read: if isOwner(resource.data.userId) || isAdmin();\r\n      allow create: if isSignedIn() && request.auth.uid == request.resource.data.userId;\r\n      allow update: if isSignedIn() && request.auth.uid == resource.data.userId;\r\n      allow delete: if isAdmin();\r\n    }\r\n    \r\n    // AI content requests\r\n    match /aiContentRequests/{requestId} {\r\n      allow read: if isOwner(resource.data.userId) || isAdmin();\r\n      allow create: if isSignedIn() && request.auth.uid == resource.data.userId;\r\n      allow update: if isOwner(resource.data.userId) || isAdmin();\r\n      allow delete: if isAdmin();\r\n    }\r\n  }\r\n}\r\n","name":"firestore.rules"}]},"createTime":"2025-09-09T12:48:39.004191Z","metadata":{"services":["cloud.firestore"]}}
+[debug] [2025-09-09T12:48:39.804Z] [rules] created ruleset projects/flowinternals-training-app/rulesets/fc44f0f9-08cc-4efc-be51-6e3f50593acc
+[debug] [2025-09-09T12:48:39.805Z] [rules] releasing cloud.firestore/(default) with ruleset projects/flowinternals-training-app/rulesets/fc44f0f9-08cc-4efc-be51-6e3f50593acc
+[debug] [2025-09-09T12:48:39.805Z] Checked if tokens are valid: true, expires at: 1757425711364
+[debug] [2025-09-09T12:48:39.805Z] Checked if tokens are valid: true, expires at: 1757425711364
+[debug] [2025-09-09T12:48:39.805Z] >>> [apiv2][query] PATCH https://firebaserules.googleapis.com/v1/projects/flowinternals-training-app/releases/cloud.firestore/(default) [none]
+[debug] [2025-09-09T12:48:39.806Z] >>> [apiv2][body] PATCH https://firebaserules.googleapis.com/v1/projects/flowinternals-training-app/releases/cloud.firestore/(default) {"release":{"name":"projects/flowinternals-training-app/releases/cloud.firestore/(default)","rulesetName":"projects/flowinternals-training-app/rulesets/fc44f0f9-08cc-4efc-be51-6e3f50593acc"}}

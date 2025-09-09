@@ -5,6 +5,7 @@ import { User as FirebaseUser, onAuthStateChanged, signOut } from 'firebase/auth
 import { doc, getDoc, setDoc } from 'firebase/firestore';
 import { auth, db } from '@/lib/firebase';
 import { User, UserRole } from '@/types';
+import { handleGoogleRedirectResult } from '@/lib/firebase-utils';
 
 interface AuthContextType {
   user: User | null;
@@ -13,6 +14,7 @@ interface AuthContextType {
   signOut: () => Promise<void>;
   isAdmin: boolean;
   isPaidUser: boolean;
+  refreshUserData: () => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
@@ -23,6 +25,17 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    // Handle Google redirect result on page load
+    const handleRedirect = async () => {
+      try {
+        await handleGoogleRedirectResult();
+      } catch (error) {
+        console.error('Error handling redirect result:', error);
+      }
+    };
+    
+    handleRedirect();
+
     const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
       setFirebaseUser(firebaseUser);
       
@@ -36,8 +49,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
             setUser({
               ...userData,
               uid: firebaseUser.uid,
-              createdAt: userData.createdAt?.toDate() || new Date(),
-              updatedAt: userData.updatedAt?.toDate() || new Date(),
+              createdAt: userData.createdAt instanceof Date ? userData.createdAt : new Date(),
+              updatedAt: userData.updatedAt instanceof Date ? userData.updatedAt : new Date(),
             });
           } else {
             // Create new user document for Google users or other auth providers
@@ -46,17 +59,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
               email: firebaseUser.email || '',
               displayName: firebaseUser.displayName || '',
               photoURL: firebaseUser.photoURL || '',
-              role: 'user',
-              isPaidUser: false,
+              role: 'freeUser',
               createdAt: new Date(),
               updatedAt: new Date(),
               enrolledCourses: [],
-              completedCourses: [],
-              preferences: {
-                theme: 'light',
-                notifications: true,
-                language: 'en'
-              }
+              completedCourses: []
             };
             
             // Save to Firestore
@@ -71,17 +78,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
             email: firebaseUser.email || '',
             displayName: firebaseUser.displayName || '',
             photoURL: firebaseUser.photoURL || '',
-            role: 'user',
-            isPaidUser: false,
+            role: 'freeUser',
             createdAt: new Date(),
             updatedAt: new Date(),
             enrolledCourses: [],
-            completedCourses: [],
-            preferences: {
-              theme: 'light',
-              notifications: true,
-              language: 'en'
-            }
+            completedCourses: []
           };
           setUser(fallbackUser);
         }
@@ -107,6 +108,26 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
+  const refreshUserData = async () => {
+    if (!firebaseUser) return;
+    
+    try {
+      const userDoc = await getDoc(doc(db, 'users', firebaseUser.uid));
+      
+      if (userDoc.exists()) {
+        const userData = userDoc.data() as User;
+        setUser({
+          ...userData,
+          uid: firebaseUser.uid,
+          createdAt: userData.createdAt instanceof Date ? userData.createdAt : new Date(),
+          updatedAt: userData.updatedAt instanceof Date ? userData.updatedAt : new Date(),
+        });
+      }
+    } catch (error) {
+      console.error('Error refreshing user data:', error);
+    }
+  };
+
   const isAdmin = user?.role === 'admin';
   const isPaidUser = user?.role === 'paidUser' || user?.role === 'admin';
 
@@ -117,6 +138,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     signOut: handleSignOut,
     isAdmin,
     isPaidUser,
+    refreshUserData,
   };
 
   return (

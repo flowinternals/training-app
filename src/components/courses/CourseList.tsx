@@ -29,17 +29,22 @@ export default function CourseList({ category, showFilters = true }: CourseListP
   const loadCourses = async () => {
     try {
       setLoading(true);
-      let coursesData: Course[];
       
+      // Fetch fresh data from Firebase API instead of using cached data
+      const response = await fetch('/api/courses');
+      if (!response.ok) {
+        throw new Error('Failed to fetch courses');
+      }
+      let coursesData: Course[] = await response.json();
+      
+      // Filter by category if specified
       if (category && category !== 'all') {
-        coursesData = await getCoursesByCategory(category);
-      } else {
-        // Show all courses for admins, only published for regular users
-        if (isAdmin) {
-          coursesData = await getAllCourses(50);
-        } else {
-          coursesData = await getPublishedCourses(50);
-        }
+        coursesData = coursesData.filter(course => course.category === category);
+      }
+      
+      // Filter by published status for non-admin users
+      if (!isAdmin) {
+        coursesData = coursesData.filter(course => course.published);
       }
       
       setCourses(coursesData);

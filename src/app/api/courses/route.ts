@@ -2,6 +2,31 @@ import { NextRequest, NextResponse } from 'next/server';
 import { verifyAuth } from '@/lib/firebase-admin';
 import { adminDb } from '@/lib/firebase-admin';
 
+export async function GET(request: NextRequest) {
+  try {
+    console.log('API - GET /api/courses - Fetching courses (optimized)');
+    
+    // Get all courses from Firestore (single query)
+    const coursesSnapshot = await adminDb.collection('courses').get();
+    
+    // For course list, we only need basic course data - no modules/lessons
+    // This reduces database calls from 50+ to just 1!
+    const courses = coursesSnapshot.docs.map(courseDoc => ({
+      id: courseDoc.id,
+      ...courseDoc.data()
+    }));
+    
+    console.log('API - GET /api/courses - Returning', courses.length, 'courses (basic data only)');
+    return NextResponse.json(courses);
+  } catch (error) {
+    console.error('Error fetching courses:', error);
+    return NextResponse.json(
+      { error: 'Failed to fetch courses' },
+      { status: 500 }
+    );
+  }
+}
+
 export async function POST(request: NextRequest) {
   let courseData: any;
   try {
@@ -33,23 +58,32 @@ export async function POST(request: NextRequest) {
       
       for (const [moduleIndex, module] of modules.entries()) {
         const moduleRef = adminDb.collection('courses').doc(courseRef.id).collection('modules').doc();
+        
         batch.set(moduleRef, {
-          title: module.title,
-          description: module.description,
+          title: module.title || '',
+          description: module.description || '',
           order: moduleIndex + 1,
         });
         
         if (module.lessons && Array.isArray(module.lessons)) {
           for (const [lessonIndex, lesson] of module.lessons.entries()) {
             const lessonRef = adminDb.collection('courses').doc(courseRef.id).collection('modules').doc(moduleRef.id).collection('lessons').doc();
-            batch.set(lessonRef, {
-              title: lesson.title,
-              content: lesson.content,
-              duration: lesson.duration,
+            
+            const lessonData: any = {
+              title: lesson.title || '',
+              content: lesson.content || '',
+              duration: lesson.duration || 0,
               type: lesson.type || 'text',
               order: lessonIndex + 1,
               completedBy: lesson.completedBy || [],
-            });
+            };
+            
+            // Only include videoUrl if it's defined and not empty
+            if (lesson.videoUrl && lesson.videoUrl.trim() !== '') {
+              lessonData.videoUrl = lesson.videoUrl;
+            }
+            
+            batch.set(lessonRef, lessonData);
           }
         }
       }

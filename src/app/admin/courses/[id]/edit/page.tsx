@@ -15,7 +15,7 @@ interface EditCoursePageProps {
 }
 
 export default function EditCoursePage({ params }: EditCoursePageProps) {
-  const { user } = useAuth();
+  const { user, isAdmin } = useAuth();
   const { addToast } = useToast();
   const router = useRouter();
   const [course, setCourse] = useState<Course | null>(null);
@@ -48,6 +48,8 @@ export default function EditCoursePage({ params }: EditCoursePageProps) {
       }
 
       const courseData = await response.json();
+      console.log('Edit page - Course data received:', courseData);
+      console.log('Edit page - Modules:', courseData.modules);
       setCourse(courseData);
     } catch (error) {
       console.error('Error fetching course:', error);

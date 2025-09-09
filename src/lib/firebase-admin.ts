@@ -18,7 +18,7 @@ try {
   adminApp = getApps().length === 0 
     ? initializeApp({
         credential: cert(firebaseAdminConfig),
-        storageBucket: `${process.env.FIREBASE_ADMIN_PROJECT_ID}.appspot.com`,
+        storageBucket: 'flowinternals-training-app.appspot.com',
       })
     : getApps()[0];
 } catch (error) {
@@ -34,34 +34,26 @@ export const adminStorage = getStorage(adminApp);
 // Verify authentication function for API routes
 export async function verifyAuth(request: NextRequest) {
   try {
-    // For development, always return a mock user to bypass Firebase Admin issues
-    if (process.env.NODE_ENV === 'development') {
-      return {
-        success: true,
-        user: {
-          uid: 'dev-user-123',
-          email: 'dev@example.com',
-          email_verified: true,
-          name: 'Development User',
-          picture: null,
-        }
-      };
-    }
-
     const authHeader = request.headers.get('authorization');
     
     if (!authHeader || !authHeader.startsWith('Bearer ')) {
+      console.log('No authorization header found');
       return { success: false, error: 'No authorization header' };
     }
 
     const idToken = authHeader.split('Bearer ')[1];
     
     if (!idToken) {
+      console.log('No token provided');
       return { success: false, error: 'No token provided' };
     }
 
+    console.log('Verifying token with Firebase Admin...');
+    
     // Verify the ID token
     const decodedToken = await adminAuth.verifyIdToken(idToken);
+    
+    console.log('Token verified successfully for user:', decodedToken.uid);
     
     return {
       success: true,

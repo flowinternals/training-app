@@ -1,18 +1,19 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { useParams } from 'next/navigation';
+import { useParams, useRouter } from 'next/navigation';
 import { getCourseById } from '@/lib/firebase-utils';
 import { Course, Module, Lesson, User } from '@/types';
 import Navigation from '@/components/Navigation';
 import PaymentButton from '@/components/payments/PaymentButton';
 import CourseViewer from '@/components/courses/CourseViewer';
+import LessonContentRenderer from '@/components/courses/LessonContentRenderer';
 import { useAuth } from '@/contexts/AuthContext';
 
 export default function CourseDetailPage() {
   const params = useParams();
   const courseId = params.id as string;
-  const { user } = useAuth();
+  const { user, isAdmin, firebaseUser } = useAuth();
   const [course, setCourse] = useState<Course | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -24,8 +25,14 @@ export default function CourseDetailPage() {
     const fetchCourse = async () => {
       try {
         setLoading(true);
-        const courseData = await getCourseById(courseId);
-        console.log('Course view - fetched course data:', courseData);
+        // Fetch fresh data from Firebase API instead of using cached data
+        const response = await fetch(`/api/courses/${courseId}`);
+        if (!response.ok) {
+          throw new Error('Failed to fetch course');
+        }
+        const courseData = await response.json();
+        
+        console.log('Course view - fetched fresh course data from API:', courseData);
         console.log('Course view - modules:', courseData.modules);
         console.log('Course view - imageAttribution:', courseData.imageAttribution);
         setCourse(courseData);
@@ -79,6 +86,7 @@ export default function CourseDetailPage() {
     loadPrism();
   }, [course]);
 
+
   // Re-apply Prism highlighting when course content changes
   useEffect(() => {
     if (course && typeof window !== 'undefined' && (window as any).Prism) {
@@ -112,16 +120,16 @@ export default function CourseDetailPage() {
             block.classList.add('prism-highlighted');
             
             // Force dark background with inline styles
-            const pre = block.parentElement;
+            const pre = block.parentElement as HTMLElement;
             if (pre) {
               pre.style.background = '#1e1e1e';
               pre.style.backgroundColor = '#1e1e1e';
               pre.style.color = '#d4d4d4';
               pre.style.imageRendering = 'crisp-edges';
               pre.style.imageRendering = '-webkit-optimize-contrast';
-              block.style.background = 'transparent';
-              block.style.backgroundColor = 'transparent';
-              block.style.color = '#d4d4d4';
+              (block as HTMLElement).style.background = 'transparent';
+              (block as HTMLElement).style.backgroundColor = 'transparent';
+              (block as HTMLElement).style.color = '#d4d4d4';
             }
             
             // Add copy button to the pre element
@@ -195,15 +203,48 @@ export default function CourseDetailPage() {
 
   // Function to bypass Stripe and enroll user directly (for testing)
   const enrollUserDirectly = async () => {
-    if (user && course) {
+    if (user && course && firebaseUser) {
       try {
-        // In a real app, you'd update the user's enrolled courses in Firebase
-        // For now, we'll just set the local state
-        setIsEnrolled(true);
-        setPaymentSuccess(true);
-        console.log('User enrolled directly (bypassing Stripe)');
+        // Get the current user's ID token
+        const idToken = await firebaseUser.getIdToken();
+        if (!idToken) {
+          throw new Error('User not authenticated');
+        }
+
+        // Actually enroll the user in the course
+        const response = await fetch('/api/courses/enroll', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${idToken}`
+          },
+          body: JSON.stringify({
+            courseId: course.id,
+            userId: user.uid,
+            bypassPayment: true, // Flag for testing bypass
+          }),
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          console.log('User enrolled successfully:', data);
+          setIsEnrolled(true);
+          setPaymentSuccess(true);
+          
+          // Update the user's enrolled courses in the context
+          if (user.enrolledCourses) {
+            user.enrolledCourses.push(course.id);
+          } else {
+            user.enrolledCourses = [course.id];
+          }
+        } else {
+          const errorData = await response.json();
+          console.error('Failed to enroll user:', errorData);
+          alert('Failed to enroll in course. Please try again.');
+        }
       } catch (error) {
         console.error('Error enrolling user:', error);
+        alert('Failed to enroll in course. Please try again.');
       }
     }
   };
@@ -296,7 +337,10 @@ export default function CourseDetailPage() {
               </div>
             )}
             {/* Debug attribution */}
-            {console.log('Course view - imageAttribution check:', course.imageAttribution, 'Truthy:', !!course.imageAttribution)}
+            {(() => {
+              console.log('Course view - imageAttribution check:', course.imageAttribution, 'Truthy:', !!course.imageAttribution);
+              return null;
+            })()}
           </div>
         )}
 
@@ -340,7 +384,7 @@ export default function CourseDetailPage() {
               </h2>
               <div className="prose dark:prose-invert max-w-none">
                 <p className="text-gray-700 dark:text-gray-300">
-                  {course.overview || 'No overview available for this course.'}
+                  {(course as any).overview || 'No overview available for this course.'}
                 </p>
               </div>
             </div>
@@ -367,7 +411,7 @@ export default function CourseDetailPage() {
                           </h4>
                           <div className="space-y-4">
                             {module.lessons.map((lesson, lessonIndex) => (
-                              <div key={lessonIndex} className="border border-gray-200 dark:border-gray-600 rounded-lg p-4 bg-gray-50 dark:bg-gray-700">
+                              <div key={lesson.id || lessonIndex} className="border border-gray-200 dark:border-gray-600 rounded-lg p-4 bg-gray-50 dark:bg-gray-700">
                                 <div className="flex items-center justify-between mb-3">
                                   <h5 className="font-medium text-gray-900 dark:text-white flex items-center">
                                     <span className="w-2 h-2 bg-blue-500 rounded-full mr-2"></span>
@@ -378,26 +422,22 @@ export default function CourseDetailPage() {
                                   </span>
                                 </div>
                                 
-                                {/* Lesson Content with Images */}
-                                {lesson.content && (
-                                  <div className="prose dark:prose-invert max-w-none">
-                                    <div 
-                                      className="text-sm text-gray-700 dark:text-gray-300"
-                                      dangerouslySetInnerHTML={{ 
-                                        __html: lesson.content.replace(
-                                          /<img([^>]+)alt="([^"]+)"([^>]*)>/g, 
-                                          '<div class="relative inline-block"><img$1alt="$2"$3><div class="absolute bottom-2 right-2 bg-black/70 backdrop-blur-sm rounded px-2 py-1"><p class="text-xs text-white">$2</p></div></div>'
-                                        )
-                                      }}
-                                      ref={(el) => {
-                                        if (el && typeof window !== 'undefined' && (window as any).Prism) {
-                                          // Re-highlight code blocks when content changes
-                                          setTimeout(() => {
-                                            (window as any).Prism.highlightAllUnder(el);
-                                          }, 100);
-                                        }
-                                      }}
-                                    />
+                                {/* Lesson Content - Only show for admin users */}
+                                {lesson.content && isAdmin && (
+                                  <LessonContentRenderer 
+                                    content={lesson.content}
+                                    className="prose dark:prose-invert max-w-none"
+                                  />
+                                )}
+                                
+                                {/* Show lesson type and duration for non-admin users */}
+                                {lesson.content && !isAdmin && (
+                                  <div className="text-sm text-gray-600 dark:text-gray-400">
+                                    <p>Type: {lesson.type || 'Text'}</p>
+                                    <p>Duration: {lesson.duration} minutes</p>
+                                    <p className="mt-2 text-gray-500 dark:text-gray-500 italic">
+                                      Content available after enrollment
+                                    </p>
                                   </div>
                                 )}
                               </div>
@@ -425,11 +465,11 @@ export default function CourseDetailPage() {
               <dl className="space-y-3">
                 <div>
                   <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Instructor</dt>
-                  <dd className="text-sm text-gray-900 dark:text-white">{course.instructor || 'TBD'}</dd>
+                  <dd className="text-sm text-gray-900 dark:text-white">{(course as any).instructor || 'TBD'}</dd>
                 </div>
                 <div>
                   <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Language</dt>
-                  <dd className="text-sm text-gray-900 dark:text-white">{course.language || 'English'}</dd>
+                  <dd className="text-sm text-gray-900 dark:text-white">{(course as any).language || 'English'}</dd>
                 </div>
                 <div>
                   <dt className="text-sm font-medium text-gray-500 dark:text-gray-400">Last Updated</dt>
@@ -470,41 +510,6 @@ export default function CourseDetailPage() {
 
             {/* Action Buttons */}
             <div className="space-y-3">
-              {/* Debug button for Prism highlighting */}
-              <button
-                onClick={() => {
-                  if (typeof window !== 'undefined' && (window as any).Prism) {
-                    // Find all code blocks and force highlight them
-                    const codeBlocks = document.querySelectorAll('pre code');
-                    codeBlocks.forEach((block) => {
-                      if (!block.className || !block.className.includes('language-')) {
-                        const code = block.textContent || '';
-                        let detectedLang = 'javascript';
-                        
-                        if (code.includes('<!DOCTYPE html>') || code.includes('<html>')) {
-                          detectedLang = 'markup';
-                        } else if (code.includes('function') && code.includes('=>')) {
-                          detectedLang = 'javascript';
-                        } else if (code.includes('def ') || code.includes('import ')) {
-                          detectedLang = 'python';
-                        } else if (code.includes('SELECT') || code.includes('FROM')) {
-                          detectedLang = 'sql';
-                        } else if (code.includes('{') && code.includes('}') && code.includes('color:')) {
-                          detectedLang = 'css';
-                        }
-                        
-                        block.className = `language-${detectedLang}`;
-                      }
-                      (window as any).Prism.highlightElement(block);
-                    });
-                    console.log('Prism highlighting applied manually to', codeBlocks.length, 'code blocks');
-                  }
-                }}
-                className="w-full bg-gray-500 hover:bg-gray-600 text-white font-medium py-2 px-4 rounded-lg transition-colors text-sm"
-              >
-                🔧 Force Syntax Highlighting
-              </button>
-              
               {user ? (
                 isEnrolled ? (
                   <div className="text-center p-4 bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800 rounded-lg">

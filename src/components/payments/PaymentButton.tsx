@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 import { Course } from '@/types';
+import { auth } from '@/lib/firebase';
+import { useAuth } from '@/contexts/AuthContext';
 
 interface PaymentButtonProps {
   course: Course;
@@ -19,15 +21,25 @@ export default function PaymentButton({
   onPaymentError 
 }: PaymentButtonProps) {
   const [isProcessing, setIsProcessing] = useState(false);
+  const { refreshUserData } = useAuth();
 
   const handlePayment = async () => {
     if (course.isFree) {
       // Handle free course enrollment
       try {
+        // Get the current user's ID token for authentication
+        const user = auth.currentUser;
+        if (!user) {
+          throw new Error('User not authenticated');
+        }
+
+        const idToken = await user.getIdToken();
+        
         const response = await fetch('/api/courses/enroll', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
+            'Authorization': `Bearer ${idToken}`,
           },
           body: JSON.stringify({
             courseId: course.id,
@@ -36,13 +48,16 @@ export default function PaymentButton({
         });
 
         if (!response.ok) {
-          throw new Error('Failed to enroll in free course');
+          const errorData = await response.json();
+          throw new Error(errorData.error || 'Failed to enroll in free course');
         }
 
+        // Refresh user data to update enrolled courses
+        await refreshUserData();
         onPaymentSuccess?.();
       } catch (error) {
         console.error('Error enrolling in free course:', error);
-        onPaymentError?.('Failed to enroll in course');
+        onPaymentError?.(error instanceof Error ? error.message : 'Failed to enroll in course');
       }
       return;
     }

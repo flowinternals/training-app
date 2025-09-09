@@ -1,10 +1,9 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { verifyAuth } from '@/lib/firebase-admin';
-import { db } from '@/lib/firebase-admin';
+import { verifyAuth, adminDb } from '@/lib/firebase-admin';
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { userId: string } }
+  { params }: { params: Promise<{ userId: string }> }
 ) {
   try {
     // Verify authentication
@@ -13,8 +12,12 @@ export async function GET(
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    const { userId } = params;
-    const { uid } = authResult.user;
+    const { userId } = await params;
+    const uid = authResult.user?.uid;
+    
+    if (!uid) {
+      return NextResponse.json({ error: 'Invalid user data' }, { status: 401 });
+    }
 
     // Verify user can access this subscription
     if (uid !== userId) {
@@ -22,12 +25,14 @@ export async function GET(
     }
 
     // Get user's active subscription
-    const subscriptionsQuery = await db.collection('subscriptions')
+    console.log('Fetching subscription for userId:', userId);
+    
+    const subscriptionsQuery = await adminDb.collection('subscriptions')
       .where('userId', '==', userId)
       .where('status', 'in', ['active', 'inactive'])
-      .orderBy('createdAt', 'desc')
-      .limit(1)
       .get();
+    
+    console.log('Found subscriptions:', subscriptionsQuery.docs.length);
 
     if (subscriptionsQuery.empty) {
       return NextResponse.json({
@@ -36,11 +41,28 @@ export async function GET(
       });
     }
 
-    const subscriptionDoc = subscriptionsQuery.docs[0];
+    // Sort by createdAt if it exists, otherwise just take the first one
+    const sortedDocs = subscriptionsQuery.docs.sort((a, b) => {
+      const aData = a.data();
+      const bData = b.data();
+      const aCreated = aData.createdAt?.toDate?.() || new Date(0);
+      const bCreated = bData.createdAt?.toDate?.() || new Date(0);
+      return bCreated.getTime() - aCreated.getTime();
+    });
+
+    const subscriptionDoc = sortedDocs[0];
+    const subscriptionData = subscriptionDoc.data();
+    
     const subscription = {
       id: subscriptionDoc.id,
-      ...subscriptionDoc.data(),
+      ...subscriptionData,
+      // Convert Firestore timestamps to ISO strings
+      createdAt: subscriptionData.createdAt?.toDate?.()?.toISOString() || new Date().toISOString(),
+      currentPeriodStart: subscriptionData.currentPeriodStart?.toDate?.()?.toISOString() || new Date().toISOString(),
+      currentPeriodEnd: subscriptionData.currentPeriodEnd?.toDate?.()?.toISOString() || new Date().toISOString(),
     };
+
+    console.log('Returning subscription:', subscription);
 
     return NextResponse.json({
       success: true,

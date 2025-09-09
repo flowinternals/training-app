@@ -1,9 +1,12 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { Course, Module, Lesson } from '@/types';
+import { Course, Module, Lesson, UserProgress } from '@/types';
 import Navigation from '@/components/Navigation';
 import { useAuth } from '@/contexts/AuthContext';
+import { useToast } from '@/contexts/ToastContext';
+import LessonContentRenderer from '@/components/courses/LessonContentRenderer';
+import { updateProgress, getAllUserProgress, updateUser } from '@/lib/firebase-utils';
 
 interface CourseViewerProps {
   course: Course;
@@ -12,9 +15,82 @@ interface CourseViewerProps {
 
 export default function CourseViewer({ course, onBack }: CourseViewerProps) {
   const { user } = useAuth();
+  const { addToast } = useToast();
   const [currentModule, setCurrentModule] = useState<number>(0);
   const [currentLesson, setCurrentLesson] = useState<number>(0);
   const [completedLessons, setCompletedLessons] = useState<Set<string>>(new Set());
+  const [userProgress, setUserProgress] = useState<UserProgress[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [saving, setSaving] = useState(false);
+
+  // Function to find the next incomplete lesson
+  const findNextIncompleteLesson = (completedSet: Set<string>) => {
+    if (!course.modules) return { moduleIndex: 0, lessonIndex: 0 };
+    
+    for (let moduleIndex = 0; moduleIndex < course.modules.length; moduleIndex++) {
+      const module = course.modules[moduleIndex];
+      if (!module.lessons) continue;
+      
+      for (let lessonIndex = 0; lessonIndex < module.lessons.length; lessonIndex++) {
+        const lessonKey = `${moduleIndex}-${lessonIndex}`;
+        if (!completedSet.has(lessonKey)) {
+          console.log(`Found next incomplete lesson: Module ${moduleIndex}, Lesson ${lessonIndex}`);
+          return { moduleIndex, lessonIndex };
+        }
+      }
+    }
+    
+    // If all lessons are completed, go to the last lesson
+    const lastModuleIndex = course.modules.length - 1;
+    const lastLessonIndex = (course.modules[lastModuleIndex]?.lessons?.length || 1) - 1;
+    console.log(`All lessons completed, going to last lesson: Module ${lastModuleIndex}, Lesson ${lastLessonIndex}`);
+    return { moduleIndex: lastModuleIndex, lessonIndex: lastLessonIndex };
+  };
+
+  // Load user progress on component mount
+  useEffect(() => {
+    const loadUserProgress = async () => {
+      if (!user) {
+        console.log('No user found in CourseViewer');
+        return;
+      }
+      
+      console.log('Loading user progress for user:', user.uid);
+      
+      try {
+        const progress = await getAllUserProgress(user.uid);
+        console.log('Loaded user progress:', progress);
+        setUserProgress(progress);
+        
+        // Create a set of completed lesson IDs for this course
+        const courseProgress = progress.filter(p => p.courseId === course.id);
+        const completedSet = new Set<string>();
+        courseProgress.forEach(p => {
+          if (p.completed) {
+            // Find the module and lesson indices
+            const moduleIndex = course.modules?.findIndex(m => m.id === p.moduleId) ?? -1;
+            const lessonIndex = course.modules?.[moduleIndex]?.lessons?.findIndex(l => l.id === p.lessonId) ?? -1;
+            if (moduleIndex >= 0 && lessonIndex >= 0) {
+              completedSet.add(`${moduleIndex}-${lessonIndex}`);
+            }
+          }
+        });
+        setCompletedLessons(completedSet);
+        
+        // Find and navigate to the next incomplete lesson
+        const nextLesson = findNextIncompleteLesson(completedSet);
+        setCurrentModule(nextLesson.moduleIndex);
+        setCurrentLesson(nextLesson.lessonIndex);
+        
+      } catch (error) {
+        console.error('Error loading user progress:', error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadUserProgress();
+  }, [user, course.id, course.modules]);
 
   // Load Prism.js for syntax highlighting
   useEffect(() => {
@@ -81,16 +157,16 @@ export default function CourseViewer({ course, onBack }: CourseViewerProps) {
             block.classList.add('prism-highlighted');
             
             // Force dark background with inline styles
-            const pre = block.parentElement;
+            const pre = block.parentElement as HTMLElement;
             if (pre) {
               pre.style.background = '#1e1e1e';
               pre.style.backgroundColor = '#1e1e1e';
               pre.style.color = '#d4d4d4';
               pre.style.imageRendering = 'crisp-edges';
               pre.style.imageRendering = '-webkit-optimize-contrast';
-              block.style.background = 'transparent';
-              block.style.backgroundColor = 'transparent';
-              block.style.color = '#d4d4d4';
+              (block as HTMLElement).style.background = 'transparent';
+              (block as HTMLElement).style.backgroundColor = 'transparent';
+              (block as HTMLElement).style.color = '#d4d4d4';
             }
             
             // Add copy button to the pre element
@@ -138,8 +214,123 @@ export default function CourseViewer({ course, onBack }: CourseViewerProps) {
   const currentModuleData = course.modules?.[currentModule];
   const currentLessonData = currentModuleData?.lessons?.[currentLesson];
 
-  const markLessonComplete = (lessonId: string) => {
-    setCompletedLessons(prev => new Set([...prev, lessonId]));
+  const markLessonComplete = async (lessonId: string) => {
+    if (!user || !currentModuleData || !currentLessonData) {
+      console.error('Missing required data:', { user: !!user, currentModuleData: !!currentModuleData, currentLessonData: !!currentLessonData });
+      return;
+    }
+    
+    setSaving(true);
+    try {
+      const moduleId = currentModuleData.id;
+      const lessonId = currentLessonData.id;
+      
+      console.log('Saving progress with data:', {
+        userId: user.uid,
+        courseId: course.id,
+        moduleId: moduleId,
+        lessonId: lessonId,
+        completed: true
+      });
+      
+      // Save progress to database
+      await updateProgress({
+        userId: user.uid,
+        courseId: course.id,
+        moduleId: moduleId,
+        lessonId: lessonId,
+        completed: true,
+        timeSpent: 0, // You could track actual time spent here
+      });
+      
+      // Update local state
+      const lessonKey = `${currentModule}-${currentLesson}`;
+      console.log('Updating completedLessons with key:', lessonKey);
+      setCompletedLessons(prev => {
+        const newSet = new Set([...prev, lessonKey]);
+        console.log('New completedLessons set:', Array.from(newSet));
+        return newSet;
+      });
+      
+      // Update userProgress state
+      setUserProgress(prev => {
+        const existingIndex = prev.findIndex(p => 
+          p.userId === user.uid && 
+          p.courseId === course.id && 
+          p.moduleId === moduleId && 
+          p.lessonId === lessonId
+        );
+        
+        if (existingIndex >= 0) {
+          const updated = [...prev];
+          updated[existingIndex] = {
+            ...updated[existingIndex],
+            completed: true,
+            completedAt: new Date(),
+            lastAccessed: new Date(),
+          };
+          return updated;
+        } else {
+          return [...prev, {
+            userId: user.uid,
+            courseId: course.id,
+            moduleId: moduleId,
+            lessonId: lessonId,
+            completed: true,
+            completedAt: new Date(),
+            timeSpent: 0,
+            lastAccessed: new Date(),
+          }];
+        }
+      });
+
+      // Check if course is completed
+      checkCourseCompletion();
+      
+      // Auto-advance to next incomplete lesson
+      const updatedCompletedSet = new Set([...completedLessons, lessonKey]);
+      const nextLesson = findNextIncompleteLesson(updatedCompletedSet);
+      
+      // Only advance if the next lesson is different from current
+      if (nextLesson.moduleIndex !== currentModule || nextLesson.lessonIndex !== currentLesson) {
+        console.log(`Auto-advancing to next incomplete lesson: Module ${nextLesson.moduleIndex}, Lesson ${nextLesson.lessonIndex}`);
+        setCurrentModule(nextLesson.moduleIndex);
+        setCurrentLesson(nextLesson.lessonIndex);
+      }
+      
+      console.log('Lesson marked as complete and saved to database');
+    } catch (error) {
+      console.error('Error saving lesson progress:', error);
+      // You might want to show a toast notification here
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const checkCourseCompletion = async () => {
+    if (!user || !course.modules) return;
+
+    // Count total lessons in the course
+    const totalLessons = course.modules.reduce((total, module) => {
+      return total + (module.lessons?.length || 0);
+    }, 0);
+
+    // Count completed lessons for this course
+    const courseProgress = userProgress.filter(p => p.courseId === course.id && p.completed);
+    const completedCount = courseProgress.length;
+
+    // If all lessons are completed, mark course as completed
+    if (completedCount >= totalLessons && !user.completedCourses?.includes(course.id)) {
+      try {
+        await updateUser(user.uid, {
+          completedCourses: [...(user.completedCourses || []), course.id]
+        });
+        console.log('Course completed!');
+        // You might want to show a completion modal or notification here
+      } catch (error) {
+        console.error('Error updating completed courses:', error);
+      }
+    }
   };
 
   const nextLesson = () => {
@@ -160,6 +351,20 @@ export default function CourseViewer({ course, onBack }: CourseViewerProps) {
       setCurrentLesson(prevModule?.lessons ? prevModule.lessons.length - 1 : 0);
     }
   };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+        <Navigation />
+        <div className="max-w-7xl mx-auto py-8 px-4 sm:px-6 lg:px-8">
+          <div className="text-center">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 mx-auto"></div>
+            <p className="mt-2 text-gray-500 dark:text-gray-400">Loading course progress...</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   if (!currentModuleData || !currentLessonData) {
     return (
@@ -218,9 +423,12 @@ export default function CourseViewer({ course, onBack }: CourseViewerProps) {
                         >
                           <div className="flex items-center justify-between">
                             <span>{lesson.title}</span>
-                            {completedLessons.has(`${moduleIndex}-${lessonIndex}`) && (
-                              <span className="text-green-500">✓</span>
-                            )}
+                            {(() => {
+                              const key = `${moduleIndex}-${lessonIndex}`;
+                              const isCompleted = completedLessons.has(key);
+                              console.log(`Lesson ${key} completed:`, isCompleted, 'Current set:', Array.from(completedLessons));
+                              return isCompleted && <span className="text-green-500">✓</span>;
+                            })()}
                           </div>
                         </button>
                       ))}
@@ -252,25 +460,26 @@ export default function CourseViewer({ course, onBack }: CourseViewerProps) {
               </div>
 
               {/* Lesson Content */}
-              <div className="prose dark:prose-invert max-w-none">
-                <div 
-                  className="text-gray-700 dark:text-gray-300"
-                  dangerouslySetInnerHTML={{ 
-                    __html: currentLessonData.content?.replace(
-                      /<img([^>]+)alt="([^"]+)"([^>]*)>/g, 
-                      '<div class="relative inline-block"><img$1alt="$2"$3><div class="absolute bottom-2 right-2 bg-black/70 backdrop-blur-sm rounded px-2 py-1"><p class="text-xs text-white">$2</p></div></div>'
-                    ) || ''
-                  }}
-                  ref={(el) => {
-                    if (el && typeof window !== 'undefined' && (window as any).Prism) {
-                      // Re-highlight code blocks when content changes
-                      setTimeout(() => {
-                        (window as any).Prism.highlightAllUnder(el);
-                      }, 100);
-                    }
-                  }}
-                />
-              </div>
+              {(() => {
+                console.log('CourseViewer - Current lesson data:', currentLessonData);
+                console.log('CourseViewer - Lesson type:', currentLessonData.type);
+                console.log('CourseViewer - Quiz data:', currentLessonData.quiz);
+                return null;
+              })()}
+              <LessonContentRenderer 
+                content={currentLessonData.content || ''}
+                className="prose dark:prose-invert max-w-none"
+                lessonType={currentLessonData.type}
+                quiz={currentLessonData.quiz}
+                onQuizComplete={(passed) => {
+                  if (passed) {
+                    markLessonComplete(currentLessonData.id);
+                    addToast({ type: 'success', title: 'Quiz completed successfully!' });
+                  } else {
+                    addToast({ type: 'error', title: 'Quiz failed. Please try again.' });
+                  }
+                }}
+              />
 
               {/* Lesson Actions */}
               <div className="flex items-center justify-between mt-8 pt-6 border-t border-gray-200 dark:border-gray-700">
@@ -290,12 +499,42 @@ export default function CourseViewer({ course, onBack }: CourseViewerProps) {
                     Previous
                   </button>
                   
-                  <button
-                    onClick={() => markLessonComplete(`${currentModule}-${currentLesson}`)}
-                    className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
-                  >
-                    Mark Complete
-                  </button>
+                  {/* Only show Mark Complete button for non-quiz lessons */}
+                  {currentLessonData.type !== 'quiz' && (
+                    <button
+                      onClick={() => {
+                        const key = `${currentModule}-${currentLesson}`;
+                        console.log('Button clicked for lesson:', key, 'Completed:', completedLessons.has(key));
+                        markLessonComplete(key);
+                      }}
+                      disabled={saving || completedLessons.has(`${currentModule}-${currentLesson}`)}
+                      className={`inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 ${
+                        completedLessons.has(`${currentModule}-${currentLesson}`)
+                          ? 'bg-gray-500 cursor-not-allowed'
+                          : saving
+                          ? 'bg-yellow-600 hover:bg-yellow-700'
+                          : 'bg-green-600 hover:bg-green-700'
+                      } disabled:opacity-50 disabled:cursor-not-allowed`}
+                    >
+                      {saving ? (
+                        <>
+                          <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
+                          Saving...
+                        </>
+                      ) : completedLessons.has(`${currentModule}-${currentLesson}`) ? (
+                        '✓ Completed'
+                      ) : (
+                        'Mark Complete'
+                      )}
+                    </button>
+                  )}
+                  
+                  {/* Show completion status for quiz lessons */}
+                  {currentLessonData.type === 'quiz' && completedLessons.has(`${currentModule}-${currentLesson}`) && (
+                    <div className="inline-flex items-center px-4 py-2 bg-green-600 text-white text-sm font-medium rounded-md">
+                      ✓ Quiz Completed
+                    </div>
+                  )}
                   
                   <button
                     onClick={nextLesson}

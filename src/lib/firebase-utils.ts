@@ -69,17 +69,11 @@ export async function createUserWithGoogle(googleUser: any): Promise<string> {
       email: googleUser.email,
       displayName: googleUser.displayName || '',
       photoURL: googleUser.photoURL || '',
-      role: 'user',
-      isPaidUser: false,
+      role: 'freeUser',
       createdAt: new Date(),
       updatedAt: new Date(),
       enrolledCourses: [],
-      completedCourses: [],
-      preferences: {
-        theme: 'light',
-        notifications: true,
-        language: 'en'
-      }
+      completedCourses: []
     };
 
     await setDoc(doc(db, 'users', googleUser.uid), userData);
@@ -92,7 +86,7 @@ export async function createUserWithGoogle(googleUser: any): Promise<string> {
 
 export async function signInWithGoogle(): Promise<any> {
   try {
-    const { GoogleAuthProvider, signInWithPopup } = await import('firebase/auth');
+    const { GoogleAuthProvider, signInWithPopup, signInWithRedirect, getRedirectResult } = await import('firebase/auth');
     const { auth } = await import('./firebase');
     
     const provider = new GoogleAuthProvider();
@@ -104,11 +98,39 @@ export async function signInWithGoogle(): Promise<any> {
       prompt: 'select_account'
     });
     
-    const result = await signInWithPopup(auth, provider);
-    return result;
+    try {
+      // Try popup first
+      const result = await signInWithPopup(auth, provider);
+      return result;
+    } catch (popupError: any) {
+      // If popup fails due to COOP policy, fall back to redirect
+      if (popupError.code === 'auth/popup-blocked' || 
+          popupError.message?.includes('Cross-Origin-Opener-Policy') ||
+          popupError.message?.includes('window.closed')) {
+        console.warn('Popup blocked by COOP policy, falling back to redirect');
+        await signInWithRedirect(auth, provider);
+        // The redirect will handle the authentication
+        return null; // Will be handled by getRedirectResult on page load
+      }
+      throw popupError;
+    }
   } catch (error) {
     console.error('Error signing in with Google:', error);
     throw error;
+  }
+}
+
+// Helper function to handle redirect result
+export async function handleGoogleRedirectResult(): Promise<any> {
+  try {
+    const { getRedirectResult } = await import('firebase/auth');
+    const { auth } = await import('./firebase');
+    
+    const result = await getRedirectResult(auth);
+    return result;
+  } catch (error) {
+    console.error('Error handling redirect result:', error);
+    return null;
   }
 }
 
@@ -219,13 +241,37 @@ export const getUserProgress = async (userId: string, courseId: string): Promise
   })) as UserProgress[];
 };
 
+export const getAllUserProgress = async (userId: string): Promise<UserProgress[]> => {
+  const progressQuery = query(
+    collection(db, 'userProgress'),
+    where('userId', '==', userId)
+  );
+  
+  const snapshot = await getDocs(progressQuery);
+  return snapshot.docs.map(doc => ({
+    ...doc.data(),
+    lastAccessed: timestampToDate(doc.data().lastAccessed),
+    completedAt: doc.data().completedAt ? timestampToDate(doc.data().completedAt) : undefined,
+  })) as UserProgress[];
+};
+
 export const updateProgress = async (progress: Omit<UserProgress, 'lastAccessed'>): Promise<void> => {
-  const progressRef = doc(db, 'userProgress', `${progress.userId}_${progress.courseId}_${progress.moduleId}_${progress.lessonId}`);
-  await updateDoc(progressRef, {
+  const progressId = `${progress.userId}_${progress.courseId}_${progress.moduleId}_${progress.lessonId}`;
+  const progressRef = doc(db, 'userProgress', progressId);
+  
+  const progressData = {
     ...progress,
     lastAccessed: dateToTimestamp(new Date()),
     completedAt: progress.completed ? dateToTimestamp(new Date()) : undefined,
-  });
+  };
+  
+  console.log('updateProgress - Progress ID:', progressId);
+  console.log('updateProgress - Progress data:', progressData);
+  console.log('updateProgress - User ID from progress:', progress.userId);
+  
+  // Use setDoc to create or update the document
+  await setDoc(progressRef, progressData, { merge: true });
+  console.log('updateProgress - Successfully saved progress');
 };
 
 // Batch operations
@@ -252,17 +298,30 @@ export const createCourseWithModules = async (courseData: Omit<Course, 'id'>, mo
   modules.forEach((module, moduleIndex) => {
     const moduleRef = doc(collection(db, 'courses', courseRef.id, 'modules'));
     batch.set(moduleRef, {
-      ...module,
+      title: module.title || '',
+      description: module.description || '',
       order: moduleIndex + 1,
     });
     
     if (module.lessons) {
       module.lessons.forEach((lesson, lessonIndex) => {
         const lessonRef = doc(collection(db, 'courses', courseRef.id, 'modules', moduleRef.id, 'lessons'));
-        batch.set(lessonRef, {
-          ...lesson,
+        
+        const lessonData: any = {
+          title: lesson.title || '',
+          content: lesson.content || '',
+          duration: lesson.duration || 0,
+          type: lesson.type || 'text',
           order: lessonIndex + 1,
-        });
+          completedBy: lesson.completedBy || [],
+        };
+        
+        // Only include videoUrl if it's defined and not empty
+        if (lesson.videoUrl && lesson.videoUrl.trim() !== '') {
+          lessonData.videoUrl = lesson.videoUrl;
+        }
+        
+        batch.set(lessonRef, lessonData);
       });
     }
   });
@@ -317,7 +376,7 @@ export const getCourseById = async (courseId: string): Promise<Course> => {
         ...moduleData,
         id: moduleDoc.id,
         lessons: lessons.sort((a, b) => (a.order || 0) - (b.order || 0)),
-      };
+      } as Module;
     })
   );
   

@@ -10,6 +10,7 @@ export interface User {
   createdAt: Date;
   updatedAt: Date;
   enrolledCourses: string[];
+  completedCourses: string[];
   subscriptionStatus?: 'active' | 'inactive' | 'cancelled';
   subscriptionExpiry?: Date;
 }
@@ -55,10 +56,26 @@ export interface Lesson {
   type: 'video' | 'text' | 'quiz';
   videoUrl?: string;
   attachments?: string[];
-  quiz?: QuizQuestion[];
+  quiz?: QuizBlock; // Updated to use QuizBlock instead of QuizQuestion[]
   completedBy: string[]; // user IDs
 }
 
+// New QuizBlock structure as per design
+export interface QuizBlock {
+  type: "quiz";
+  title: string;
+  description?: string;
+  questions: Question[];
+}
+
+export type Question =
+  | { kind: "mcq"; text: string; options: string[]; correct: number[] }
+  | { kind: "msq"; text: string; options: string[]; correct: number[] }
+  | { kind: "truefalse"; text: string; correct: boolean }
+  | { kind: "short"; text: string; answers: string[] }
+  | { kind: "match"; left: string[]; right: string[]; correctPairs: [number, number][] };
+
+// Keep legacy QuizQuestion for backward compatibility
 export interface QuizQuestion {
   id: string;
   question: string;
@@ -67,6 +84,17 @@ export interface QuizQuestion {
   correctAnswer: string | string[];
   explanation?: string;
 }
+
+// Content blocks for lesson content
+export interface VideoBlock {
+  type: 'video';
+  provider: 'youtube';
+  url: string;
+  title?: string;
+  start?: number;
+}
+
+export type ContentBlock = VideoBlock;
 
 // Payment and subscription
 export interface Payment {

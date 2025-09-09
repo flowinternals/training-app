@@ -7,9 +7,13 @@ A modern, full-stack training platform built with Next.js, Firebase, and Stripe.
 ### For Learners
 - **Course Discovery**: Browse courses by category, difficulty, and price
 - **Interactive Learning**: Progress through modules and lessons with real-time tracking
+- **Dashboard Analytics**: Track progress with completion rates, enrolled courses, and recent activity
+- **Recent Activity Feed**: View learning progress with meaningful course, module, and lesson names
+- **Activity Pagination**: Navigate through learning history with paginated activity feed
 - **Code Snippets**: Copy code examples with one-click copy-to-clipboard functionality
 - **Responsive Design**: Optimized for desktop and mobile devices
 - **Theme Support**: Light and dark mode options
+- **Testing Features**: Bypass payment functionality for testing course enrollment
 
 ### For Administrators
 - **Course Management**: Create, edit, and publish courses with rich content
@@ -20,10 +24,14 @@ A modern, full-stack training platform built with Next.js, Firebase, and Stripe.
 
 ### Technical Features
 - **Real-time Updates**: Firebase Firestore provides live content synchronization
-- **Secure Authentication**: Firebase Auth with role-based access control
+- **Secure Authentication**: Firebase Auth with role-based access control and Google Sign-In
 - **Payment Integration**: Stripe checkout and subscription management
 - **Image Management**: Unsplash API integration for course imagery
 - **Code Highlighting**: Prism.js syntax highlighting with copy functionality
+- **Progress Tracking**: Comprehensive user progress tracking with Firestore
+- **Role Management**: Dynamic role updates (freeUser, paidUser, admin) with real-time UI updates
+- **Cross-Origin Security**: COOP headers for secure popup authentication
+- **API Error Handling**: Robust error handling with fallback mechanisms
 
 ## Getting Started
 
@@ -40,6 +48,26 @@ bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## Recent Implementations
+
+### Dashboard Enhancements
+- **Activity Feed**: Recent Activity section now displays meaningful course, module, and lesson names instead of Firestore IDs
+- **Chronological Sorting**: Activities are sorted by date in descending order (most recent first)
+- **Pagination Support**: Navigate through learning history with 5 items per page
+- **Auto-refresh**: Dashboard automatically refreshes when user returns from course pages
+- **Manual Refresh**: Users can manually refresh activity data with a dedicated button
+
+### Authentication Improvements
+- **Google Sign-In**: Robust Google authentication with popup and redirect fallback
+- **COOP Headers**: Cross-Origin-Opener-Policy headers for secure popup authentication
+- **Role Management**: Dynamic role updates with real-time UI synchronization
+- **Error Handling**: Comprehensive error handling for authentication failures
+
+### Testing Features
+- **Bypass Payment**: Testing functionality that simulates full course enrollment
+- **Role Elevation**: Automatically upgrades user role to paidUser during testing
+- **Enrollment Tracking**: Records bypass enrollments with special type for testing purposes
 
 ## Code Snippet Copy Feature
 

@@ -5,6 +5,7 @@ import { Clock, Users, Star, BookOpen, Lock } from 'lucide-react';
 import { useAuth } from '@/contexts/AuthContext';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
 
 interface CourseCardProps {
   course: Course;
@@ -12,7 +13,8 @@ interface CourseCardProps {
 }
 
 export default function CourseCard({ course, showEnrollButton = true }: CourseCardProps) {
-  const { isAdmin } = useAuth();
+  const { user, isAdmin } = useAuth();
+  const router = useRouter();
   
   const formatDuration = (minutes: number) => {
     const hours = Math.floor(minutes / 60);
@@ -31,6 +33,17 @@ export default function CourseCard({ course, showEnrollButton = true }: CourseCa
       default:
         return 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200';
     }
+  };
+
+  const handleEnrollClick = () => {
+    if (!user) {
+      // Redirect to login page if user is not logged in
+      router.push('/login');
+      return;
+    }
+    
+    // If user is logged in, redirect to course detail page
+    router.push(`/courses/${course.id}`);
   };
 
   return (
@@ -158,12 +171,12 @@ export default function CourseCard({ course, showEnrollButton = true }: CourseCa
           
           {showEnrollButton && (
             <button
+              onClick={handleEnrollClick}
               className={`px-4 py-2 rounded-md font-medium transition-colors ${
                 course.price > 0
                   ? 'bg-green-600 hover:bg-green-700 text-white'
-                  : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 cursor-not-allowed'
+                  : 'bg-blue-600 hover:bg-blue-700 text-white'
               }`}
-              disabled={course.price > 0}
             >
               {course.price > 0 ? (
                 <>

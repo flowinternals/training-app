@@ -12,6 +12,20 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  // Headers for Firebase Auth popup compatibility
+  async headers() {
+    return [
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'Cross-Origin-Opener-Policy',
+            value: 'same-origin-allow-popups',
+          },
+        ],
+      },
+    ];
+  },
   // Turbopack configuration for TinyMCE assets
   turbopack: {
     rules: {

@@ -1396,5 +1396,2878 @@
       "panelImage": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
       "imageAttribution": "Photo by Erik-Jan Leusink on Unsplash"
     }
+  },
+  {
+    "timestamp": "2025-09-08T17:14:39.971Z",
+    "action": "course_update",
+    "courseId": "syh9IAD1C10PeiR5XrCz",
+    "data": {
+      "title": "Introduction to n8n (Cats)",
+      "description": "A beginner's guide to understanding and implementing workflow automation using the n8n tool. This course aims to equip non-technical professionals, business analysts, and junior developers with the skills to automate tasks and integrate applications without the need for advanced coding.\n\nMaking a change for the halfwit claude model.",
+      "category": "programming",
+      "difficulty": "beginner",
+      "price": 50,
+      "duration": 251,
+      "tags": [
+        "n8n",
+        "beginner",
+        "workflow"
+      ],
+      "thumbnail": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by Erik-Jan Leusink on Unsplash",
+      "published": false,
+      "slug": "introduction-to-n8n-(cats)",
+      "imageUrl": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "isFree": false,
+      "createdAt": {
+        "_seconds": 1756996369,
+        "_nanoseconds": 953000000
+      },
+      "updatedAt": "2025-09-08T17:14:39.608Z",
+      "authorId": "FAxsVhNFSyWaBahUZI2HA1q0wTq1",
+      "authorName": "Flow Internals",
+      "modules": [
+        {
+          "title": "Understanding Workflow Automation and n8n",
+          "description": "Introduction to the basics of workflow automation and the role of n8n in the automation ecosystem.",
+          "order": 1,
+          "lessons": [
+            {
+              "id": "temp-1757351679608-0",
+              "title": "The Basics of Workflow Automation",
+              "content": "<p>An overview of workflow automation and its benefits.<br><br><img style=\"max-width: 100%; height: auto;\" src=\"https://images.unsplash.com/photo-1533915828531-55b274d98dc5?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHw0fHxyb2JvdHN8ZW58MHwwfHx8MTc1Njk5NTc3OHww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080\" alt=\"Photo by Craig Sybert on Unsplash\"></p>\n<pre class=\"language-javascript\"><code>// Example: Simple greeting function\nfunction greetUser(name) {\n  if (!name) {\n    return \"Hello, Guest!\";\n  }\n  return `Hello, ${name}!`;\n}\n\n// Usage\nconsole.log(greetUser(\"Mick\")); // Output: Hello, Mick!\n</code></pre>",
+              "duration": 20,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757351679608-1",
+              "title": "Introduction to n8n",
+              "content": "<p>An introduction to n8n, its purpose, and its place in the automation ecosystem.<br><br><img style=\"max-width: 100%; height: auto;\" src=\"https://images.unsplash.com/photo-1472491235688-bdc81a63246e?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwyfHxjYXR8ZW58MHwwfHx8MTc1NzAwNzUxMnww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080\" alt=\"Photo by Mikhail Vasilyev on Unsplash\"></p>",
+              "duration": 40,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Navigating the n8n Interface",
+          "description": "A guide to navigating n8n's interface, including the workflow editor, node library, and execution logs.",
+          "order": 2,
+          "lessons": [
+            {
+              "id": "temp-1757351679608-0",
+              "title": "Exploring the n8n Interface",
+              "content": "<p>A tour of the n8n interface, focusing on the workflow editor and node library.<br><br><img style=\"max-width: 100%; height: auto;\" src=\"https://images.unsplash.com/photo-1480044965905-02098d419e96?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHw1fHxiaXJkc3xlbnwwfDB8fHwxNzU3MDA3NTM1fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080\" alt=\"Photo by Boris  Smokrovic on Unsplash\"></p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757351679608-1",
+              "title": "Working with Execution Logs",
+              "content": "<p>A guide to using execution logs to monitor and debug workflows.<br><br></p>\n<pre class=\"language-javascript\"><code>&lt;!DOCTYPE html&gt;\n&lt;html lang=\"en\"&gt;\n&lt;head&gt;\n  &lt;meta charset=\"UTF-8\"&gt;\n  &lt;title&gt;JavaScript Sample&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n  &lt;h1&gt;Hello, JavaScript!&lt;/h1&gt;\n  &lt;button id=\"myButton\"&gt;Click Me&lt;/button&gt;\n\n  &lt;script&gt;\n    // Get the button element by its ID\n    const button = document.getElementById(\"myButton\");\n\n    // Add a click event listener\n    button.addEventListener(\"click\", () =&gt; {\n      alert(\"Button was clicked!\");\n    });\n  &lt;/script&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n</code></pre>",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Building and Running Workflows",
+          "description": "Learn to build and run simple workflows using common nodes like email, webhook, and Google Sheets.",
+          "order": 3,
+          "lessons": [
+            {
+              "id": "temp-1757351679608-0",
+              "title": "Building Simple Workflows",
+              "content": "<p>Creating simple workflows using common nodes.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757351679608-1",
+              "title": "Configuring Triggers and Actions",
+              "content": "<p>A guide to configuring triggers and actions to automate processes.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757351679608-2",
+              "title": "Video as Example",
+              "content": "[{\"type\":\"text\",\"content\":\"<p>Additional content can appear here and can also include diagrams</p>\\n<p>&nbsp;</p>\"},{\"type\":\"video\",\"provider\":\"youtube\",\"url\":\"https://www.youtube.com/watch?v=XzNi70r8UJE\",\"title\":\"Video as Example\"}]",
+              "duration": 11,
+              "type": "video",
+              "order": 3,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Monitoring and Refining Workflows",
+          "description": "Learn to monitor, debug and refine workflows using n8n's execution logs and error handling features.",
+          "order": 4,
+          "lessons": [
+            {
+              "id": "temp-1757351679608-0",
+              "title": "Monitoring Workflows",
+              "content": "<p>Using n8n's execution logs to monitor workflows.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757351679608-1",
+              "title": "Debugging and Refining Workflows",
+              "content": "<p>A guide to debugging and improving workflows using error handling features.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        }
+      ]
+    },
+    "published": false,
+    "imageData": {
+      "thumbnail": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by Erik-Jan Leusink on Unsplash"
+    }
+  },
+  {
+    "timestamp": "2025-09-08T20:09:46.041Z",
+    "action": "course_update",
+    "courseId": "syh9IAD1C10PeiR5XrCz",
+    "data": {
+      "title": "Introduction to n8n (Cats)",
+      "description": "A beginner's guide to understanding and implementing workflow automation using the n8n tool. This course aims to equip non-technical professionals, business analysts, and junior developers with the skills to automate tasks and integrate applications without the need for advanced coding.\n\nMaking a change for the halfwit claude model.",
+      "category": "programming",
+      "difficulty": "beginner",
+      "price": 50,
+      "duration": 252,
+      "tags": [
+        "n8n",
+        "beginner",
+        "workflow"
+      ],
+      "thumbnail": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by Erik-Jan Leusink on Unsplash",
+      "published": false,
+      "slug": "introduction-to-n8n-(cats)",
+      "imageUrl": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "isFree": false,
+      "createdAt": {
+        "_seconds": 1756996369,
+        "_nanoseconds": 953000000
+      },
+      "updatedAt": "2025-09-08T20:09:45.684Z",
+      "authorId": "FAxsVhNFSyWaBahUZI2HA1q0wTq1",
+      "authorName": "Flow Internals",
+      "modules": [
+        {
+          "title": "Understanding Workflow Automation and n8n",
+          "description": "Introduction to the basics of workflow automation and the role of n8n in the automation ecosystem.",
+          "order": 1,
+          "lessons": [
+            {
+              "id": "temp-1757362185684-0",
+              "title": "The Basics of Workflow Automation",
+              "content": "<p>An overview of workflow automation and its benefits.<br><br><img style=\"max-width: 100%; height: auto;\" src=\"https://images.unsplash.com/photo-1533915828531-55b274d98dc5?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHw0fHxyb2JvdHN8ZW58MHwwfHx8MTc1Njk5NTc3OHww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080\" alt=\"Photo by Craig Sybert on Unsplash\"></p>\n<pre class=\"language-javascript\"><code>// Example: Simple greeting function\nfunction greetUser(name) {\n  if (!name) {\n    return \"Hello, Guest!\";\n  }\n  return `Hello, ${name}!`;\n}\n\n// Usage\nconsole.log(greetUser(\"Mick\")); // Output: Hello, Mick!\n</code></pre>",
+              "duration": 20,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757362185684-1",
+              "title": "Introduction to n8n",
+              "content": "<p>An introduction to n8n, its purpose, and its place in the automation ecosystem.<br><br><img style=\"max-width: 100%; height: auto;\" src=\"https://images.unsplash.com/photo-1472491235688-bdc81a63246e?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwyfHxjYXR8ZW58MHwwfHx8MTc1NzAwNzUxMnww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080\" alt=\"Photo by Mikhail Vasilyev on Unsplash\"></p>",
+              "duration": 40,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757362185684-2",
+              "title": "Video Lesson Example",
+              "content": "<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FwVruO8nSxlY%3Fsi%3DtiVqX97DQJmdR46i%22%2C%22title%22%3A%22Video%20Lesson%20Example%22%7D\"></video-block>\n\n<p>This is a video lesson. There could ne new information added here.</p>",
+              "duration": 1,
+              "type": "video",
+              "order": 3,
+              "completedBy": [],
+              "videoUrl": "https://youtu.be/wVruO8nSxlY?si=tiVqX97DQJmdR46i"
+            }
+          ]
+        },
+        {
+          "title": "Navigating the n8n Interface",
+          "description": "A guide to navigating n8n's interface, including the workflow editor, node library, and execution logs.",
+          "order": 2,
+          "lessons": [
+            {
+              "id": "temp-1757362185684-0",
+              "title": "Exploring the n8n Interface",
+              "content": "<p>A tour of the n8n interface, focusing on the workflow editor and node library.<br><br><img style=\"max-width: 100%; height: auto;\" src=\"https://images.unsplash.com/photo-1480044965905-02098d419e96?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHw1fHxiaXJkc3xlbnwwfDB8fHwxNzU3MDA3NTM1fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080\" alt=\"Photo by Boris  Smokrovic on Unsplash\"></p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757362185684-1",
+              "title": "Working with Execution Logs",
+              "content": "<p>A guide to using execution logs to monitor and debug workflows.<br><br></p>\n<pre class=\"language-javascript\"><code>&lt;!DOCTYPE html&gt;\n&lt;html lang=\"en\"&gt;\n&lt;head&gt;\n  &lt;meta charset=\"UTF-8\"&gt;\n  &lt;title&gt;JavaScript Sample&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n  &lt;h1&gt;Hello, JavaScript!&lt;/h1&gt;\n  &lt;button id=\"myButton\"&gt;Click Me&lt;/button&gt;\n\n  &lt;script&gt;\n    // Get the button element by its ID\n    const button = document.getElementById(\"myButton\");\n\n    // Add a click event listener\n    button.addEventListener(\"click\", () =&gt; {\n      alert(\"Button was clicked!\");\n    });\n  &lt;/script&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n</code></pre>",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Building and Running Workflows",
+          "description": "Learn to build and run simple workflows using common nodes like email, webhook, and Google Sheets.",
+          "order": 3,
+          "lessons": [
+            {
+              "id": "temp-1757362185684-0",
+              "title": "Building Simple Workflows",
+              "content": "<p>Creating simple workflows using common nodes.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757362185684-1",
+              "title": "Configuring Triggers and Actions",
+              "content": "<p>A guide to configuring triggers and actions to automate processes.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757362185684-2",
+              "title": "Video as Example",
+              "content": "<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FwVruO8nSxlY%3Fsi%3DtiVqX97DQJmdR46i%22%2C%22title%22%3A%22Video%20as%20Example%22%7D\"></video-block>\n\n[{\"type\":\"text\",\"content\":\"<p>Additional content can appear here and can also include diagrams</p>\\n<p>&nbsp;</p>\"},{\"type\":\"video\",\"provider\":\"youtube\",\"url\":\"https://www.youtube.com/watch?v=XzNi70r8UJE\",\"title\":\"Video as Example\"}]",
+              "duration": 11,
+              "type": "video",
+              "order": 3,
+              "completedBy": [],
+              "videoUrl": "https://youtu.be/wVruO8nSxlY?si=tiVqX97DQJmdR46i"
+            }
+          ]
+        },
+        {
+          "title": "Monitoring and Refining Workflows",
+          "description": "Learn to monitor, debug and refine workflows using n8n's execution logs and error handling features.",
+          "order": 4,
+          "lessons": [
+            {
+              "id": "temp-1757362185684-0",
+              "title": "Monitoring Workflows",
+              "content": "<p>Using n8n's execution logs to monitor workflows.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757362185684-1",
+              "title": "Debugging and Refining Workflows",
+              "content": "<p>A guide to debugging and improving workflows using error handling features.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        }
+      ]
+    },
+    "published": false,
+    "imageData": {
+      "thumbnail": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by Erik-Jan Leusink on Unsplash"
+    }
+  },
+  {
+    "timestamp": "2025-09-08T20:57:51.898Z",
+    "action": "course_update",
+    "courseId": "syh9IAD1C10PeiR5XrCz",
+    "data": {
+      "title": "Introduction to n8n (Cats)",
+      "description": "A beginner's guide to understanding and implementing workflow automation using the n8n tool. This course aims to equip non-technical professionals, business analysts, and junior developers with the skills to automate tasks and integrate applications without the need for advanced coding.\n\nMaking a change for the halfwit claude model.",
+      "category": "programming",
+      "difficulty": "beginner",
+      "price": 50,
+      "duration": 252,
+      "tags": [
+        "n8n",
+        "beginner",
+        "workflow"
+      ],
+      "thumbnail": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by Erik-Jan Leusink on Unsplash",
+      "published": false,
+      "slug": "introduction-to-n8n-(cats)",
+      "imageUrl": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "isFree": false,
+      "createdAt": {
+        "_seconds": 1756996369,
+        "_nanoseconds": 953000000
+      },
+      "updatedAt": "2025-09-08T20:57:51.560Z",
+      "authorId": "FAxsVhNFSyWaBahUZI2HA1q0wTq1",
+      "authorName": "Flow Internals",
+      "modules": [
+        {
+          "title": "Understanding Workflow Automation and n8n",
+          "description": "Introduction to the basics of workflow automation and the role of n8n in the automation ecosystem.",
+          "order": 1,
+          "lessons": [
+            {
+              "id": "temp-1757365071560-0",
+              "title": "The Basics of Workflow Automation",
+              "content": "<p>An overview of workflow automation and its benefits.<br><br><img style=\"max-width: 100%; height: auto;\" src=\"https://images.unsplash.com/photo-1533915828531-55b274d98dc5?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHw0fHxyb2JvdHN8ZW58MHwwfHx8MTc1Njk5NTc3OHww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080\" alt=\"Photo by Craig Sybert on Unsplash\"></p>\n<pre class=\"language-javascript\"><code>// Example: Simple greeting function\nfunction greetUser(name) {\n  if (!name) {\n    return \"Hello, Guest!\";\n  }\n  return `Hello, ${name}!`;\n}\n\n// Usage\nconsole.log(greetUser(\"Mick\")); // Output: Hello, Mick!\n</code></pre>",
+              "duration": 20,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757365071560-1",
+              "title": "Introduction to n8n",
+              "content": "<p>An introduction to n8n, its purpose, and its place in the automation ecosystem.<br><br><img style=\"max-width: 100%; height: auto;\" src=\"https://images.unsplash.com/photo-1472491235688-bdc81a63246e?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwyfHxjYXR8ZW58MHwwfHx8MTc1NzAwNzUxMnww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080\" alt=\"Photo by Mikhail Vasilyev on Unsplash\"></p>",
+              "duration": 40,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757365071560-2",
+              "title": "Video Lesson Example",
+              "content": "<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FcPsNpvY1Xjc%3Fsi%3D1Y8nb235BpYHe4c9%22%2C%22title%22%3A%22Video%20Lesson%20Example%22%7D\"></video-block>\n\n<p>This is a video lesson</p>",
+              "duration": 1,
+              "type": "video",
+              "order": 3,
+              "completedBy": [],
+              "videoUrl": "https://youtu.be/cPsNpvY1Xjc?si=1Y8nb235BpYHe4c9"
+            }
+          ]
+        },
+        {
+          "title": "Navigating the n8n Interface",
+          "description": "A guide to navigating n8n's interface, including the workflow editor, node library, and execution logs.",
+          "order": 2,
+          "lessons": [
+            {
+              "id": "temp-1757365071560-0",
+              "title": "Exploring the n8n Interface",
+              "content": "<p>A tour of the n8n interface, focusing on the workflow editor and node library.<br><br><img style=\"max-width: 100%; height: auto;\" src=\"https://images.unsplash.com/photo-1480044965905-02098d419e96?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHw1fHxiaXJkc3xlbnwwfDB8fHwxNzU3MDA3NTM1fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080\" alt=\"Photo by Boris  Smokrovic on Unsplash\"></p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757365071560-1",
+              "title": "Working with Execution Logs",
+              "content": "<p>A guide to using execution logs to monitor and debug workflows.<br><br></p>\n<pre class=\"language-javascript\"><code>&lt;!DOCTYPE html&gt;\n&lt;html lang=\"en\"&gt;\n&lt;head&gt;\n  &lt;meta charset=\"UTF-8\"&gt;\n  &lt;title&gt;JavaScript Sample&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n  &lt;h1&gt;Hello, JavaScript!&lt;/h1&gt;\n  &lt;button id=\"myButton\"&gt;Click Me&lt;/button&gt;\n\n  &lt;script&gt;\n    // Get the button element by its ID\n    const button = document.getElementById(\"myButton\");\n\n    // Add a click event listener\n    button.addEventListener(\"click\", () =&gt; {\n      alert(\"Button was clicked!\");\n    });\n  &lt;/script&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n</code></pre>",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Building and Running Workflows",
+          "description": "Learn to build and run simple workflows using common nodes like email, webhook, and Google Sheets.",
+          "order": 3,
+          "lessons": [
+            {
+              "id": "temp-1757365071560-0",
+              "title": "Building Simple Workflows",
+              "content": "<p>Creating simple workflows using common nodes.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757365071560-1",
+              "title": "Configuring Triggers and Actions",
+              "content": "<p>A guide to configuring triggers and actions to automate processes.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757365071560-2",
+              "title": "Video as Example",
+              "content": "<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DXzNi70r8UJE%22%2C%22title%22%3A%22Video%20as%20Example%22%7D\"></video-block>",
+              "duration": 11,
+              "type": "video",
+              "order": 3,
+              "completedBy": [],
+              "videoUrl": "https://www.youtube.com/watch?v=XzNi70r8UJE"
+            }
+          ]
+        },
+        {
+          "title": "Monitoring and Refining Workflows",
+          "description": "Learn to monitor, debug and refine workflows using n8n's execution logs and error handling features.",
+          "order": 4,
+          "lessons": [
+            {
+              "id": "temp-1757365071560-0",
+              "title": "Monitoring Workflows",
+              "content": "<p>Using n8n's execution logs to monitor workflows.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757365071560-1",
+              "title": "Debugging and Refining Workflows",
+              "content": "<p>A guide to debugging and improving workflows using error handling features.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        }
+      ]
+    },
+    "published": false,
+    "imageData": {
+      "thumbnail": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by Erik-Jan Leusink on Unsplash"
+    }
+  },
+  {
+    "timestamp": "2025-09-08T20:59:34.880Z",
+    "action": "course_update",
+    "courseId": "syh9IAD1C10PeiR5XrCz",
+    "data": {
+      "title": "Introduction to n8n (Cats)",
+      "description": "A beginner's guide to understanding and implementing workflow automation using the n8n tool. This course aims to equip non-technical professionals, business analysts, and junior developers with the skills to automate tasks and integrate applications without the need for advanced coding.\n\nMaking a change for the halfwit claude model.",
+      "category": "programming",
+      "difficulty": "beginner",
+      "price": 50,
+      "duration": 252,
+      "tags": [
+        "n8n",
+        "beginner",
+        "workflow"
+      ],
+      "thumbnail": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by Erik-Jan Leusink on Unsplash",
+      "published": true,
+      "slug": "introduction-to-n8n-(cats)",
+      "imageUrl": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "isFree": false,
+      "createdAt": {
+        "_seconds": 1756996369,
+        "_nanoseconds": 953000000
+      },
+      "updatedAt": "2025-09-08T20:59:34.541Z",
+      "authorId": "FAxsVhNFSyWaBahUZI2HA1q0wTq1",
+      "authorName": "Flow Internals",
+      "modules": [
+        {
+          "title": "Understanding Workflow Automation and n8n",
+          "description": "Introduction to the basics of workflow automation and the role of n8n in the automation ecosystem.",
+          "order": 1,
+          "lessons": [
+            {
+              "id": "temp-1757365174542-0",
+              "title": "The Basics of Workflow Automation",
+              "content": "<p>An overview of workflow automation and its benefits.<br><br><img style=\"max-width: 100%; height: auto;\" src=\"https://images.unsplash.com/photo-1533915828531-55b274d98dc5?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHw0fHxyb2JvdHN8ZW58MHwwfHx8MTc1Njk5NTc3OHww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080\" alt=\"Photo by Craig Sybert on Unsplash\"></p>\n<pre class=\"language-javascript\"><code>// Example: Simple greeting function\nfunction greetUser(name) {\n  if (!name) {\n    return \"Hello, Guest!\";\n  }\n  return `Hello, ${name}!`;\n}\n\n// Usage\nconsole.log(greetUser(\"Mick\")); // Output: Hello, Mick!\n</code></pre>",
+              "duration": 20,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757365174542-1",
+              "title": "Introduction to n8n",
+              "content": "<p>An introduction to n8n, its purpose, and its place in the automation ecosystem.<br><br><img style=\"max-width: 100%; height: auto;\" src=\"https://images.unsplash.com/photo-1472491235688-bdc81a63246e?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwyfHxjYXR8ZW58MHwwfHx8MTc1NzAwNzUxMnww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080\" alt=\"Photo by Mikhail Vasilyev on Unsplash\"></p>",
+              "duration": 40,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757365174542-2",
+              "title": "Video Lesson Example",
+              "content": "<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FcPsNpvY1Xjc%3Fsi%3D1Y8nb235BpYHe4c9%22%2C%22title%22%3A%22Video%20Lesson%20Example%22%7D\"></video-block>\n\n<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FcPsNpvY1Xjc%3Fsi%3D1Y8nb235BpYHe4c9%22%2C%22title%22%3A%22Video%20Lesson%20Example%22%7D\"></video-block>\n\n<p>This is a video lesson</p>",
+              "duration": 1,
+              "type": "video",
+              "order": 3,
+              "completedBy": [],
+              "videoUrl": "https://youtu.be/cPsNpvY1Xjc?si=1Y8nb235BpYHe4c9"
+            }
+          ]
+        },
+        {
+          "title": "Navigating the n8n Interface",
+          "description": "A guide to navigating n8n's interface, including the workflow editor, node library, and execution logs.",
+          "order": 2,
+          "lessons": [
+            {
+              "id": "temp-1757365174542-0",
+              "title": "Exploring the n8n Interface",
+              "content": "<p>A tour of the n8n interface, focusing on the workflow editor and node library.<br><br><img style=\"max-width: 100%; height: auto;\" src=\"https://images.unsplash.com/photo-1480044965905-02098d419e96?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHw1fHxiaXJkc3xlbnwwfDB8fHwxNzU3MDA3NTM1fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080\" alt=\"Photo by Boris  Smokrovic on Unsplash\"></p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757365174542-1",
+              "title": "Working with Execution Logs",
+              "content": "<p>A guide to using execution logs to monitor and debug workflows.<br><br></p>\n<pre class=\"language-javascript\"><code>&lt;!DOCTYPE html&gt;\n&lt;html lang=\"en\"&gt;\n&lt;head&gt;\n  &lt;meta charset=\"UTF-8\"&gt;\n  &lt;title&gt;JavaScript Sample&lt;/title&gt;\n&lt;/head&gt;\n&lt;body&gt;\n  &lt;h1&gt;Hello, JavaScript!&lt;/h1&gt;\n  &lt;button id=\"myButton\"&gt;Click Me&lt;/button&gt;\n\n  &lt;script&gt;\n    // Get the button element by its ID\n    const button = document.getElementById(\"myButton\");\n\n    // Add a click event listener\n    button.addEventListener(\"click\", () =&gt; {\n      alert(\"Button was clicked!\");\n    });\n  &lt;/script&gt;\n&lt;/body&gt;\n&lt;/html&gt;\n</code></pre>",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Building and Running Workflows",
+          "description": "Learn to build and run simple workflows using common nodes like email, webhook, and Google Sheets.",
+          "order": 3,
+          "lessons": [
+            {
+              "id": "temp-1757365174542-0",
+              "title": "Building Simple Workflows",
+              "content": "<p>Creating simple workflows using common nodes.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757365174542-1",
+              "title": "Configuring Triggers and Actions",
+              "content": "<p>A guide to configuring triggers and actions to automate processes.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757365174542-2",
+              "title": "Video as Example",
+              "content": "<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DXzNi70r8UJE%22%2C%22title%22%3A%22Video%20as%20Example%22%7D\"></video-block>\n\n<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DXzNi70r8UJE%22%2C%22title%22%3A%22Video%20as%20Example%22%7D\"></video-block>",
+              "duration": 11,
+              "type": "video",
+              "order": 3,
+              "completedBy": [],
+              "videoUrl": "https://www.youtube.com/watch?v=XzNi70r8UJE"
+            }
+          ]
+        },
+        {
+          "title": "Monitoring and Refining Workflows",
+          "description": "Learn to monitor, debug and refine workflows using n8n's execution logs and error handling features.",
+          "order": 4,
+          "lessons": [
+            {
+              "id": "temp-1757365174542-0",
+              "title": "Monitoring Workflows",
+              "content": "<p>Using n8n's execution logs to monitor workflows.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757365174542-1",
+              "title": "Debugging and Refining Workflows",
+              "content": "<p>A guide to debugging and improving workflows using error handling features.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        }
+      ]
+    },
+    "published": true,
+    "imageData": {
+      "thumbnail": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxjYXRzfGVufDB8MHx8fDE3NTcwMDc1MTJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by Erik-Jan Leusink on Unsplash"
+    }
+  },
+  {
+    "timestamp": "2025-09-08T22:12:06.628Z",
+    "action": "course_update",
+    "courseId": "PF7ycSjQAtIpZYdPbyRR",
+    "data": {
+      "title": "Introduction to n8n (Dogs in Lessons)",
+      "description": "A beginner's guide to understanding and implementing workflow automation using the n8n tool. This course aims to equip non-technical professionals, business analysts, and junior developers with the skills to automate tasks and integrate applications without the need for advanced coding.\n\nMaking another change this time with dogs",
+      "category": "design",
+      "difficulty": "beginner",
+      "price": 0,
+      "duration": 240,
+      "tags": [
+        "n8n",
+        "beginner",
+        "workflow",
+        "dogs"
+      ],
+      "thumbnail": "https://images.unsplash.com/photo-1444212477490-ca407925329e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwyfHxkb2dzfGVufDB8MHx8fDE3NTcwMDc0MzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1444212477490-ca407925329e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwyfHxkb2dzfGVufDB8MHx8fDE3NTcwMDc0MzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by Anoir Chafik on Unsplash",
+      "published": true,
+      "slug": "introduction-to-n8n-(dogs-in-lessons)",
+      "imageUrl": "https://images.unsplash.com/photo-1444212477490-ca407925329e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwyfHxkb2dzfGVufDB8MHx8fDE3NTcwMDc0MzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "isFree": true,
+      "createdAt": "2025-09-04T17:46:45.279Z",
+      "updatedAt": "2025-09-08T22:12:06.222Z",
+      "authorId": "FAxsVhNFSyWaBahUZI2HA1q0wTq1",
+      "authorName": "Flow Internals",
+      "modules": [
+        {
+          "title": "Understanding Workflow Automation and n8n",
+          "description": "Introduction to the basics of workflow automation and the role of n8n in the automation ecosystem.",
+          "order": 1,
+          "lessons": [
+            {
+              "id": "temp-1757369526222-0",
+              "title": "The Basics of Workflow Automation",
+              "content": "<p>An overview of workflow automation and its benefits.<br><br><img style=\"max-width: 100%; height: auto;\" src=\"https://images.unsplash.com/photo-1533915828531-55b274d98dc5?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHw0fHxyb2JvdHN8ZW58MHwwfHx8MTc1Njk5NTc3OHww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080\" alt=\"Photo by Craig Sybert on Unsplash\"></p>",
+              "duration": 20,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757369526222-1",
+              "title": "Introduction to n8n",
+              "content": "<p>An introduction to n8n, its purpose, and its place in the automation ecosystem.<br><br><img style=\"max-width: 100%; height: auto;\" src=\"https://images.unsplash.com/photo-1472491235688-bdc81a63246e?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwyfHxjYXR8ZW58MHwwfHx8MTc1NzAwNzUxMnww&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080\" alt=\"Photo by Mikhail Vasilyev on Unsplash\"></p>",
+              "duration": 40,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Navigating the n8n Interface",
+          "description": "A guide to navigating n8n's interface, including the workflow editor, node library, and execution logs.",
+          "order": 2,
+          "lessons": [
+            {
+              "id": "temp-1757369526222-0",
+              "title": "Exploring the n8n Interface",
+              "content": "<p>A tour of the n8n interface, focusing on the workflow editor and node library.<br><br><img style=\"max-width: 100%; height: auto;\" src=\"https://images.unsplash.com/photo-1480044965905-02098d419e96?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHw1fHxiaXJkc3xlbnwwfDB8fHwxNzU3MDA3NTM1fDA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080\" alt=\"Photo by Boris  Smokrovic on Unsplash\"></p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757369526222-1",
+              "title": "Working with Execution Logs",
+              "content": "<p>A guide to using execution logs to monitor and debug workflows.<br><br>Aligators ?<br><br><img style=\"max-width: 100%; height: auto;\" src=\"https://images.unsplash.com/photo-1484620479898-57494cfedf1a?crop=entropy&amp;cs=tinysrgb&amp;fit=max&amp;fm=jpg&amp;ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwyfHxhbGxpZ2F0b3JzfGVufDB8MHx8fDE3NTcwMDgzMzd8MA&amp;ixlib=rb-4.1.0&amp;q=80&amp;w=1080\" alt=\"Photo by Kyaw Tun on Unsplash\"></p>",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Building and Running Workflows",
+          "description": "Learn to build and run simple workflows using common nodes like email, webhook, and Google Sheets.",
+          "order": 3,
+          "lessons": [
+            {
+              "id": "temp-1757369526222-0",
+              "title": "Building Simple Workflows",
+              "content": "Creating simple workflows using common nodes.",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757369526222-1",
+              "title": "Configuring Triggers and Actions",
+              "content": "A guide to configuring triggers and actions to automate processes.",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Monitoring and Refining Workflows",
+          "description": "Learn to monitor, debug and refine workflows using n8n's execution logs and error handling features.",
+          "order": 4,
+          "lessons": [
+            {
+              "id": "temp-1757369526222-0",
+              "title": "Monitoring Workflows",
+              "content": "Using n8n's execution logs to monitor workflows.",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757369526222-1",
+              "title": "Debugging and Refining Workflows",
+              "content": "A guide to debugging and improving workflows using error handling features.",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        }
+      ]
+    },
+    "published": true,
+    "imageData": {
+      "thumbnail": "https://images.unsplash.com/photo-1444212477490-ca407925329e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwyfHxkb2dzfGVufDB8MHx8fDE3NTcwMDc0MzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1444212477490-ca407925329e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwyfHxkb2dzfGVufDB8MHx8fDE3NTcwMDc0MzF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by Anoir Chafik on Unsplash"
+    }
+  },
+  {
+    "timestamp": "2025-09-09T14:19:45.007Z",
+    "action": "course_update",
+    "courseId": "4GFI3j1xhlp8K40tVj29",
+    "data": {
+      "title": "Mastering Cursor Good Practices for Enhanced Productivity",
+      "description": "This intermediate-level course is designed to equip software developers, data scientists, and technical writers with the knowledge and skills to use Cursor effectively. The course covers configuring Cursor for different development environments, applying best practices for AI-assisted coding, and using Cursor’s navigation and code-understanding features to speed up debugging and reviews.",
+      "category": "programming",
+      "difficulty": "intermediate",
+      "price": 100,
+      "duration": 241,
+      "tags": [
+        "tags"
+      ],
+      "thumbnail": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxwcm9ncmFtbWluZ3xlbnwwfHwwfHx8MTc1NzAwNzUxMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxwcm9ncmFtbWluZ3xlbnwwfHwwfHx8MTc1NzAwNzUxMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by ThisisEngineering RAEng on Unsplash",
+      "published": false,
+      "slug": "mastering-cursor-good-practices-for-enhanced-productivity",
+      "imageUrl": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxwcm9ncmFtbWluZ3xlbnwwfHwwfHx8MTc1NzAwNzUxMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "isFree": false,
+      "createdAt": {
+        "_seconds": 1757364623,
+        "_nanoseconds": 754000000
+      },
+      "updatedAt": "2025-09-09T14:19:44.631Z",
+      "authorId": "FAxsVhNFSyWaBahUZI2HA1q0wTq1",
+      "authorName": "Flow Internals",
+      "modules": [
+        {
+          "title": "Setting Up Cursor",
+          "description": "Understand how to setup and configure Cursor effectively for your development environment and workflow.",
+          "order": 1,
+          "lessons": [
+            {
+              "id": "temp-1757427584631-0",
+              "title": "Installation and Setup",
+              "content": "<p>Installation process and initial setup of Cursor.</p>",
+              "duration": 15,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757427584631-1",
+              "title": "Configuring Cursor for Productivity",
+              "content": "<p>How to configure Cursor to enhance your coding productivity.</p>",
+              "duration": 45,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757427584631-2",
+              "title": "Video # 1",
+              "content": "<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FocMOZpuAMw4%3Fsi%3D1rhtUHL7dgQHcD7X%22%2C%22title%22%3A%22Video%20%23%201%22%7D\"></video-block>",
+              "duration": 11,
+              "type": "video",
+              "order": 3,
+              "completedBy": [],
+              "videoUrl": "https://youtu.be/ocMOZpuAMw4?si=1rhtUHL7dgQHcD7X"
+            }
+          ]
+        },
+        {
+          "title": "AI-Assisted Coding with Cursor",
+          "description": "Learn to leverage the power of AI to generate, refactor and explain code.",
+          "order": 2,
+          "lessons": [
+            {
+              "id": "temp-1757427584631-0",
+              "title": "Generating Code with AI",
+              "content": "<p>Learn how to use Cursor's AI to generate code effectively.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757427584631-1",
+              "title": "Refactoring and Explaining Code with AI",
+              "content": "<p>Use AI to refactor and explain code, improving code quality and understanding.</p>",
+              "duration": 60,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Navigating and Understanding Code with Cursor",
+          "description": "Master the use of Cursor's navigation and code-understanding features to accelerate debugging and reviews.",
+          "order": 3,
+          "lessons": [
+            {
+              "id": "temp-1757427584631-0",
+              "title": "Navigating Code with Cursor",
+              "content": "<p>Learn how to navigate code effectively with Cursor.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757427584631-1",
+              "title": "Debugging and Code Review with Cursor",
+              "content": "<p>Use Cursor's code-understanding features to speed up debugging and code reviews.</p>",
+              "duration": 50,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        }
+      ]
+    },
+    "published": false,
+    "imageData": {
+      "thumbnail": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxwcm9ncmFtbWluZ3xlbnwwfHwwfHx8MTc1NzAwNzUxMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxwcm9ncmFtbWluZ3xlbnwwfHwwfHx8MTc1NzAwNzUxMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by ThisisEngineering RAEng on Unsplash"
+    }
+  },
+  {
+    "timestamp": "2025-09-09T14:30:35.374Z",
+    "action": "course_update",
+    "courseId": "4GFI3j1xhlp8K40tVj29",
+    "data": {
+      "title": "Mastering Cursor Good Practices for Enhanced Productivity",
+      "description": "This intermediate-level course is designed to equip software developers, data scientists, and technical writers with the knowledge and skills to use Cursor effectively. The course covers configuring Cursor for different development environments, applying best practices for AI-assisted coding, and using Cursor’s navigation and code-understanding features to speed up debugging and reviews.",
+      "category": "programming",
+      "difficulty": "intermediate",
+      "price": 100,
+      "duration": 251,
+      "tags": [
+        "tags"
+      ],
+      "thumbnail": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxwcm9ncmFtbWluZ3xlbnwwfHwwfHx8MTc1NzAwNzUxMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxwcm9ncmFtbWluZ3xlbnwwfHwwfHx8MTc1NzAwNzUxMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by ThisisEngineering RAEng on Unsplash",
+      "published": false,
+      "slug": "mastering-cursor-good-practices-for-enhanced-productivity",
+      "imageUrl": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxwcm9ncmFtbWluZ3xlbnwwfHwwfHx8MTc1NzAwNzUxMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "isFree": false,
+      "createdAt": {
+        "_seconds": 1757364623,
+        "_nanoseconds": 754000000
+      },
+      "updatedAt": "2025-09-09T14:30:34.995Z",
+      "authorId": "FAxsVhNFSyWaBahUZI2HA1q0wTq1",
+      "authorName": "Flow Internals",
+      "modules": [
+        {
+          "title": "Setting Up Cursor",
+          "description": "Understand how to setup and configure Cursor effectively for your development environment and workflow.",
+          "order": 1,
+          "lessons": [
+            {
+              "id": "temp-1757428234995-0",
+              "title": "Installation and Setup",
+              "content": "<p>Installation process and initial setup of Cursor.</p>",
+              "duration": 15,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757428234995-1",
+              "title": "Configuring Cursor for Productivity",
+              "content": "<p>How to configure Cursor to enhance your coding productivity.</p>",
+              "duration": 45,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757428234995-2",
+              "title": "Video # 1",
+              "content": "<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FocMOZpuAMw4%3Fsi%3D1rhtUHL7dgQHcD7X%22%2C%22title%22%3A%22Video%20%23%201%22%7D\"></video-block>\n\n<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FocMOZpuAMw4%3Fsi%3D1rhtUHL7dgQHcD7X%22%2C%22title%22%3A%22Video%20%23%201%22%7D\"></video-block>",
+              "duration": 11,
+              "type": "video",
+              "order": 3,
+              "completedBy": [],
+              "videoUrl": "https://youtu.be/ocMOZpuAMw4?si=1rhtUHL7dgQHcD7X"
+            },
+            {
+              "id": "temp-1757428234995-3",
+              "title": "Module Quiz: Test Module",
+              "content": "",
+              "duration": 10,
+              "type": "quiz",
+              "order": 4,
+              "completedBy": [],
+              "videoUrl": "",
+              "quiz": {
+                "type": "quiz",
+                "title": "Module Quiz: Test Module",
+                "description": "Test your understanding of the module content",
+                "questions": [
+                  {
+                    "kind": "mcq",
+                    "text": "What is the main topic of this module?",
+                    "options": [
+                      "Option A",
+                      "Option B",
+                      "Option C",
+                      "Option D"
+                    ],
+                    "correct": [
+                      1
+                    ]
+                  },
+                  {
+                    "kind": "truefalse",
+                    "text": "This module contains important information.",
+                    "correct": true
+                  },
+                  {
+                    "kind": "short",
+                    "text": "What did you learn from this module?",
+                    "answers": [
+                      "Key concepts",
+                      "Important information",
+                      "Valuable insights"
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "title": "AI-Assisted Coding with Cursor",
+          "description": "Learn to leverage the power of AI to generate, refactor and explain code.",
+          "order": 2,
+          "lessons": [
+            {
+              "id": "temp-1757428234995-0",
+              "title": "Generating Code with AI",
+              "content": "<p>Learn how to use Cursor's AI to generate code effectively.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757428234995-1",
+              "title": "Refactoring and Explaining Code with AI",
+              "content": "<p>Use AI to refactor and explain code, improving code quality and understanding.</p>",
+              "duration": 60,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Navigating and Understanding Code with Cursor",
+          "description": "Master the use of Cursor's navigation and code-understanding features to accelerate debugging and reviews.",
+          "order": 3,
+          "lessons": [
+            {
+              "id": "temp-1757428234995-0",
+              "title": "Navigating Code with Cursor",
+              "content": "<p>Learn how to navigate code effectively with Cursor.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757428234995-1",
+              "title": "Debugging and Code Review with Cursor",
+              "content": "<p>Use Cursor's code-understanding features to speed up debugging and code reviews.</p>",
+              "duration": 50,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        }
+      ]
+    },
+    "published": false,
+    "imageData": {
+      "thumbnail": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxwcm9ncmFtbWluZ3xlbnwwfHwwfHx8MTc1NzAwNzUxMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxwcm9ncmFtbWluZ3xlbnwwfHwwfHx8MTc1NzAwNzUxMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by ThisisEngineering RAEng on Unsplash"
+    }
+  },
+  {
+    "timestamp": "2025-09-09T14:37:58.461Z",
+    "action": "course_update",
+    "courseId": "4GFI3j1xhlp8K40tVj29",
+    "data": {
+      "title": "Mastering Cursor Good Practices for Enhanced Productivity",
+      "description": "This intermediate-level course is designed to equip software developers, data scientists, and technical writers with the knowledge and skills to use Cursor effectively. The course covers configuring Cursor for different development environments, applying best practices for AI-assisted coding, and using Cursor’s navigation and code-understanding features to speed up debugging and reviews.",
+      "category": "programming",
+      "difficulty": "intermediate",
+      "price": 100,
+      "duration": 241,
+      "tags": [
+        "tags"
+      ],
+      "thumbnail": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxwcm9ncmFtbWluZ3xlbnwwfHwwfHx8MTc1NzAwNzUxMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxwcm9ncmFtbWluZ3xlbnwwfHwwfHx8MTc1NzAwNzUxMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by ThisisEngineering RAEng on Unsplash",
+      "published": false,
+      "slug": "mastering-cursor-good-practices-for-enhanced-productivity",
+      "imageUrl": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxwcm9ncmFtbWluZ3xlbnwwfHwwfHx8MTc1NzAwNzUxMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "isFree": false,
+      "createdAt": {
+        "_seconds": 1757364623,
+        "_nanoseconds": 754000000
+      },
+      "updatedAt": "2025-09-09T14:37:58.075Z",
+      "authorId": "FAxsVhNFSyWaBahUZI2HA1q0wTq1",
+      "authorName": "Flow Internals",
+      "modules": [
+        {
+          "title": "Setting Up Cursor",
+          "description": "Understand how to setup and configure Cursor effectively for your development environment and workflow.",
+          "order": 1,
+          "lessons": [
+            {
+              "id": "temp-1757428678075-0",
+              "title": "Installation and Setup",
+              "content": "<p>Installation process and initial setup of Cursor.</p>",
+              "duration": 15,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757428678075-1",
+              "title": "Configuring Cursor for Productivity",
+              "content": "<p>How to configure Cursor to enhance your coding productivity.</p>",
+              "duration": 45,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757428678075-2",
+              "title": "Video # 1",
+              "content": "<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FocMOZpuAMw4%3Fsi%3D1rhtUHL7dgQHcD7X%22%2C%22title%22%3A%22Video%20%23%201%22%7D\"></video-block>\n\n<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FocMOZpuAMw4%3Fsi%3D1rhtUHL7dgQHcD7X%22%2C%22title%22%3A%22Video%20%23%201%22%7D\"></video-block>\n\n<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FocMOZpuAMw4%3Fsi%3D1rhtUHL7dgQHcD7X%22%2C%22title%22%3A%22Video%20%23%201%22%7D\"></video-block>",
+              "duration": 11,
+              "type": "video",
+              "order": 3,
+              "completedBy": [],
+              "videoUrl": "https://youtu.be/ocMOZpuAMw4?si=1rhtUHL7dgQHcD7X"
+            }
+          ]
+        },
+        {
+          "title": "AI-Assisted Coding with Cursor",
+          "description": "Learn to leverage the power of AI to generate, refactor and explain code.",
+          "order": 2,
+          "lessons": [
+            {
+              "id": "temp-1757428678075-0",
+              "title": "Generating Code with AI",
+              "content": "<p>Learn how to use Cursor's AI to generate code effectively.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757428678075-1",
+              "title": "Refactoring and Explaining Code with AI",
+              "content": "<p>Use AI to refactor and explain code, improving code quality and understanding.</p>",
+              "duration": 60,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Navigating and Understanding Code with Cursor",
+          "description": "Master the use of Cursor's navigation and code-understanding features to accelerate debugging and reviews.",
+          "order": 3,
+          "lessons": [
+            {
+              "id": "temp-1757428678075-0",
+              "title": "Navigating Code with Cursor",
+              "content": "<p>Learn how to navigate code effectively with Cursor.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757428678075-1",
+              "title": "Debugging and Code Review with Cursor",
+              "content": "<p>Use Cursor's code-understanding features to speed up debugging and code reviews.</p>",
+              "duration": 50,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        }
+      ]
+    },
+    "published": false,
+    "imageData": {
+      "thumbnail": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxwcm9ncmFtbWluZ3xlbnwwfHwwfHx8MTc1NzAwNzUxMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxwcm9ncmFtbWluZ3xlbnwwfHwwfHx8MTc1NzAwNzUxMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by ThisisEngineering RAEng on Unsplash"
+    }
+  },
+  {
+    "timestamp": "2025-09-09T15:02:02.602Z",
+    "action": "course_update",
+    "courseId": "4GFI3j1xhlp8K40tVj29",
+    "data": {
+      "title": "Mastering Cursor Good Practices for Enhanced Productivity",
+      "description": "This intermediate-level course is designed to equip software developers, data scientists, and technical writers with the knowledge and skills to use Cursor effectively. The course covers configuring Cursor for different development environments, applying best practices for AI-assisted coding, and using Cursor’s navigation and code-understanding features to speed up debugging and reviews.",
+      "category": "programming",
+      "difficulty": "intermediate",
+      "price": 100,
+      "duration": 251,
+      "tags": [
+        "tags"
+      ],
+      "thumbnail": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxwcm9ncmFtbWluZ3xlbnwwfHwwfHx8MTc1NzAwNzUxMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxwcm9ncmFtbWluZ3xlbnwwfHwwfHx8MTc1NzAwNzUxMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by ThisisEngineering RAEng on Unsplash",
+      "published": false,
+      "slug": "mastering-cursor-good-practices-for-enhanced-productivity",
+      "imageUrl": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxwcm9ncmFtbWluZ3xlbnwwfHwwfHx8MTc1NzAwNzUxMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "isFree": false,
+      "createdAt": {
+        "_seconds": 1757364623,
+        "_nanoseconds": 754000000
+      },
+      "updatedAt": "2025-09-09T15:02:02.113Z",
+      "authorId": "FAxsVhNFSyWaBahUZI2HA1q0wTq1",
+      "authorName": "Flow Internals",
+      "modules": [
+        {
+          "title": "Setting Up Cursor",
+          "description": "Understand how to setup and configure Cursor effectively for your development environment and workflow.",
+          "order": 1,
+          "lessons": [
+            {
+              "id": "temp-1757430122113-0",
+              "title": "Installation and Setup",
+              "content": "<p>Installation process and initial setup of Cursor.</p>",
+              "duration": 15,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757430122113-1",
+              "title": "Configuring Cursor for Productivity",
+              "content": "<p>How to configure Cursor to enhance your coding productivity.</p>",
+              "duration": 45,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757430122113-2",
+              "title": "Video # 1",
+              "content": "<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FocMOZpuAMw4%3Fsi%3D1rhtUHL7dgQHcD7X%22%2C%22title%22%3A%22Video%20%23%201%22%7D\"></video-block>\n\n<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FocMOZpuAMw4%3Fsi%3D1rhtUHL7dgQHcD7X%22%2C%22title%22%3A%22Video%20%23%201%22%7D\"></video-block>\n\n<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FocMOZpuAMw4%3Fsi%3D1rhtUHL7dgQHcD7X%22%2C%22title%22%3A%22Video%20%23%201%22%7D\"></video-block>\n\n<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FocMOZpuAMw4%3Fsi%3D1rhtUHL7dgQHcD7X%22%2C%22title%22%3A%22Video%20%23%201%22%7D\"></video-block>",
+              "duration": 11,
+              "type": "video",
+              "order": 3,
+              "completedBy": [],
+              "videoUrl": "https://youtu.be/ocMOZpuAMw4?si=1rhtUHL7dgQHcD7X"
+            },
+            {
+              "id": "temp-1757430122113-3",
+              "title": "Module Quiz: Setting Up Cursor",
+              "content": "",
+              "duration": 10,
+              "type": "quiz",
+              "order": 4,
+              "completedBy": [],
+              "videoUrl": "",
+              "quiz": {
+                "type": "quiz",
+                "title": "Module Quiz: Setting Up Cursor",
+                "description": "Test your understanding of the module content",
+                "questions": [
+                  {
+                    "kind": "mcq",
+                    "text": "What is the primary purpose of configuring Cursor?",
+                    "options": [
+                      "To enhance gaming experience",
+                      "To enhance coding productivity",
+                      "To enhance video streaming",
+                      "To enhance graphic design"
+                    ],
+                    "correct": [
+                      1
+                    ]
+                  },
+                  {
+                    "kind": "mcq",
+                    "text": "Which platform is the video tutorial for Cursor setup provided on?",
+                    "options": [
+                      "Vimeo",
+                      "YouTube",
+                      "Dailymotion",
+                      "Twitch"
+                    ],
+                    "correct": [
+                      1
+                    ]
+                  },
+                  {
+                    "kind": "multiple",
+                    "text": "What are the steps to set up Cursor?",
+                    "options": [
+                      "Installation",
+                      "Configuration",
+                      "Subscription",
+                      "Registration"
+                    ],
+                    "correct": [
+                      0,
+                      1
+                    ]
+                  },
+                  {
+                    "kind": "truefalse",
+                    "text": "The Cursor module includes multiple video tutorials.",
+                    "correct": false
+                  },
+                  {
+                    "kind": "truefalse",
+                    "text": "The Cursor setup process includes installation and configuration.",
+                    "correct": true
+                  },
+                  {
+                    "kind": "short",
+                    "text": "What is the main utility of Cursor in coding?",
+                    "answers": [
+                      "Enhances productivity",
+                      "Improves efficiency",
+                      "Helps in faster coding"
+                    ]
+                  },
+                  {
+                    "kind": "short",
+                    "text": "Name any platform where the video tutorial for Cursor setup is hosted.",
+                    "answers": [
+                      "YouTube",
+                      "Youtube",
+                      "youtube"
+                    ]
+                  },
+                  {
+                    "kind": "match",
+                    "left": [
+                      "Initial process",
+                      "Enhancing coding",
+                      "Video tutorial",
+                      "Cursor"
+                    ],
+                    "right": [
+                      "Installation",
+                      "Configuration",
+                      "YouTube",
+                      "Coding tool"
+                    ],
+                    "correctPairs": [
+                      [
+                        0,
+                        0
+                      ],
+                      [
+                        1,
+                        1
+                      ],
+                      [
+                        2,
+                        2
+                      ],
+                      [
+                        3,
+                        3
+                      ]
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "title": "AI-Assisted Coding with Cursor",
+          "description": "Learn to leverage the power of AI to generate, refactor and explain code.",
+          "order": 2,
+          "lessons": [
+            {
+              "id": "temp-1757430122113-0",
+              "title": "Generating Code with AI",
+              "content": "<p>Learn how to use Cursor's AI to generate code effectively.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757430122113-1",
+              "title": "Refactoring and Explaining Code with AI",
+              "content": "<p>Use AI to refactor and explain code, improving code quality and understanding.</p>",
+              "duration": 60,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Navigating and Understanding Code with Cursor",
+          "description": "Master the use of Cursor's navigation and code-understanding features to accelerate debugging and reviews.",
+          "order": 3,
+          "lessons": [
+            {
+              "id": "temp-1757430122113-0",
+              "title": "Navigating Code with Cursor",
+              "content": "<p>Learn how to navigate code effectively with Cursor.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757430122113-1",
+              "title": "Debugging and Code Review with Cursor",
+              "content": "<p>Use Cursor's code-understanding features to speed up debugging and code reviews.</p>",
+              "duration": 50,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        }
+      ]
+    },
+    "published": false,
+    "imageData": {
+      "thumbnail": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxwcm9ncmFtbWluZ3xlbnwwfHwwfHx8MTc1NzAwNzUxMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxwcm9ncmFtbWluZ3xlbnwwfHwwfHx8MTc1NzAwNzUxMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by ThisisEngineering RAEng on Unsplash"
+    }
+  },
+  {
+    "timestamp": "2025-09-09T15:35:21.719Z",
+    "action": "course_update",
+    "courseId": "4GFI3j1xhlp8K40tVj29",
+    "data": {
+      "title": "Mastering Cursor Good Practices for Enhanced Productivity",
+      "description": "This intermediate-level course is designed to equip software developers, data scientists, and technical writers with the knowledge and skills to use Cursor effectively. The course covers configuring Cursor for different development environments, applying best practices for AI-assisted coding, and using Cursor’s navigation and code-understanding features to speed up debugging and reviews.",
+      "category": "programming",
+      "difficulty": "intermediate",
+      "price": 100,
+      "duration": 241,
+      "tags": [
+        "tags"
+      ],
+      "thumbnail": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxwcm9ncmFtbWluZ3xlbnwwfHwwfHx8MTc1NzAwNzUxMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxwcm9ncmFtbWluZ3xlbnwwfHwwfHx8MTc1NzAwNzUxMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by ThisisEngineering RAEng on Unsplash",
+      "published": false,
+      "slug": "mastering-cursor-good-practices-for-enhanced-productivity",
+      "imageUrl": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxwcm9ncmFtbWluZ3xlbnwwfHwwfHx8MTc1NzAwNzUxMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "isFree": false,
+      "createdAt": {
+        "_seconds": 1757364623,
+        "_nanoseconds": 754000000
+      },
+      "updatedAt": "2025-09-09T15:35:21.159Z",
+      "authorId": "FAxsVhNFSyWaBahUZI2HA1q0wTq1",
+      "authorName": "Flow Internals",
+      "modules": [
+        {
+          "title": "Setting Up Cursor",
+          "description": "Understand how to setup and configure Cursor effectively for your development environment and workflow.",
+          "order": 1,
+          "lessons": [
+            {
+              "id": "temp-1757432121159-0",
+              "title": "Installation and Setup",
+              "content": "<p>Installation process and initial setup of Cursor.</p>",
+              "duration": 15,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757432121159-1",
+              "title": "Configuring Cursor for Productivity",
+              "content": "<p>How to configure Cursor to enhance your coding productivity.</p>",
+              "duration": 45,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757432121159-2",
+              "title": "Video # 1",
+              "content": "<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FocMOZpuAMw4%3Fsi%3D1rhtUHL7dgQHcD7X%22%2C%22title%22%3A%22Video%20%23%201%22%7D\"></video-block>\n\n<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FocMOZpuAMw4%3Fsi%3D1rhtUHL7dgQHcD7X%22%2C%22title%22%3A%22Video%20%23%201%22%7D\"></video-block>\n\n<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FocMOZpuAMw4%3Fsi%3D1rhtUHL7dgQHcD7X%22%2C%22title%22%3A%22Video%20%23%201%22%7D\"></video-block>\n\n<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FocMOZpuAMw4%3Fsi%3D1rhtUHL7dgQHcD7X%22%2C%22title%22%3A%22Video%20%23%201%22%7D\"></video-block>\n\n<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FocMOZpuAMw4%3Fsi%3D1rhtUHL7dgQHcD7X%22%2C%22title%22%3A%22Video%20%23%201%22%7D\"></video-block>",
+              "duration": 11,
+              "type": "video",
+              "order": 3,
+              "completedBy": [],
+              "videoUrl": "https://youtu.be/ocMOZpuAMw4?si=1rhtUHL7dgQHcD7X"
+            }
+          ]
+        },
+        {
+          "title": "AI-Assisted Coding with Cursor",
+          "description": "Learn to leverage the power of AI to generate, refactor and explain code.",
+          "order": 2,
+          "lessons": [
+            {
+              "id": "temp-1757432121159-0",
+              "title": "Generating Code with AI",
+              "content": "<p>Learn how to use Cursor's AI to generate code effectively.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757432121159-1",
+              "title": "Refactoring and Explaining Code with AI",
+              "content": "<p>Use AI to refactor and explain code, improving code quality and understanding.</p>",
+              "duration": 60,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Navigating and Understanding Code with Cursor",
+          "description": "Master the use of Cursor's navigation and code-understanding features to accelerate debugging and reviews.",
+          "order": 3,
+          "lessons": [
+            {
+              "id": "temp-1757432121159-0",
+              "title": "Navigating Code with Cursor",
+              "content": "<p>Learn how to navigate code effectively with Cursor.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757432121159-1",
+              "title": "Debugging and Code Review with Cursor",
+              "content": "<p>Use Cursor's code-understanding features to speed up debugging and code reviews.</p>",
+              "duration": 50,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        }
+      ]
+    },
+    "published": false,
+    "imageData": {
+      "thumbnail": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxwcm9ncmFtbWluZ3xlbnwwfHwwfHx8MTc1NzAwNzUxMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxwcm9ncmFtbWluZ3xlbnwwfHwwfHx8MTc1NzAwNzUxMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by ThisisEngineering RAEng on Unsplash"
+    }
+  },
+  {
+    "timestamp": "2025-09-09T15:35:35.400Z",
+    "action": "course_update",
+    "courseId": "4GFI3j1xhlp8K40tVj29",
+    "data": {
+      "title": "Mastering Cursor Good Practices for Enhanced Productivity",
+      "description": "This intermediate-level course is designed to equip software developers, data scientists, and technical writers with the knowledge and skills to use Cursor effectively. The course covers configuring Cursor for different development environments, applying best practices for AI-assisted coding, and using Cursor’s navigation and code-understanding features to speed up debugging and reviews.",
+      "category": "programming",
+      "difficulty": "intermediate",
+      "price": 100,
+      "duration": 241,
+      "tags": [
+        "tags"
+      ],
+      "thumbnail": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxwcm9ncmFtbWluZ3xlbnwwfHwwfHx8MTc1NzAwNzUxMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxwcm9ncmFtbWluZ3xlbnwwfHwwfHx8MTc1NzAwNzUxMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by ThisisEngineering RAEng on Unsplash",
+      "published": true,
+      "slug": "mastering-cursor-good-practices-for-enhanced-productivity",
+      "imageUrl": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxwcm9ncmFtbWluZ3xlbnwwfHwwfHx8MTc1NzAwNzUxMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "isFree": false,
+      "createdAt": {
+        "_seconds": 1757364623,
+        "_nanoseconds": 754000000
+      },
+      "updatedAt": "2025-09-09T15:35:34.998Z",
+      "authorId": "FAxsVhNFSyWaBahUZI2HA1q0wTq1",
+      "authorName": "Flow Internals",
+      "modules": [
+        {
+          "title": "Setting Up Cursor",
+          "description": "Understand how to setup and configure Cursor effectively for your development environment and workflow.",
+          "order": 1,
+          "lessons": [
+            {
+              "id": "temp-1757432134998-0",
+              "title": "Installation and Setup",
+              "content": "<p>Installation process and initial setup of Cursor.</p>",
+              "duration": 15,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757432134998-1",
+              "title": "Configuring Cursor for Productivity",
+              "content": "<p>How to configure Cursor to enhance your coding productivity.</p>",
+              "duration": 45,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757432134998-2",
+              "title": "Video # 1",
+              "content": "<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FocMOZpuAMw4%3Fsi%3D1rhtUHL7dgQHcD7X%22%2C%22title%22%3A%22Video%20%23%201%22%7D\"></video-block>\n\n<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FocMOZpuAMw4%3Fsi%3D1rhtUHL7dgQHcD7X%22%2C%22title%22%3A%22Video%20%23%201%22%7D\"></video-block>\n\n<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FocMOZpuAMw4%3Fsi%3D1rhtUHL7dgQHcD7X%22%2C%22title%22%3A%22Video%20%23%201%22%7D\"></video-block>\n\n<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FocMOZpuAMw4%3Fsi%3D1rhtUHL7dgQHcD7X%22%2C%22title%22%3A%22Video%20%23%201%22%7D\"></video-block>\n\n<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FocMOZpuAMw4%3Fsi%3D1rhtUHL7dgQHcD7X%22%2C%22title%22%3A%22Video%20%23%201%22%7D\"></video-block>\n\n<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FocMOZpuAMw4%3Fsi%3D1rhtUHL7dgQHcD7X%22%2C%22title%22%3A%22Video%20%23%201%22%7D\"></video-block>",
+              "duration": 11,
+              "type": "video",
+              "order": 3,
+              "completedBy": [],
+              "videoUrl": "https://youtu.be/ocMOZpuAMw4?si=1rhtUHL7dgQHcD7X"
+            }
+          ]
+        },
+        {
+          "title": "AI-Assisted Coding with Cursor",
+          "description": "Learn to leverage the power of AI to generate, refactor and explain code.",
+          "order": 2,
+          "lessons": [
+            {
+              "id": "temp-1757432134998-0",
+              "title": "Generating Code with AI",
+              "content": "<p>Learn how to use Cursor's AI to generate code effectively.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757432134998-1",
+              "title": "Refactoring and Explaining Code with AI",
+              "content": "<p>Use AI to refactor and explain code, improving code quality and understanding.</p>",
+              "duration": 60,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Navigating and Understanding Code with Cursor",
+          "description": "Master the use of Cursor's navigation and code-understanding features to accelerate debugging and reviews.",
+          "order": 3,
+          "lessons": [
+            {
+              "id": "temp-1757432134998-0",
+              "title": "Navigating Code with Cursor",
+              "content": "<p>Learn how to navigate code effectively with Cursor.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757432134998-1",
+              "title": "Debugging and Code Review with Cursor",
+              "content": "<p>Use Cursor's code-understanding features to speed up debugging and code reviews.</p>",
+              "duration": 50,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        }
+      ]
+    },
+    "published": true,
+    "imageData": {
+      "thumbnail": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxwcm9ncmFtbWluZ3xlbnwwfHwwfHx8MTc1NzAwNzUxMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxwcm9ncmFtbWluZ3xlbnwwfHwwfHx8MTc1NzAwNzUxMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by ThisisEngineering RAEng on Unsplash"
+    }
+  },
+  {
+    "timestamp": "2025-09-09T15:36:14.311Z",
+    "action": "course_update",
+    "courseId": "4GFI3j1xhlp8K40tVj29",
+    "data": {
+      "title": "Mastering Cursor Good Practices for Enhanced Productivity",
+      "description": "This intermediate-level course is designed to equip software developers, data scientists, and technical writers with the knowledge and skills to use Cursor effectively. The course covers configuring Cursor for different development environments, applying best practices for AI-assisted coding, and using Cursor’s navigation and code-understanding features to speed up debugging and reviews.",
+      "category": "programming",
+      "difficulty": "intermediate",
+      "price": 100,
+      "duration": 251,
+      "tags": [
+        "tags"
+      ],
+      "thumbnail": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxwcm9ncmFtbWluZ3xlbnwwfHwwfHx8MTc1NzAwNzUxMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxwcm9ncmFtbWluZ3xlbnwwfHwwfHx8MTc1NzAwNzUxMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by ThisisEngineering RAEng on Unsplash",
+      "published": true,
+      "slug": "mastering-cursor-good-practices-for-enhanced-productivity",
+      "imageUrl": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxwcm9ncmFtbWluZ3xlbnwwfHwwfHx8MTc1NzAwNzUxMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "isFree": false,
+      "createdAt": {
+        "_seconds": 1757364623,
+        "_nanoseconds": 754000000
+      },
+      "updatedAt": "2025-09-09T15:36:13.915Z",
+      "authorId": "FAxsVhNFSyWaBahUZI2HA1q0wTq1",
+      "authorName": "Flow Internals",
+      "modules": [
+        {
+          "title": "Setting Up Cursor",
+          "description": "Understand how to setup and configure Cursor effectively for your development environment and workflow.",
+          "order": 1,
+          "lessons": [
+            {
+              "id": "temp-1757432173915-0",
+              "title": "Installation and Setup",
+              "content": "<p>Installation process and initial setup of Cursor.</p>",
+              "duration": 15,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757432173915-1",
+              "title": "Configuring Cursor for Productivity",
+              "content": "<p>How to configure Cursor to enhance your coding productivity.</p>",
+              "duration": 45,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757432173915-2",
+              "title": "Video # 1",
+              "content": "<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FocMOZpuAMw4%3Fsi%3D1rhtUHL7dgQHcD7X%22%2C%22title%22%3A%22Video%20%23%201%22%7D\"></video-block>\n\n<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FocMOZpuAMw4%3Fsi%3D1rhtUHL7dgQHcD7X%22%2C%22title%22%3A%22Video%20%23%201%22%7D\"></video-block>\n\n<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FocMOZpuAMw4%3Fsi%3D1rhtUHL7dgQHcD7X%22%2C%22title%22%3A%22Video%20%23%201%22%7D\"></video-block>\n\n<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FocMOZpuAMw4%3Fsi%3D1rhtUHL7dgQHcD7X%22%2C%22title%22%3A%22Video%20%23%201%22%7D\"></video-block>\n\n<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FocMOZpuAMw4%3Fsi%3D1rhtUHL7dgQHcD7X%22%2C%22title%22%3A%22Video%20%23%201%22%7D\"></video-block>\n\n<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FocMOZpuAMw4%3Fsi%3D1rhtUHL7dgQHcD7X%22%2C%22title%22%3A%22Video%20%23%201%22%7D\"></video-block>\n\n<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FocMOZpuAMw4%3Fsi%3D1rhtUHL7dgQHcD7X%22%2C%22title%22%3A%22Video%20%23%201%22%7D\"></video-block>",
+              "duration": 11,
+              "type": "video",
+              "order": 3,
+              "completedBy": [],
+              "videoUrl": "https://youtu.be/ocMOZpuAMw4?si=1rhtUHL7dgQHcD7X"
+            },
+            {
+              "id": "temp-1757432173915-3",
+              "title": "Module Quiz: Setting Up Cursor",
+              "content": "",
+              "duration": 10,
+              "type": "quiz",
+              "order": 4,
+              "completedBy": [],
+              "videoUrl": "",
+              "quiz": {
+                "type": "quiz",
+                "title": "Module Quiz: Setting Up Cursor",
+                "description": "Test your understanding of the module content",
+                "questions": [
+                  {
+                    "kind": "mcq",
+                    "text": "Which process is crucial before using Cursor?",
+                    "options": [
+                      "Downloading",
+                      "Installation and Setup",
+                      "Configuring",
+                      "All of the above"
+                    ],
+                    "correct": [
+                      1
+                    ]
+                  },
+                  {
+                    "kind": "mcq",
+                    "text": "What can be enhanced by configuring Cursor?",
+                    "options": [
+                      "Coding productivity",
+                      "Internet speed",
+                      "Device Battery",
+                      "None of the above"
+                    ],
+                    "correct": [
+                      0
+                    ]
+                  },
+                  {
+                    "kind": "truefalse",
+                    "text": "Installation process and initial setup of Cursor are not necessary for its use.",
+                    "correct": false
+                  },
+                  {
+                    "kind": "match",
+                    "left": [
+                      "Initial process",
+                      "Enhancement process",
+                      "Visual learning",
+                      "Final process"
+                    ],
+                    "right": [
+                      "Installation and Setup",
+                      "Configuring Cursor for Productivity",
+                      "Video # 1",
+                      "None"
+                    ],
+                    "correctPairs": [
+                      [
+                        0,
+                        0
+                      ],
+                      [
+                        1,
+                        1
+                      ],
+                      [
+                        2,
+                        2
+                      ]
+                    ]
+                  },
+                  {
+                    "kind": "msq",
+                    "text": "What are the two main topics covered in this module?",
+                    "options": [
+                      "Installation and Setup",
+                      "Configuring for Productivity",
+                      "Downloading Cursor",
+                      "Troubleshooting"
+                    ],
+                    "correct": [
+                      0,
+                      1
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "title": "AI-Assisted Coding with Cursor",
+          "description": "Learn to leverage the power of AI to generate, refactor and explain code.",
+          "order": 2,
+          "lessons": [
+            {
+              "id": "temp-1757432173915-0",
+              "title": "Generating Code with AI",
+              "content": "<p>Learn how to use Cursor's AI to generate code effectively.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757432173915-1",
+              "title": "Refactoring and Explaining Code with AI",
+              "content": "<p>Use AI to refactor and explain code, improving code quality and understanding.</p>",
+              "duration": 60,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Navigating and Understanding Code with Cursor",
+          "description": "Master the use of Cursor's navigation and code-understanding features to accelerate debugging and reviews.",
+          "order": 3,
+          "lessons": [
+            {
+              "id": "temp-1757432173915-0",
+              "title": "Navigating Code with Cursor",
+              "content": "<p>Learn how to navigate code effectively with Cursor.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757432173915-1",
+              "title": "Debugging and Code Review with Cursor",
+              "content": "<p>Use Cursor's code-understanding features to speed up debugging and code reviews.</p>",
+              "duration": 50,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        }
+      ]
+    },
+    "published": true,
+    "imageData": {
+      "thumbnail": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxwcm9ncmFtbWluZ3xlbnwwfHwwfHx8MTc1NzAwNzUxMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxwcm9ncmFtbWluZ3xlbnwwfHwwfHx8MTc1NzAwNzUxMnww&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by ThisisEngineering RAEng on Unsplash"
+    }
+  },
+  {
+    "timestamp": "2025-09-09T16:04:36.851Z",
+    "action": "course_update",
+    "courseId": "muzSzFGr30anjvpKcwJt",
+    "data": {
+      "title": "Mastering Cursor for Beginners (Alligators Edition)",
+      "description": "A comprehensive, beginner-friendly course designed to equip non-technical professionals, business analysts, and junior developers with the knowledge and skills to automate tasks and integrate apps using Cursor. The course covers essential settings, secrets management, test plan development, and best practices for initial code structure.",
+      "category": "programming",
+      "difficulty": "beginner",
+      "price": 0,
+      "duration": 240,
+      "tags": [
+        "alligators",
+        "cursor"
+      ],
+      "thumbnail": "https://images.unsplash.com/photo-1677684076048-d5665304b59b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxhbGlnYXRvcnxlbnwwfDB8fHwxNzU3NDMzNDQyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1677684076048-d5665304b59b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxhbGlnYXRvcnxlbnwwfDB8fHwxNzU3NDMzNDQyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by Adam Kubín on Unsplash",
+      "published": false,
+      "slug": "mastering-cursor-for-beginners-(alligators-edition)",
+      "imageUrl": "https://images.unsplash.com/photo-1677684076048-d5665304b59b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxhbGlnYXRvcnxlbnwwfDB8fHwxNzU3NDMzNDQyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "isFree": true,
+      "createdAt": {
+        "_seconds": 1757433586,
+        "_nanoseconds": 38000000
+      },
+      "updatedAt": "2025-09-09T16:04:36.392Z",
+      "authorId": "FAxsVhNFSyWaBahUZI2HA1q0wTq1",
+      "authorName": "Flow Internals",
+      "modules": [
+        {
+          "title": "Getting Started with Cursor",
+          "description": "An introduction to the Cursor tool and the essential settings for beginners.",
+          "order": 1,
+          "lessons": [
+            {
+              "id": "temp-1757433876392-0",
+              "title": "Introduction to Cursor",
+              "content": "<p>An overview of Cursor and its uses.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757433876392-1",
+              "title": "Essential Cursor Settings",
+              "content": "<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FocMOZpuAMw4%3Fsi%3DyNAUmmEK7Fs5bX73%22%2C%22title%22%3A%22Essential%20Cursor%20Settings%22%7D\"></video-block>\n\n<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FocMOZpuAMw4%3Fsi%3DyNAUmmEK7Fs5bX73%22%2C%22title%22%3A%22Essential%20Cursor%20Settings%22%7D\"></video-block>\n\n<p>A deep dive into the essential settings to set in Cursor when starting out.</p>",
+              "duration": 30,
+              "type": "video",
+              "order": 2,
+              "completedBy": [],
+              "videoUrl": "https://youtu.be/ocMOZpuAMw4?si=yNAUmmEK7Fs5bX73"
+            }
+          ]
+        },
+        {
+          "title": "Secrets Management",
+          "description": "Learn how to effectively manage secrets within Cursor.",
+          "order": 2,
+          "lessons": [
+            {
+              "id": "temp-1757433876392-0",
+              "title": "Introduction to Secrets Management",
+              "content": "<p>Covering the basics of secrets management in Cursor.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757433876392-1",
+              "title": "Best Practices for Secrets Management",
+              "content": "<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FYtTWNzOtkxU%3Fsi%3DLvBPfAlb1JELa8mA%22%2C%22title%22%3A%22Best%20Practices%20for%20Secrets%20Management%22%7D\"></video-block>\n\n<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FYtTWNzOtkxU%3Fsi%3DLvBPfAlb1JELa8mA%22%2C%22title%22%3A%22Best%20Practices%20for%20Secrets%20Management%22%7D\"></video-block>\n\n<p>Unpacking the best practices for managing secrets in Cursor.</p>",
+              "duration": 30,
+              "type": "video",
+              "order": 2,
+              "completedBy": [],
+              "videoUrl": "https://youtu.be/YtTWNzOtkxU?si=LvBPfAlb1JELa8mA"
+            }
+          ]
+        },
+        {
+          "title": "Developing Test Plans",
+          "description": "Understand how to develop efficient and effective test plans in Cursor.",
+          "order": 3,
+          "lessons": [
+            {
+              "id": "temp-1757433876392-0",
+              "title": "Basics of Test Plan Development",
+              "content": "<p>An introductory lesson on how to develop test plans in Cursor.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757433876392-1",
+              "title": "Advanced Test Plan Development",
+              "content": "<p>A deeper look into more advanced strategies for developing test plans.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Good Practices for Initial Code Structure",
+          "description": "Learn to create a solid foundation by following good practices for initial code structure.",
+          "order": 4,
+          "lessons": [
+            {
+              "id": "temp-1757433876392-0",
+              "title": "Understanding Good Code Structure Practices",
+              "content": "<p>A guide to understanding the importance and elements of good code structure practices.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757433876392-1",
+              "title": "Implementing Good Code Structure Practices",
+              "content": "<p>Learn how to implement good practices for your initial code structure in Cursor.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        }
+      ]
+    },
+    "published": false,
+    "imageData": {
+      "thumbnail": "https://images.unsplash.com/photo-1677684076048-d5665304b59b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxhbGlnYXRvcnxlbnwwfDB8fHwxNzU3NDMzNDQyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1677684076048-d5665304b59b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxhbGlnYXRvcnxlbnwwfDB8fHwxNzU3NDMzNDQyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by Adam Kubín on Unsplash"
+    }
+  },
+  {
+    "timestamp": "2025-09-09T17:17:06.816Z",
+    "action": "course_update",
+    "courseId": "muzSzFGr30anjvpKcwJt",
+    "data": {
+      "title": "Mastering Cursor for Beginners (Alligators Edition)",
+      "description": "A comprehensive, beginner-friendly course designed to equip non-technical professionals, business analysts, and junior developers with the knowledge and skills to automate tasks and integrate apps using Cursor. The course covers essential settings, secrets management, test plan development, and best practices for initial code structure.",
+      "category": "programming",
+      "difficulty": "beginner",
+      "price": 0,
+      "duration": 250,
+      "tags": [
+        "alligators",
+        "cursor"
+      ],
+      "thumbnail": "https://images.unsplash.com/photo-1677684076048-d5665304b59b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxhbGlnYXRvcnxlbnwwfDB8fHwxNzU3NDMzNDQyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1677684076048-d5665304b59b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxhbGlnYXRvcnxlbnwwfDB8fHwxNzU3NDMzNDQyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by Adam Kubín on Unsplash",
+      "published": false,
+      "slug": "mastering-cursor-for-beginners-(alligators-edition)",
+      "imageUrl": "https://images.unsplash.com/photo-1677684076048-d5665304b59b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxhbGlnYXRvcnxlbnwwfDB8fHwxNzU3NDMzNDQyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "isFree": true,
+      "createdAt": {
+        "_seconds": 1757433586,
+        "_nanoseconds": 38000000
+      },
+      "updatedAt": "2025-09-09T17:17:06.386Z",
+      "authorId": "FAxsVhNFSyWaBahUZI2HA1q0wTq1",
+      "authorName": "Flow Internals",
+      "modules": [
+        {
+          "title": "Getting Started with Cursor",
+          "description": "An introduction to the Cursor tool and the essential settings for beginners.",
+          "order": 1,
+          "lessons": [
+            {
+              "id": "temp-1757438226386-0",
+              "title": "Introduction to Cursor",
+              "content": "<p>An overview of Cursor and its uses.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757438226386-1",
+              "title": "Essential Cursor Settings",
+              "content": "<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FocMOZpuAMw4%3Fsi%3DyNAUmmEK7Fs5bX73%22%2C%22title%22%3A%22Essential%20Cursor%20Settings%22%7D\"></video-block>\n\n<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FocMOZpuAMw4%3Fsi%3DyNAUmmEK7Fs5bX73%22%2C%22title%22%3A%22Essential%20Cursor%20Settings%22%7D\"></video-block>\n\n<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FocMOZpuAMw4%3Fsi%3DyNAUmmEK7Fs5bX73%22%2C%22title%22%3A%22Essential%20Cursor%20Settings%22%7D\"></video-block>\n\n<p>A deep dive into the essential settings to set in Cursor when starting out.</p>",
+              "duration": 30,
+              "type": "video",
+              "order": 2,
+              "completedBy": [],
+              "videoUrl": "https://youtu.be/ocMOZpuAMw4?si=yNAUmmEK7Fs5bX73"
+            },
+            {
+              "id": "temp-1757438226386-2",
+              "title": "Module Quiz: Getting Started with Cursor",
+              "content": "",
+              "duration": 10,
+              "type": "quiz",
+              "order": 3,
+              "completedBy": [],
+              "videoUrl": "",
+              "quiz": {
+                "type": "quiz",
+                "title": "Module Quiz: Getting Started with Cursor",
+                "description": "Test your understanding of the module content",
+                "questions": [
+                  {
+                    "kind": "mcq",
+                    "text": "What is the primary use of Cursor?",
+                    "options": [
+                      "Text Editing",
+                      "Web Browsing",
+                      "Video Editing",
+                      "Database Management"
+                    ],
+                    "correct": [
+                      0
+                    ]
+                  },
+                  {
+                    "kind": "mcq",
+                    "text": "Which platform provides the video tutorial for Essential Cursor Settings?",
+                    "options": [
+                      "Vimeo",
+                      "YouTube",
+                      "Dailymotion",
+                      "Twitch"
+                    ],
+                    "correct": [
+                      1
+                    ]
+                  },
+                  {
+                    "kind": "truefalse",
+                    "text": "Cursor has no setting that could be modified according to user preference.",
+                    "correct": false
+                  },
+                  {
+                    "kind": "match",
+                    "left": [
+                      "Cursor",
+                      "Settings",
+                      "YouTube",
+                      "Starting Out"
+                    ],
+                    "right": [
+                      "Introduction to Cursor",
+                      "Essential for Cursor",
+                      "Video Tutorial Provider",
+                      "Target Audience"
+                    ],
+                    "correctPairs": [
+                      [
+                        0,
+                        0
+                      ],
+                      [
+                        1,
+                        1
+                      ],
+                      [
+                        2,
+                        2
+                      ],
+                      [
+                        3,
+                        3
+                      ]
+                    ]
+                  },
+                  {
+                    "kind": "multiselect",
+                    "text": "What are some essential settings to set in Cursor when starting out?",
+                    "options": [
+                      "Text Style",
+                      "Cursor Speed",
+                      "Sound Settings",
+                      "Screen Resolution"
+                    ],
+                    "correct": [
+                      0,
+                      1,
+                      2
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "title": "Secrets Management",
+          "description": "Learn how to effectively manage secrets within Cursor.",
+          "order": 2,
+          "lessons": [
+            {
+              "id": "temp-1757438226386-0",
+              "title": "Introduction to Secrets Management",
+              "content": "<p>Covering the basics of secrets management in Cursor.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757438226386-1",
+              "title": "Best Practices for Secrets Management",
+              "content": "<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FYtTWNzOtkxU%3Fsi%3DLvBPfAlb1JELa8mA%22%2C%22title%22%3A%22Best%20Practices%20for%20Secrets%20Management%22%7D\"></video-block>\n\n<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FYtTWNzOtkxU%3Fsi%3DLvBPfAlb1JELa8mA%22%2C%22title%22%3A%22Best%20Practices%20for%20Secrets%20Management%22%7D\"></video-block>\n\n<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FYtTWNzOtkxU%3Fsi%3DLvBPfAlb1JELa8mA%22%2C%22title%22%3A%22Best%20Practices%20for%20Secrets%20Management%22%7D\"></video-block>\n\n<p>Unpacking the best practices for managing secrets in Cursor.</p>",
+              "duration": 30,
+              "type": "video",
+              "order": 2,
+              "completedBy": [],
+              "videoUrl": "https://youtu.be/YtTWNzOtkxU?si=LvBPfAlb1JELa8mA"
+            }
+          ]
+        },
+        {
+          "title": "Developing Test Plans",
+          "description": "Understand how to develop efficient and effective test plans in Cursor.",
+          "order": 3,
+          "lessons": [
+            {
+              "id": "temp-1757438226386-0",
+              "title": "Basics of Test Plan Development",
+              "content": "<p>An introductory lesson on how to develop test plans in Cursor.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757438226386-1",
+              "title": "Advanced Test Plan Development",
+              "content": "<p>A deeper look into more advanced strategies for developing test plans.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Good Practices for Initial Code Structure",
+          "description": "Learn to create a solid foundation by following good practices for initial code structure.",
+          "order": 4,
+          "lessons": [
+            {
+              "id": "temp-1757438226386-0",
+              "title": "Understanding Good Code Structure Practices",
+              "content": "<p>A guide to understanding the importance and elements of good code structure practices.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757438226386-1",
+              "title": "Implementing Good Code Structure Practices",
+              "content": "<p>Learn how to implement good practices for your initial code structure in Cursor.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        }
+      ]
+    },
+    "published": false,
+    "imageData": {
+      "thumbnail": "https://images.unsplash.com/photo-1677684076048-d5665304b59b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxhbGlnYXRvcnxlbnwwfDB8fHwxNzU3NDMzNDQyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1677684076048-d5665304b59b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxhbGlnYXRvcnxlbnwwfDB8fHwxNzU3NDMzNDQyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by Adam Kubín on Unsplash"
+    }
+  },
+  {
+    "timestamp": "2025-09-09T17:21:01.509Z",
+    "action": "course_update",
+    "courseId": "muzSzFGr30anjvpKcwJt",
+    "data": {
+      "title": "Mastering Cursor for Beginners (Alligators Edition)",
+      "description": "A comprehensive, beginner-friendly course designed to equip non-technical professionals, business analysts, and junior developers with the knowledge and skills to automate tasks and integrate apps using Cursor. The course covers essential settings, secrets management, test plan development, and best practices for initial code structure.",
+      "category": "programming",
+      "difficulty": "beginner",
+      "price": 0,
+      "duration": 250,
+      "tags": [
+        "alligators",
+        "cursor"
+      ],
+      "thumbnail": "https://images.unsplash.com/photo-1677684076048-d5665304b59b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxhbGlnYXRvcnxlbnwwfDB8fHwxNzU3NDMzNDQyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1677684076048-d5665304b59b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxhbGlnYXRvcnxlbnwwfDB8fHwxNzU3NDMzNDQyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by Adam Kubín on Unsplash",
+      "published": false,
+      "slug": "mastering-cursor-for-beginners-(alligators-edition)",
+      "imageUrl": "https://images.unsplash.com/photo-1677684076048-d5665304b59b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxhbGlnYXRvcnxlbnwwfDB8fHwxNzU3NDMzNDQyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "isFree": true,
+      "createdAt": {
+        "_seconds": 1757433586,
+        "_nanoseconds": 38000000
+      },
+      "updatedAt": "2025-09-09T17:21:01.076Z",
+      "authorId": "FAxsVhNFSyWaBahUZI2HA1q0wTq1",
+      "authorName": "Flow Internals",
+      "modules": [
+        {
+          "title": "Getting Started with Cursor",
+          "description": "An introduction to the Cursor tool and the essential settings for beginners.",
+          "order": 1,
+          "lessons": [
+            {
+              "id": "temp-1757438461076-0",
+              "title": "Introduction to Cursor",
+              "content": "<p>An overview of Cursor and its uses.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757438461077-1",
+              "title": "Essential Cursor Settings",
+              "content": "<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FocMOZpuAMw4%3Fsi%3DyNAUmmEK7Fs5bX73%22%2C%22title%22%3A%22Essential%20Cursor%20Settings%22%7D\"></video-block>\n\n<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FocMOZpuAMw4%3Fsi%3DyNAUmmEK7Fs5bX73%22%2C%22title%22%3A%22Essential%20Cursor%20Settings%22%7D\"></video-block>\n\n<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FocMOZpuAMw4%3Fsi%3DyNAUmmEK7Fs5bX73%22%2C%22title%22%3A%22Essential%20Cursor%20Settings%22%7D\"></video-block>\n\n<p>A deep dive into the essential settings to set in Cursor when starting out.</p>",
+              "duration": 30,
+              "type": "video",
+              "order": 2,
+              "completedBy": [],
+              "videoUrl": "https://youtu.be/ocMOZpuAMw4?si=yNAUmmEK7Fs5bX73"
+            },
+            {
+              "id": "temp-1757438461077-2",
+              "title": "Module Quiz: Getting Started with Cursor",
+              "content": "",
+              "duration": 10,
+              "type": "quiz",
+              "order": 3,
+              "completedBy": [],
+              "videoUrl": "",
+              "quiz": {
+                "type": "quiz",
+                "title": "Module Quiz: Getting Started with Cursor",
+                "description": "Test your understanding of the module content",
+                "questions": [
+                  {
+                    "kind": "mcq",
+                    "text": "What is the main use of a Cursor?",
+                    "options": [
+                      "To navigate through the document",
+                      "To write the text",
+                      "To delete the text",
+                      "To underline the text"
+                    ],
+                    "correct": [
+                      0
+                    ]
+                  },
+                  {
+                    "kind": "mcq",
+                    "text": "Which of these is not a Cursor setting?",
+                    "options": [
+                      "Cursor speed",
+                      "Cursor size",
+                      "Cursor color",
+                      "Cursor height"
+                    ],
+                    "correct": [
+                      3
+                    ]
+                  },
+                  {
+                    "kind": "truefalse",
+                    "text": "The Cursor is used only for navigation purposes.",
+                    "correct": false
+                  },
+                  {
+                    "kind": "msq",
+                    "text": "Which are the essential settings for Cursor when starting out?",
+                    "options": [
+                      "Cursor speed",
+                      "Cursor size",
+                      "Cursor color",
+                      "Cursor theme"
+                    ],
+                    "correct": [
+                      0,
+                      1,
+                      2
+                    ]
+                  },
+                  {
+                    "kind": "match",
+                    "left": [
+                      "Cursor",
+                      "Cursor speed",
+                      "Cursor color",
+                      "Cursor size"
+                    ],
+                    "right": [
+                      "Navigational tool in a document",
+                      "Adjusts how fast the cursor moves",
+                      "Changes the appearance of the cursor",
+                      "Determines the thickness of the cursor"
+                    ],
+                    "correctPairs": [
+                      [
+                        0,
+                        0
+                      ],
+                      [
+                        1,
+                        1
+                      ],
+                      [
+                        2,
+                        2
+                      ],
+                      [
+                        3,
+                        3
+                      ]
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "title": "Secrets Management",
+          "description": "Learn how to effectively manage secrets within Cursor.",
+          "order": 2,
+          "lessons": [
+            {
+              "id": "temp-1757438461077-0",
+              "title": "Introduction to Secrets Management",
+              "content": "<p>Covering the basics of secrets management in Cursor.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757438461077-1",
+              "title": "Best Practices for Secrets Management",
+              "content": "<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FYtTWNzOtkxU%3Fsi%3DLvBPfAlb1JELa8mA%22%2C%22title%22%3A%22Best%20Practices%20for%20Secrets%20Management%22%7D\"></video-block>\n\n<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FYtTWNzOtkxU%3Fsi%3DLvBPfAlb1JELa8mA%22%2C%22title%22%3A%22Best%20Practices%20for%20Secrets%20Management%22%7D\"></video-block>\n\n<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FYtTWNzOtkxU%3Fsi%3DLvBPfAlb1JELa8mA%22%2C%22title%22%3A%22Best%20Practices%20for%20Secrets%20Management%22%7D\"></video-block>\n\n<p>Unpacking the best practices for managing secrets in Cursor.</p>",
+              "duration": 30,
+              "type": "video",
+              "order": 2,
+              "completedBy": [],
+              "videoUrl": "https://youtu.be/YtTWNzOtkxU?si=LvBPfAlb1JELa8mA"
+            }
+          ]
+        },
+        {
+          "title": "Developing Test Plans",
+          "description": "Understand how to develop efficient and effective test plans in Cursor.",
+          "order": 3,
+          "lessons": [
+            {
+              "id": "temp-1757438461077-0",
+              "title": "Basics of Test Plan Development",
+              "content": "<p>An introductory lesson on how to develop test plans in Cursor.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757438461077-1",
+              "title": "Advanced Test Plan Development",
+              "content": "<p>A deeper look into more advanced strategies for developing test plans.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Good Practices for Initial Code Structure",
+          "description": "Learn to create a solid foundation by following good practices for initial code structure.",
+          "order": 4,
+          "lessons": [
+            {
+              "id": "temp-1757438461077-0",
+              "title": "Understanding Good Code Structure Practices",
+              "content": "<p>A guide to understanding the importance and elements of good code structure practices.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757438461077-1",
+              "title": "Implementing Good Code Structure Practices",
+              "content": "<p>Learn how to implement good practices for your initial code structure in Cursor.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        }
+      ]
+    },
+    "published": false,
+    "imageData": {
+      "thumbnail": "https://images.unsplash.com/photo-1677684076048-d5665304b59b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxhbGlnYXRvcnxlbnwwfDB8fHwxNzU3NDMzNDQyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1677684076048-d5665304b59b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxhbGlnYXRvcnxlbnwwfDB8fHwxNzU3NDMzNDQyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by Adam Kubín on Unsplash"
+    }
+  },
+  {
+    "timestamp": "2025-09-09T17:37:19.585Z",
+    "action": "course_update",
+    "courseId": "muzSzFGr30anjvpKcwJt",
+    "data": {
+      "title": "Mastering Cursor for Beginners (Alligators Edition)",
+      "description": "A comprehensive, beginner-friendly course designed to equip non-technical professionals, business analysts, and junior developers with the knowledge and skills to automate tasks and integrate apps using Cursor. The course covers essential settings, secrets management, test plan development, and best practices for initial code structure.",
+      "category": "programming",
+      "difficulty": "beginner",
+      "price": 0,
+      "duration": 240,
+      "tags": [
+        "alligators",
+        "cursor"
+      ],
+      "thumbnail": "https://images.unsplash.com/photo-1677684076048-d5665304b59b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxhbGlnYXRvcnxlbnwwfDB8fHwxNzU3NDMzNDQyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1677684076048-d5665304b59b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxhbGlnYXRvcnxlbnwwfDB8fHwxNzU3NDMzNDQyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by Adam Kubín on Unsplash",
+      "published": false,
+      "slug": "mastering-cursor-for-beginners-(alligators-edition)",
+      "imageUrl": "https://images.unsplash.com/photo-1677684076048-d5665304b59b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxhbGlnYXRvcnxlbnwwfDB8fHwxNzU3NDMzNDQyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "isFree": true,
+      "createdAt": {
+        "_seconds": 1757433586,
+        "_nanoseconds": 38000000
+      },
+      "updatedAt": "2025-09-09T17:37:19.000Z",
+      "authorId": "FAxsVhNFSyWaBahUZI2HA1q0wTq1",
+      "authorName": "Flow Internals",
+      "modules": [
+        {
+          "title": "Getting Started with the Cursor coding tool",
+          "description": "An introduction to the Cursor tool and the essential settings for beginners.",
+          "order": 1,
+          "lessons": [
+            {
+              "id": "temp-1757439439000-0",
+              "title": "Introduction to Cursor",
+              "content": "<p>An overview of Cursor ((the vibe code management tool) and its uses.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757439439001-1",
+              "title": "Essential Cursor Settings",
+              "content": "<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FocMOZpuAMw4%3Fsi%3DyNAUmmEK7Fs5bX73%22%2C%22title%22%3A%22Essential%20Cursor%20Settings%22%7D\"></video-block>\n\n<p>A deep dive into the essential settings to set in Cursor ((the vibe code management tool) when starting out.</p>",
+              "duration": 30,
+              "type": "video",
+              "order": 2,
+              "completedBy": [],
+              "videoUrl": "https://youtu.be/ocMOZpuAMw4?si=yNAUmmEK7Fs5bX73"
+            }
+          ]
+        },
+        {
+          "title": "Secrets Management in Cursor",
+          "description": "Learn how to effectively manage secrets within Cursor.",
+          "order": 2,
+          "lessons": [
+            {
+              "id": "temp-1757439439001-0",
+              "title": "Introduction to Secrets Management",
+              "content": "<p>Covering the basics of secrets management in Cursor (the vibe code management tool).</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757439439001-1",
+              "title": "Best Practices for Secrets Management in Cursor",
+              "content": "<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FYtTWNzOtkxU%3Fsi%3DLvBPfAlb1JELa8mA%22%2C%22title%22%3A%22Best%20Practices%20for%20Secrets%20Management%20in%20Cursor%22%7D\"></video-block>\n\n<p>Unpacking the best practices for managing secrets in Cursor ((the vibe code management tool).</p>",
+              "duration": 30,
+              "type": "video",
+              "order": 2,
+              "completedBy": [],
+              "videoUrl": "https://youtu.be/YtTWNzOtkxU?si=LvBPfAlb1JELa8mA"
+            }
+          ]
+        },
+        {
+          "title": "Developing Test Plans",
+          "description": "Understand how to develop efficient and effective test plans in Cursor.",
+          "order": 3,
+          "lessons": [
+            {
+              "id": "temp-1757439439001-0",
+              "title": "Basics of Test Plan Development",
+              "content": "<p>An introductory lesson on how to develop test plans in Cursor.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757439439001-1",
+              "title": "Advanced Test Plan Development",
+              "content": "<p>A deeper look into more advanced strategies for developing test plans.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Good Practices for Initial Code Structure",
+          "description": "Learn to create a solid foundation by following good practices for initial code structure.",
+          "order": 4,
+          "lessons": [
+            {
+              "id": "temp-1757439439001-0",
+              "title": "Understanding Good Code Structure Practices",
+              "content": "<p>A guide to understanding the importance and elements of good code structure practices.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757439439001-1",
+              "title": "Implementing Good Code Structure Practices",
+              "content": "<p>Learn how to implement good practices for your initial code structure in Cursor.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        }
+      ]
+    },
+    "published": false,
+    "imageData": {
+      "thumbnail": "https://images.unsplash.com/photo-1677684076048-d5665304b59b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxhbGlnYXRvcnxlbnwwfDB8fHwxNzU3NDMzNDQyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1677684076048-d5665304b59b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxhbGlnYXRvcnxlbnwwfDB8fHwxNzU3NDMzNDQyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by Adam Kubín on Unsplash"
+    }
+  },
+  {
+    "timestamp": "2025-09-09T17:38:12.067Z",
+    "action": "course_update",
+    "courseId": "muzSzFGr30anjvpKcwJt",
+    "data": {
+      "title": "Mastering Cursor for Beginners (Alligators Edition)",
+      "description": "A comprehensive, beginner-friendly course designed to equip non-technical professionals, business analysts, and junior developers with the knowledge and skills to automate tasks and integrate apps using Cursor. The course covers essential settings, secrets management, test plan development, and best practices for initial code structure.",
+      "category": "programming",
+      "difficulty": "beginner",
+      "price": 0,
+      "duration": 250,
+      "tags": [
+        "alligators",
+        "cursor"
+      ],
+      "thumbnail": "https://images.unsplash.com/photo-1677684076048-d5665304b59b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxhbGlnYXRvcnxlbnwwfDB8fHwxNzU3NDMzNDQyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1677684076048-d5665304b59b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxhbGlnYXRvcnxlbnwwfDB8fHwxNzU3NDMzNDQyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by Adam Kubín on Unsplash",
+      "published": false,
+      "slug": "mastering-cursor-for-beginners-(alligators-edition)",
+      "imageUrl": "https://images.unsplash.com/photo-1677684076048-d5665304b59b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxhbGlnYXRvcnxlbnwwfDB8fHwxNzU3NDMzNDQyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "isFree": true,
+      "createdAt": {
+        "_seconds": 1757433586,
+        "_nanoseconds": 38000000
+      },
+      "updatedAt": "2025-09-09T17:38:11.617Z",
+      "authorId": "FAxsVhNFSyWaBahUZI2HA1q0wTq1",
+      "authorName": "Flow Internals",
+      "modules": [
+        {
+          "title": "Getting Started with the Cursor coding tool",
+          "description": "An introduction to the Cursor tool and the essential settings for beginners.",
+          "order": 1,
+          "lessons": [
+            {
+              "id": "temp-1757439491617-0",
+              "title": "Introduction to Cursor",
+              "content": "<p>An overview of Cursor ((the vibe code management tool) and its uses.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757439491617-1",
+              "title": "Essential Cursor Settings",
+              "content": "<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FocMOZpuAMw4%3Fsi%3DyNAUmmEK7Fs5bX73%22%2C%22title%22%3A%22Essential%20Cursor%20Settings%22%7D\"></video-block>\n\n<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FocMOZpuAMw4%3Fsi%3DyNAUmmEK7Fs5bX73%22%2C%22title%22%3A%22Essential%20Cursor%20Settings%22%7D\"></video-block>\n\n<p>A deep dive into the essential settings to set in Cursor ((the vibe code management tool) when starting out.</p>",
+              "duration": 30,
+              "type": "video",
+              "order": 2,
+              "completedBy": [],
+              "videoUrl": "https://youtu.be/ocMOZpuAMw4?si=yNAUmmEK7Fs5bX73"
+            },
+            {
+              "id": "temp-1757439491617-2",
+              "title": "Module Quiz: Getting Started with the Cursor coding tool",
+              "content": "",
+              "duration": 10,
+              "type": "quiz",
+              "order": 3,
+              "completedBy": [],
+              "videoUrl": "",
+              "quiz": {
+                "type": "quiz",
+                "title": "Module Quiz: Getting Started with the Cursor coding tool",
+                "description": "Test your understanding of the module content",
+                "questions": [
+                  {
+                    "kind": "mcq",
+                    "text": "What is the main use of Cursor?",
+                    "options": [
+                      "Code management",
+                      "Design tool",
+                      "Music player",
+                      "Social media platform"
+                    ],
+                    "correct": [
+                      0
+                    ]
+                  },
+                  {
+                    "kind": "mcq",
+                    "text": "Which platform hosts the video about Essential Cursor Settings?",
+                    "options": [
+                      "Facebook",
+                      "Instagram",
+                      "Youtube",
+                      "Vimeo"
+                    ],
+                    "correct": [
+                      2
+                    ]
+                  },
+                  {
+                    "kind": "truefalse",
+                    "text": "Cursor is a vibe code management tool.",
+                    "correct": true
+                  },
+                  {
+                    "kind": "msq",
+                    "text": "Which of the following are important when starting out with Cursor?",
+                    "options": [
+                      "Understanding its main use",
+                      "Setting up essential settings",
+                      "Knowing the color scheme",
+                      "Identifying the music genre"
+                    ],
+                    "correct": [
+                      0,
+                      1
+                    ]
+                  },
+                  {
+                    "kind": "match",
+                    "left": [
+                      "Cursor",
+                      "Essential Settings",
+                      "Vibe Code Management",
+                      "Youtube"
+                    ],
+                    "right": [
+                      "A coding tool",
+                      "Important to set up when starting out",
+                      "Function of Cursor",
+                      "Provider of the tutorial video"
+                    ],
+                    "correctPairs": [
+                      [
+                        0,
+                        0
+                      ],
+                      [
+                        1,
+                        1
+                      ],
+                      [
+                        2,
+                        2
+                      ],
+                      [
+                        3,
+                        3
+                      ]
+                    ]
+                  }
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "title": "Secrets Management in Cursor",
+          "description": "Learn how to effectively manage secrets within Cursor.",
+          "order": 2,
+          "lessons": [
+            {
+              "id": "temp-1757439491617-0",
+              "title": "Introduction to Secrets Management",
+              "content": "<p>Covering the basics of secrets management in Cursor (the vibe code management tool).</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757439491617-1",
+              "title": "Best Practices for Secrets Management in Cursor",
+              "content": "<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FYtTWNzOtkxU%3Fsi%3DLvBPfAlb1JELa8mA%22%2C%22title%22%3A%22Best%20Practices%20for%20Secrets%20Management%20in%20Cursor%22%7D\"></video-block>\n\n<video-block data=\"%7B%22type%22%3A%22video%22%2C%22provider%22%3A%22youtube%22%2C%22url%22%3A%22https%3A%2F%2Fyoutu.be%2FYtTWNzOtkxU%3Fsi%3DLvBPfAlb1JELa8mA%22%2C%22title%22%3A%22Best%20Practices%20for%20Secrets%20Management%20in%20Cursor%22%7D\"></video-block>\n\n<p>Unpacking the best practices for managing secrets in Cursor ((the vibe code management tool).</p>",
+              "duration": 30,
+              "type": "video",
+              "order": 2,
+              "completedBy": [],
+              "videoUrl": "https://youtu.be/YtTWNzOtkxU?si=LvBPfAlb1JELa8mA"
+            }
+          ]
+        },
+        {
+          "title": "Developing Test Plans",
+          "description": "Understand how to develop efficient and effective test plans in Cursor.",
+          "order": 3,
+          "lessons": [
+            {
+              "id": "temp-1757439491617-0",
+              "title": "Basics of Test Plan Development",
+              "content": "<p>An introductory lesson on how to develop test plans in Cursor.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757439491617-1",
+              "title": "Advanced Test Plan Development",
+              "content": "<p>A deeper look into more advanced strategies for developing test plans.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        },
+        {
+          "title": "Good Practices for Initial Code Structure",
+          "description": "Learn to create a solid foundation by following good practices for initial code structure.",
+          "order": 4,
+          "lessons": [
+            {
+              "id": "temp-1757439491617-0",
+              "title": "Understanding Good Code Structure Practices",
+              "content": "<p>A guide to understanding the importance and elements of good code structure practices.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 1,
+              "completedBy": []
+            },
+            {
+              "id": "temp-1757439491617-1",
+              "title": "Implementing Good Code Structure Practices",
+              "content": "<p>Learn how to implement good practices for your initial code structure in Cursor.</p>",
+              "duration": 30,
+              "type": "text",
+              "order": 2,
+              "completedBy": []
+            }
+          ]
+        }
+      ]
+    },
+    "published": false,
+    "imageData": {
+      "thumbnail": "https://images.unsplash.com/photo-1677684076048-d5665304b59b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxhbGlnYXRvcnxlbnwwfDB8fHwxNzU3NDMzNDQyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "panelImage": "https://images.unsplash.com/photo-1677684076048-d5665304b59b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4MDAzNzJ8MHwxfHNlYXJjaHwxfHxhbGlnYXRvcnxlbnwwfDB8fHwxNzU3NDMzNDQyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "imageAttribution": "Photo by Adam Kubín on Unsplash"
+    }
   }
 ]

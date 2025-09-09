@@ -9,7 +9,7 @@ import { BookOpen, Users, Plus, Edit, Trash2, Eye, BarChart3, Settings, UserChec
 import Link from 'next/link';
 
 export default function AdminDashboard() {
-  const { user } = useAuth();
+  const { user, firebaseUser } = useAuth();
   const { addToast } = useToast();
   const [courses, setCourses] = useState<Course[]>([]);
   const [loading, setLoading] = useState(true);
@@ -18,42 +18,83 @@ export default function AdminDashboard() {
     publishedCourses: 0,
     draftCourses: 0,
     totalUsers: 0,
+    adminUsers: 0,
+    regularUsers: 0,
+    usersWithProgress: 0,
   });
+  const [initialized, setInitialized] = useState(false);
   const [promoteEmail, setPromoteEmail] = useState('');
   const [promoteLoading, setPromoteLoading] = useState(false);
   const [promoteMessage, setPromoteMessage] = useState('');
   const [promoteMessageType, setPromoteMessageType] = useState<'success' | 'error'>('success');
   const [cloningCourse, setCloningCourse] = useState<string | null>(null);
   const [deletingCourse, setDeletingCourse] = useState<string | null>(null);
+  const [cleaningUp, setCleaningUp] = useState(false);
 
-  useEffect(() => {
-    if (user && user.role === 'admin') {
-      loadAdminData();
-    }
-  }, [user]);
-
+  // Always fetch fresh data from Firebase API
   const loadAdminData = async () => {
     try {
       setLoading(true);
-      console.log('AdminDashboard - Loading courses from Firebase...');
-      const allCourses = await getAllCourses(100);
-      console.log('AdminDashboard - Courses loaded from Firebase:', allCourses);
+      console.log('AdminDashboard - Fetching fresh courses from Firebase API...');
+      
+      // Fetch fresh data from Firebase API instead of using cached data
+      const response = await fetch('/api/courses');
+      if (!response.ok) {
+        throw new Error('Failed to fetch courses');
+      }
+      const allCourses = await response.json();
+      
+      console.log('AdminDashboard - Fresh courses loaded from API:', allCourses);
       console.log('AdminDashboard - Number of courses:', allCourses.length);
       setCourses(allCourses);
+      
+      // Fetch user statistics from the API
+      let userStats = {
+        totalUsers: 0,
+        adminUsers: 0,
+        regularUsers: 0,
+        usersWithProgress: 0,
+      };
+      
+      try {
+        const usersResponse = await fetch('/api/admin/users');
+        if (usersResponse.ok) {
+          const usersData = await usersResponse.json();
+          userStats = {
+            totalUsers: usersData.count || 0,
+            adminUsers: usersData.adminCount || 0,
+            regularUsers: usersData.regularCount || 0,
+            usersWithProgress: usersData.usersWithProgress || 0,
+          };
+          console.log('AdminDashboard - Loaded user statistics:', userStats);
+        }
+      } catch (userError) {
+        console.warn('Error fetching user statistics:', userError);
+        // Continue without user stats if it fails
+      }
       
       // Calculate stats
       setStats({
         totalCourses: allCourses.length,
         publishedCourses: allCourses.filter(c => c.published).length,
         draftCourses: allCourses.filter(c => !c.published).length,
-        totalUsers: 0, // Would need a separate query
+        ...userStats,
       });
     } catch (error) {
       console.error('Error loading admin data:', error);
+      addToast('Error loading admin data', 'error');
     } finally {
       setLoading(false);
     }
   };
+
+  // Initialize data on mount
+  useEffect(() => {
+    if (user && user.role === 'admin' && !initialized) {
+      loadAdminData();
+      setInitialized(true);
+    }
+  }, [user, initialized]);
 
   const handlePromoteUser = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -137,17 +178,22 @@ export default function AdminDashboard() {
   };
 
   const handleDeleteCourse = async (courseId: string, courseTitle: string) => {
-    if (!confirm(`Are you sure you want to delete "${courseTitle}"? This action cannot be undone.`)) {
+    if (!confirm(`Are you sure you want to delete "${courseTitle}"? This action cannot be undone and will remove all user progress for this course.`)) {
       return;
     }
 
     try {
       setDeletingCourse(courseId);
       console.log('AdminDashboard - Deleting course:', courseId);
+      
+      // Get auth token
+      const idToken = await firebaseUser?.getIdToken();
+      
       const response = await fetch(`/api/courses/${courseId}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
+          'Authorization': `Bearer ${idToken}`,
         },
       });
       console.log('AdminDashboard - Delete response status:', response.status);
@@ -157,22 +203,17 @@ export default function AdminDashboard() {
         throw new Error(errorData.error || 'Failed to delete course');
       }
 
-      // Remove the course from the local state
-      setCourses(prev => prev.filter(course => course.id !== courseId));
+      const result = await response.json();
+      const cleanupInfo = result.cleanup || { deletedRecords: { userProgress: 0 } };
       
-      // Update stats
-      setStats(prev => ({
-        ...prev,
-        totalCourses: prev.totalCourses - 1,
-        publishedCourses: courses.find(c => c.id === courseId)?.published ? prev.publishedCourses - 1 : prev.publishedCourses,
-        draftCourses: courses.find(c => c.id === courseId)?.published ? prev.draftCourses : prev.draftCourses - 1,
-      }));
-
       addToast({
         type: 'success',
         title: 'Course Deleted',
-        message: `"${courseTitle}" has been deleted successfully`
+        message: `"${courseTitle}" has been deleted successfully. Cleaned up ${cleanupInfo.deletedRecords.userProgress} user progress records.`
       });
+      
+      // Refresh the courses list to reflect the deletion
+      loadAdminData();
     } catch (error) {
       console.error('Error deleting course:', error);
       addToast({
@@ -182,6 +223,51 @@ export default function AdminDashboard() {
       });
     } finally {
       setDeletingCourse(null);
+    }
+  };
+
+  const handleCleanupOrphanedData = async () => {
+    if (!confirm('This will clean up orphaned progress records for deleted courses. Continue?')) {
+      return;
+    }
+
+    try {
+      setCleaningUp(true);
+      console.log('AdminDashboard - Cleaning up orphaned data...');
+      
+      // Get auth token
+      const idToken = await firebaseUser?.getIdToken();
+      
+      const response = await fetch('/api/cleanup-orphaned-data', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${idToken}`,
+        },
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Failed to clean up orphaned data');
+      }
+
+      const result = await response.json();
+      
+      addToast({
+        type: 'success',
+        title: 'Cleanup Complete',
+        message: `Cleaned up ${result.cleaned} orphaned progress records`
+      });
+      
+    } catch (error) {
+      console.error('Error cleaning up orphaned data:', error);
+      addToast({
+        type: 'error',
+        title: 'Cleanup Failed',
+        message: error instanceof Error ? error.message : 'Unknown error occurred'
+      });
+    } finally {
+      setCleaningUp(false);
     }
   };
 
@@ -267,6 +353,48 @@ export default function AdminDashboard() {
                 <p className="text-sm font-medium text-gray-500 dark:text-gray-400">Total Users</p>
                 <p className="text-2xl font-semibold text-gray-900 dark:text-white">
                   {stats.totalUsers}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
+            <div className="flex items-center">
+              <div className="flex-shrink-0">
+                <UserCheck className="h-8 w-8 text-green-600 dark:text-green-400" />
+              </div>
+              <div className="ml-4">
+                <p className="text-sm font-medium text-gray-500 dark:text-gray-400">Admin Users</p>
+                <p className="text-2xl font-semibold text-gray-900 dark:text-white">
+                  {stats.adminUsers}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
+            <div className="flex items-center">
+              <div className="flex-shrink-0">
+                <UserX className="h-8 w-8 text-blue-600 dark:text-blue-400" />
+              </div>
+              <div className="ml-4">
+                <p className="text-sm font-medium text-gray-500 dark:text-gray-400">Regular Users</p>
+                <p className="text-2xl font-semibold text-gray-900 dark:text-white">
+                  {stats.regularUsers}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-6">
+            <div className="flex items-center">
+              <div className="flex-shrink-0">
+                <BarChart3 className="h-8 w-8 text-orange-600 dark:text-orange-400" />
+              </div>
+              <div className="ml-4">
+                <p className="text-sm font-medium text-gray-500 dark:text-gray-400">Active Learners</p>
+                <p className="text-2xl font-semibold text-gray-900 dark:text-white">
+                  {stats.usersWithProgress}
                 </p>
               </div>
             </div>
@@ -364,6 +492,37 @@ export default function AdminDashboard() {
                 </div>
               )}
             </form>
+          </div>
+        </div>
+
+        {/* Data Cleanup */}
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow">
+          <div className="px-6 py-4 border-b border-gray-200 dark:border-gray-700">
+            <h2 className="text-lg font-medium text-gray-900 dark:text-white">Data Cleanup</h2>
+          </div>
+          <div className="p-6">
+            <div className="flex items-center justify-between">
+              <div>
+                <h3 className="text-sm font-medium text-gray-900 dark:text-white">Clean Orphaned Data</h3>
+                <p className="text-sm text-gray-500 dark:text-gray-400">
+                  Remove progress records for deleted courses
+                </p>
+              </div>
+              <button
+                onClick={handleCleanupOrphanedData}
+                disabled={cleaningUp}
+                className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-orange-600 hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-orange-500 disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {cleaningUp ? (
+                  <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
+                ) : (
+                  <>
+                    <Settings className="h-4 w-4 mr-2" />
+                    Clean Up
+                  </>
+                )}
+              </button>
+            </div>
           </div>
         </div>
 
